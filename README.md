@@ -39,10 +39,10 @@
 4. [内置指令](https://github.com/whjin/docs/blob/main/vue/%E5%86%85%E7%BD%AE%E6%8C%87%E4%BB%A4.md)
 5. [方法与事件](https://github.com/whjin/docs/blob/main/vue/%E6%96%B9%E6%B3%95%E4%B8%8E%E4%BA%8B%E4%BB%B6.md)
 6. [表单与v-model](https://github.com/whjin/docs/blob/main/vue/%E8%A1%A8%E5%8D%95%E4%B8%8Ev-model.md)
-7. 组件详解
-8. 自定义指令
-9. Render函数
-10. 函数化组件
-11. Vue插件
-12. 状态管理与Vuex
-13. 部署github pages
+7. [组件详解](https://github.com/whjin/docs/blob/main/vue/%E7%BB%84%E4%BB%B6%E8%AF%A6%E8%A7%A3.md)
+8. [自定义指令](https://github.com/whjin/docs/blob/main/vue/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4.md)
+9. [Render函数](https://github.com/whjin/docs/blob/main/vue/Render%E5%87%BD%E6%95%B0.md)
+10. [函数化组件](https://github.com/whjin/docs/blob/main/vue/%E5%87%BD%E6%95%B0%E5%8C%96%E7%BB%84%E4%BB%B6.md)
+11. [Vue插件](https://github.com/whjin/docs/blob/main/vue/Vue%E6%8F%92%E4%BB%B6.md)
+12. [状态管理与Vuex](https://github.com/whjin/docs/blob/main/vue/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E4%B8%8EVuex.md)
+13. [部署github pages](https://github.com/whjin/docs/blob/main/vue/%E9%83%A8%E7%BD%B2github%20pages.md)
