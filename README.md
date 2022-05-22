@@ -46,3 +46,13 @@
 11. [Vue插件](https://github.com/whjin/docs/blob/main/vue/Vue%E6%8F%92%E4%BB%B6.md)
 12. [状态管理与Vuex](https://github.com/whjin/docs/blob/main/vue/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E4%B8%8EVuex.md)
 13. [部署github pages](https://github.com/whjin/docs/blob/main/vue/%E9%83%A8%E7%BD%B2github%20pages.md)
+
+# 面试
+1. 导学
+2. HTML
+3. CSS
+4. JavaScript
+5. ES6
+6. Node
+7. HTTP
+8. 性能优化
