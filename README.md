@@ -54,5 +54,5 @@
 4. [JavaScript](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/JavaScript.md)
 5. [ES6](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/ES6.md)
 6. [Node](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/Node.md)
-7. HTTP
-8. 性能优化
+7. [HTTP](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/HTTP.md)
+8. [性能优化](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md)
