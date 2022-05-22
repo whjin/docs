@@ -10,3 +10,24 @@
 5. [清除浮动](https://github.com/whjin/docs/blob/main/css/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8.md)
 6. [定位](https://github.com/whjin/docs/blob/main/css/%E5%AE%9A%E4%BD%8D.md)
 7. [BFC](https://github.com/whjin/docs/blob/main/css/BFC.md)
+
+# JavaScript
+1. 基础知识
+2. 实用技巧
+3. 内存管理
+4. JS思维导图
+5. 学习JS的8张思维导图
+6. jQuery的deferred对象
+7. jQuery学习笔记
+
+# HTTP
+1. 导学
+2. 细节
+3. 跨域和缓存
+4. Ajax技术细节
+5. 前端路由原理
+6. 性能优化
+
+# 正则
+1. 正则表达式
+2. 正则表达式实例
