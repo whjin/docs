@@ -1,10 +1,10 @@
 ```
 <p>
-	 Hover <span class="tooltip" tooltip-data="Tooltip Content">Here</span> to see the tooltip.
+  Hover <span class="tooltip" tooltip-data="Tooltip Content">Here</span> to see the tooltip.
 </p>
 <p>
-	 You can also hover <span class="tooltip" tooltip-data="This is another Tooltip Content">here</span>
-	to see another example.
+  You can also hover <span class="tooltip" tooltip-data="This is another Tooltip Content">here</span>
+  to see another example.
 </p>
 ```
 ```
