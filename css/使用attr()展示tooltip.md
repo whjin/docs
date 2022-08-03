@@ -51,5 +51,4 @@
   opacity: 1;
   visibility: visible;
 }
-
 ```
