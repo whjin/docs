@@ -20,6 +20,7 @@
 5. [学习JS的8张思维导图](https://github.com/whjin/docs/blob/main/javascript/%E5%AD%A6%E4%B9%A0Javascript%E7%9A%848%E5%BC%A0%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.md)
 6. [jQuery的deferred对象](https://github.com/whjin/docs/blob/main/javascript/jQuery%E7%9A%84deferred%E5%AF%B9%E8%B1%A1.md)
 7. [jQuery学习笔记](https://github.com/whjin/docs/blob/main/javascript/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)
+8. [Promise](https://github.com/whjin/docs/blob/main/javascript/Promise.md)
 
 # HTTP
 1. [导学](https://github.com/whjin/docs/blob/main/http/%E5%AF%BC%E5%AD%A6.md)
