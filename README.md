@@ -31,7 +31,7 @@
 5. [前端路由原理](https://github.com/whjin/docs/blob/main/http/%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1%E5%8E%9F%E7%90%86.md)
 6. [性能优化](https://github.com/whjin/docs/blob/main/http/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md)
 
-# 正则
+# Regex
 1. [正则表达式](https://github.com/whjin/docs/blob/main/%E6%AD%A3%E5%88%99/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.md)
 2. [正则表达式实例](https://github.com/whjin/docs/blob/main/%E6%AD%A3%E5%88%99/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B.md)
 
@@ -50,7 +50,7 @@
 12. [状态管理与Vuex](https://github.com/whjin/docs/blob/main/vue/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E4%B8%8EVuex.md)
 13. [部署github pages](https://github.com/whjin/docs/blob/main/vue/%E9%83%A8%E7%BD%B2github%20pages.md)
 
-# 面试
+# Interview
 1. [导学](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/%E5%AF%BC%E5%AD%A6.md)
 2. [HTML](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/HTML.md)
 3. [CSS](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/CSS.md)
