@@ -21,7 +21,7 @@
 6. [jQuery的deferred对象](https://github.com/whjin/docs/blob/main/javascript/jQuery%E7%9A%84deferred%E5%AF%B9%E8%B1%A1.md)
 7. [jQuery学习笔记](https://github.com/whjin/docs/blob/main/javascript/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)
 8. [Promise](https://github.com/whjin/docs/blob/main/javascript/Promise.md)
-9. [https://github.com/whjin/docs/tree/main/webrtc/%E4%B8%80%E5%AF%B9%E4%B8%80%E8%A7%86%E9%A2%91](https://github.com/whjin/docs/tree/main/webrtc/%E4%B8%80%E5%AF%B9%E4%B8%80%E8%A7%86%E9%A2%91 "webrtc-one-to-one")
+9. [webrtc:one-to-one-talk](https://github.com/whjin/docs/tree/main/webrtc/%E4%B8%80%E5%AF%B9%E4%B8%80%E8%A7%86%E9%A2%91)
 
 # HTTP
 1. [导学](https://github.com/whjin/docs/blob/main/http/%E5%AF%BC%E5%AD%A6.md)
