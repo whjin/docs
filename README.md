@@ -31,8 +31,8 @@
 6. [性能优化](https://github.com/whjin/docs/blob/main/http/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md)
 
 # Regex
-1. [正则表达式](https://github.com/whjin/docs/blob/main/%E6%AD%A3%E5%88%99/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.md)
-2. [正则表达式实例](https://github.com/whjin/docs/blob/main/%E6%AD%A3%E5%88%99/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B.md)
+1. [正则表达式](https://github.com/whjin/docs/blob/main/regex/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.md)
+2. [正则表达式实例](https://github.com/whjin/docs/blob/main/regex/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B.md)
 
 # Vue
 1. [基础知识](https://github.com/whjin/docs/blob/main/vue/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
@@ -50,14 +50,14 @@
 13. [部署github pages](https://github.com/whjin/docs/blob/main/vue/%E9%83%A8%E7%BD%B2github%20pages.md)
 
 # Interview
-1. [导学](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/%E5%AF%BC%E5%AD%A6.md)
-2. [HTML](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/HTML.md)
-3. [CSS](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/CSS.md)
-4. [JavaScript](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/JavaScript.md)
-5. [ES6](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/ES6.md)
-6. [Node](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/Node.md)
-7. [HTTP](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/HTTP.md)
-8. [性能优化](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md)
+1. [导学](https://github.com/whjin/docs/blob/main/interview/%E5%AF%BC%E5%AD%A6.md)
+2. [HTML](https://github.com/whjin/docs/blob/main/interview/HTML.md)
+3. [CSS](https://github.com/whjin/docs/blob/main/interview/CSS.md)
+4. [JavaScript](https://github.com/whjin/docs/blob/main/interview/JavaScript.md)
+5. [ES6](https://github.com/whjin/docs/blob/main/interview/ES6.md)
+6. [Node](https://github.com/whjin/docs/blob/main/interview/Node.md)
+7. [HTTP](https://github.com/whjin/docs/blob/main/interview/HTTP.md)
+8. [性能优化](https://github.com/whjin/docs/blob/main/interview/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md)
 
 # WebRTC
 1. [webrtc:one-to-one-talk](https://github.com/whjin/docs/tree/main/webrtc/one-to-one)
