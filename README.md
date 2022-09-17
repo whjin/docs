@@ -60,6 +60,6 @@
 8. [性能优化](https://github.com/whjin/docs/blob/main/%E9%9D%A2%E8%AF%95/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md)
 
 # WebRTC
-1. [webrtc:sdp](https://github.com/whjin/docs/tree/main/webrtc/offer-answer-sdp)
-2. [webrtc:one-to-one-talk](https://github.com/whjin/docs/tree/main/webrtc/one-to-one)
+1. [webrtc:one-to-one-talk](https://github.com/whjin/docs/tree/main/webrtc/one-to-one)
+2. [webrtc:sdp](https://github.com/whjin/docs/tree/main/webrtc/offer-answer-sdp)
 
