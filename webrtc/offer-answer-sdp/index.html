@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offer-Answer-SDP</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div>
+        <button id="start">start</button>
+        <button id="call" disabled>call</button>
+        <button id="hangup" disabled>hangup</button>
+    </div>
+    <div class="preview">
+        <div>
+            <h2>Local:</h2>
+            <video autoplay playsinline id="localvideo" width="320" height="240"></video>
+            <h2>Local SDP:</h2>
+            <textarea name="offer" id="offer" cols="50" rows="15"></textarea>
+        </div>
+        <div>
+            <h2>Remote:</h2>
+            <video autoplay playsinline id="remotevideo" width="320" height="240"></video>
+            <h2>Remote SDP:</h2>
+            <textarea name="answer" id="answer" cols="50" rows="15"></textarea>
+        </div>
+    </div>
+    <script src="./client.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+body {
+  text-align: center;
+}
+button {
+  width: 80px;
+  font-size: 18px;
+}
+.preview {
+  display: flex;
+  justify-content: center;
+}
+.preview video {
+  border: 1px solid #666;
+}
+.preview textarea#offer {
+  margin-right: 20px;
+}
