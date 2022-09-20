@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登录</title>
+  </head>
+  <body>
+    <form
+      action="/login"
+      method="POST"
+      enctype="application/x-www-form-urlencoded"
+    >
+      <fieldset>
+        <legend>登录</legend>
+        <div>
+          <label for="username">账号</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <div>
+          <label for="password">密码</label>
+          <input
+            type="text"
+            name="password"
+            id="password"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <div>
+          <button type="submit">登录</button>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>

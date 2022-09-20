@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>博客</title>
+  </head>
+  <body>
+    <% if(logged){ %>
+    <a href="/">首页</a>
+    <a href="/publish">发表文章</a>
+    <a href="/logout">退出登录</a>
+    <% } else {%>
+    <a href="/login">登录</a>
+    <% } %> <%- body %>
+  </body>
+</html>

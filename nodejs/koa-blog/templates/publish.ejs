@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>发表文章</title>
+  </head>
+  <body>
+    <form
+      action="/publish"
+      method="POST"
+      enctype="application/x-www-form-urlencoded"
+    >
+      <fieldset>
+        <legend>发表文章</legend>
+        <div>
+          <label for="title">标题</label>
+          <input type="text" name="title" id="title" required />
+        </div>
+        <div>
+          <label for="content">内容</label>
+          <textarea name="content" id="content" required></textarea>
+        </div>
+        <div>
+          <button type="submit">发布</button>
+          <button type="reset">重置</button>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
