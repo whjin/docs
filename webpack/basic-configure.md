@@ -80,4 +80,105 @@
 	  },
 	};
 
+# `module`
 
+`noParse`配置用来告知`webpack`忽略指定的、且未采用模块系统的模块，不对其进行递归解析和处理。这样做的好处是可以提高构建性能，因为一些大型的库（如`jQuery`）没有采用模块系统，让`webpack`解析浪费时间和资源。
+
+`noParse`只能对文件级别进行控制，对于匹配的文件，任何模块系统都不会进行解析。
+
+	// 以正则方式指定
+	noParse: /jquery/
+
+	// 以数组方式指定
+	noParse: [/jquery/]
+
+	// 以函数方式指定
+	noParse: (content) => {
+	  return content.test(/jquery/)
+	}
+
+被忽略的模块不应该含有`import、require、define`的调用，或其他任何导入机制。
+
+`rules`是一个数组，配置`rules`时需要完成以下工作：
+
+- 匹配条件：通过`test`、`include`、`exclude`来指定要应用或排除`loader`的文件。
+- `loader`列表：对匹配成功的文件运用执行的`loader`，也可以传递数组，多个`loader`的运用顺序是从后往前应用的。此外，每个`loader`还支持传递选项。
+
+
+	module: {
+	  rules: [
+	    {
+	      test: /\.css$/,
+	      // loader执行顺序从后往前，css-loader --> style-loader
+	      use: ["style-loader", "css-loader"],
+	    },
+	    {
+	      test: /\.js$/,
+	      // 使用查询字符串形式传入选项
+	      use: ["babel-loader?cacheDirectory"],
+	      // 只对src目录下的文件应用规则
+	      include: path.resolve(__dirname, "src"),
+	      parser: {
+	        amd: false, // 不解析 AMD
+	        commonjs: false, // 不解析 commonjs
+	        harmony: false, // 不解析 es6 import/export 模块语法
+	        requirejs: false, // 不解析 requirejs
+	      },
+	    },
+	    {
+	      test: /\.less$/,
+	      // 以数组方式运用loader
+	      use: ["style-loader", "css-loader", "less-loader"],
+	      // 忽略node_modules目录下的文件
+	      exclude: path.resolve(__dirname, "node_modules"),
+	    },
+	    {
+	      test: /\.(gif|png|jpe?g)$/,
+	      // 以对象方式运用loader
+	      use: [
+	        {
+	          loader: "file-loader",
+	          // 以对象方式传递选项
+	          options: {
+	            name: "images/[name].[ext]",
+	            esModule: false,
+	          },
+	        },
+	      ],
+	    },
+	  ];
+	}
+
+# `resolve`
+
+`alias`创建`import`或`require`模块的别名。
+
+	module.exports = {
+	  resolve: {
+	    alias: {
+	      "@": "./src",
+	    },
+	  },
+	};
+
+	module.exports = {
+	  resolve: {
+	    alias: {
+	      xyz$: path.resolve(__dirname, "path/to/file.js"),
+	    },
+	  },
+	};
+
+`extensions`当不带扩展名的模块导入时，`webpack`会读取本配置指定的扩展名去尝试访问文件是否存在。
+
+	module.exports = {
+	  extensions: [".vue", ".js", ".json"],
+	};
+
+# `modules`
+
+该选项配置`webpack`去哪些目录下寻找第三方模块，默认情况下只会去`node_modules`目录下寻找。
+
+	module.exports = {
+	  modules: [path.resolve(__dirname, "lib"), "node_modules"],
+	};
