@@ -77,4 +77,4 @@
 
 # Webpack
 
-1. [basic-configure](https://github.com/whjin/docs/tree/main/webpack/basic-configure)
+1. [basic-configure](https://github.com/whjin/docs/blob/main/webpack/basic-configure.md)
