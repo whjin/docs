@@ -216,4 +216,36 @@ module: {
 
 用于扩展`webpack`的功能，`plugin`是通过`webpack`在构建流程中回调钩子函数来实现的，因此几乎可以实现任何与构建相关的功能。
 
+# `Vue`项目构建
+
+```
+// 安装 babel 相关模块
+npm i babel-loader @babel/core @babel/runtime @babel/preset-env @babel/plugin-transform-runtime -D
+
+// 安装 vue 相关的 loader，会自动安装 vue-style-loader
+npm i vue-loader vue-template-compiler -D
+
+// 安装 css 相关模块
+npm i postcss-loader css-loader autoprefixer -D
+
+// 安装 html-webpack-plugin
+npm i html-webpack-plugin -D
+
+// 安装 webpack 相关模块
+npm i webpack webpack-cli webpack-dev-server -D
+```
+
+## `.babelrc`
+
+	{
+	  "plugins": ["@babel/plugin-transform-runtime"],
+	  "presets": ["@babel/preset-env"]
+	}
+
+## `postcss.config.js`
+
+	module.exports = {
+	  plugins: [require("autoprefixer")],
+	};
+
 > [webpack.config.js](https://github.com/whjin/docs/blob/main/webpack/webpack.config.js)
