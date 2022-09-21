@@ -44,7 +44,7 @@ const config = {
     resolve: {
       modules: ["node_modules", path.resolve(__dirname, "lib")], // 用于查找模块的目录
     },
-    extensions: [".vue", ".js", ".json"], // 模块扩展名
+    extensions: [".ts", ".vue", ".js", ".json"], // 模块扩展名
     alias: {
       xyz$: path.resolve(__dirname, "path/to/file.js"),
     },

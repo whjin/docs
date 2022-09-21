@@ -233,6 +233,9 @@ npm i html-webpack-plugin -D
 
 // 安装 webpack 相关模块
 npm i webpack webpack-cli webpack-dev-server -D
+
+// 安装 TypeScript 相关模块
+npm i typescript ts-loader -D
 ```
 
 ## `.babelrc`

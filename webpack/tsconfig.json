@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "strict": true,
+        "module": "es2015",
+        "moduleResolution": "node"
+    },
+    "include": [
+        "src/**/*.vue",
+        "src/**/*.ts",
+    ]
+}
