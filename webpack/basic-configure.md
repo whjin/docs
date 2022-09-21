@@ -216,4 +216,4 @@ module: {
 
 用于扩展`webpack`的功能，`plugin`是通过`webpack`在构建流程中回调钩子函数来实现的，因此几乎可以实现任何与构建相关的功能。
 
-> [webpack.config.js]()
+> [webpack.config.js](https://github.com/whjin/docs/blob/main/webpack/webpack.config.js)
