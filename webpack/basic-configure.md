@@ -103,8 +103,8 @@
 
 - 匹配条件：通过`test`、`include`、`exclude`来指定要应用或排除`loader`的文件。
 - `loader`列表：对匹配成功的文件运用执行的`loader`，也可以传递数组，多个`loader`的运用顺序是从后往前应用的。此外，每个`loader`还支持传递选项。
-
-
+	
+	
 	module: {
 	  rules: [
 	    {
@@ -149,9 +149,7 @@
 	  ];
 	}
 
-# `resolve`
-
-`alias`创建`import`或`require`模块的别名。
+`resolve/alias`创建`import`或`require`模块的别名。
 
 	module.exports = {
 	  resolve: {
@@ -175,10 +173,11 @@
 	  extensions: [".vue", ".js", ".json"],
 	};
 
-# `modules`
-
-该选项配置`webpack`去哪些目录下寻找第三方模块，默认情况下只会去`node_modules`目录下寻找。
+`modules`该选项配置`webpack`去哪些目录下寻找第三方模块，默认情况下只会去`node_modules`目录下寻找。
 
 	module.exports = {
 	  modules: [path.resolve(__dirname, "lib"), "node_modules"],
 	};
+
+# `externals`
+
