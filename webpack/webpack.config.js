@@ -1,8 +1,9 @@
 const path = require("path");
 const MiniCssPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
-module.exports = {
+const config = {
   mode: "production",
   entry: "./src/main.js",
   output: {
@@ -16,6 +17,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.vue$/,
+        loader: "vue-loader",
+      },
+      {
         test: /\.js$/,
         loader: "babel-loader",
         include: [path.resolve(__dirname, "src")],
@@ -23,6 +28,16 @@ module.exports = {
         options: {
           presets: ["es2015"],
         },
+      },
+      {
+        test: /\.css$/,
+        use: [
+          process.env.NODE_ENV === "production"
+            ? minify.loader
+            : "vue-style-loader",
+          "css-loader",
+          "postcss-loader",
+        ],
       },
     ],
     noParse: [/jquery/], // 不解析的模块
@@ -45,9 +60,7 @@ module.exports = {
     port: 8080,
   },
   plugins: [
-    new MiniCssPlugin({
-      filename: "css/[name].css",
-    }),
+    new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       chunks: ["main"],
       filename: "index.html",
@@ -55,3 +68,14 @@ module.exports = {
     }),
   ],
 };
+
+if (process.env.NODE_ENV === "production") {
+  // 在生产环境中添加 css 提取插件
+  config.plugins.push(
+    new MiniCssPlugin({
+      filename: "css/[name].css",
+    })
+  );
+}
+
+module.exports = config;
