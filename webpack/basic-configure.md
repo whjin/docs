@@ -15,3 +15,22 @@
 - `externals`：配置外部运行环境提供的模块
 - `devServer`：配置开发服务器
 - `plugins`：配置插件
+
+## `entry`和`context`
+
+`webpack`通过`entry`入口来开始应用的构建，`context`是包含入口文件的目录，必须使用绝对路径。
+
+	module.exports = {
+	  entry: "./src/main.js",
+	};
+	
+	module.exports = {
+	  entry: "./main.js",
+	  context: path.resolve(__dirname, "src"),
+	};
+
+`entry`支持字符串、对象或数组格式的配置。
+
+|类型|说明|示例|
+|:---:|----|----|
+|字符串|单个入口文件|123|
