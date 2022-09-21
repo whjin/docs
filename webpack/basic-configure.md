@@ -104,50 +104,51 @@
 - 匹配条件：通过`test`、`include`、`exclude`来指定要应用或排除`loader`的文件。
 - `loader`列表：对匹配成功的文件运用执行的`loader`，也可以传递数组，多个`loader`的运用顺序是从后往前应用的。此外，每个`loader`还支持传递选项。
 	
-	
-	module: {
-	  rules: [
-	    {
-	      test: /\.css$/,
-	      // loader执行顺序从后往前，css-loader --> style-loader
-	      use: ["style-loader", "css-loader"],
-	    },
-	    {
-	      test: /\.js$/,
-	      // 使用查询字符串形式传入选项
-	      use: ["babel-loader?cacheDirectory"],
-	      // 只对src目录下的文件应用规则
-	      include: path.resolve(__dirname, "src"),
-	      parser: {
-	        amd: false, // 不解析 AMD
-	        commonjs: false, // 不解析 commonjs
-	        harmony: false, // 不解析 es6 import/export 模块语法
-	        requirejs: false, // 不解析 requirejs
-	      },
-	    },
-	    {
-	      test: /\.less$/,
-	      // 以数组方式运用loader
-	      use: ["style-loader", "css-loader", "less-loader"],
-	      // 忽略node_modules目录下的文件
-	      exclude: path.resolve(__dirname, "node_modules"),
-	    },
-	    {
-	      test: /\.(gif|png|jpe?g)$/,
-	      // 以对象方式运用loader
-	      use: [
-	        {
-	          loader: "file-loader",
-	          // 以对象方式传递选项
-	          options: {
-	            name: "images/[name].[ext]",
-	            esModule: false,
-	          },
-	        },
-	      ],
-	    },
-	  ];
-	}
+```
+module: {
+  rules: [
+    {
+      test: /\.css$/,
+      // loader执行顺序从后往前，css-loader --> style-loader
+      use: ["style-loader", "css-loader"],
+    },
+    {
+      test: /\.js$/,
+      // 使用查询字符串形式传入选项
+      use: ["babel-loader?cacheDirectory"],
+      // 只对src目录下的文件应用规则
+      include: path.resolve(__dirname, "src"),
+      parser: {
+        amd: false, // 不解析 AMD
+        commonjs: false, // 不解析 commonjs
+        harmony: false, // 不解析 es6 import/export 模块语法
+        requirejs: false, // 不解析 requirejs
+      },
+    },
+    {
+      test: /\.less$/,
+      // 以数组方式运用loader
+      use: ["style-loader", "css-loader", "less-loader"],
+      // 忽略node_modules目录下的文件
+      exclude: path.resolve(__dirname, "node_modules"),
+    },
+    {
+      test: /\.(gif|png|jpe?g)$/,
+      // 以对象方式运用loader
+      use: [
+        {
+          loader: "file-loader",
+          // 以对象方式传递选项
+          options: {
+            name: "images/[name].[ext]",
+            esModule: false,
+          },
+        },
+      ],
+    },
+  ];
+}
+```
 
 `resolve/alias`创建`import`或`require`模块的别名。
 
