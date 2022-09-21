@@ -182,3 +182,38 @@ module: {
 
 # `externals`
 
+该选项用来告知`webpack`应用代码中哪些模块是外部环境提供的，`webpack`构建时不要打包它们，比如`jQuery`。
+
+	module.exports = {
+	  externals: {
+	    // 键名代表应用代码中导入的模块名称，值代表全局变量
+	    jquery: "jQuery",
+	  },
+	};
+
+# `devServer`
+
+`hot`是否启用模块热替换功能。`devServer`默认的`liveReload`是检测到变更后刷新整个页面以此来实现实时预览。启用模块热替换功能后，只会替换变更的模块。
+
+`contentBase`配置`DevServer HTTP`服务的`documentRoot`。默认使用当前工作目录作为`documentRoot`。
+
+	module.exports = {
+	  contentBase: path.join(__dirname, "public"),
+	};
+
+`devServer`提供的`HTTP`服务器允许我们在浏览器中访问相关文件。`devServer`暴露的文件有两类：
+
+- 本地文件。
+- `webpack`构建结果，由于构建结果直接交付给了`DevServer`，因此本地会看不到构建出的文件。
+
+`contentBase`只能配置本地文件的目录，如果不需要暴露本地文件到`HTTP`服务器上，可以通过`contentBase: false`配置来关闭。
+
+`host`配置`devServer`监听的地址。默认`127.0.0.1`，只能本机能够访问。开发手机`H5`页面，需要配置该选项为局域网`IP`，才能在手机上访问`devServer`。
+
+`port`配置`devServer`监听端口，默认为`8080`。
+
+# `plugins`
+
+用于扩展`webpack`的功能，`plugin`是通过`webpack`在构建流程中回调钩子函数来实现的，因此几乎可以实现任何与构建相关的功能。
+
+> [webpack.config.js]()
