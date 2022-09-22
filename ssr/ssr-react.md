@@ -20,3 +20,5 @@
 - `target`修改为`node`，打包时不会打包`node.js`内置的模块。
 - `libraryTarget`修改为`commonjs2`，以便被`node.js`加载。
 - 去掉`HtmlWebpackPlugin`插件。
+
+`package.json`需要添加`build-ssr`命令用来打包`SSR`环境下的`bundle`。

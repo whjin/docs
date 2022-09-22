@@ -1,0 +1,7 @@
+{
+    "scripts": {
+        "build": "webpack",
+        "start": "webpack-dev-server",
+        "build-ssr": "webpack --config webpack.ssr.config.js"
+    }
+}
