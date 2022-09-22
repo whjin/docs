@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const MiniCssPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const HappyPackPlugin = require("happypack");
 
 const config = {
   mode: "production",
@@ -23,7 +24,8 @@ const config = {
       },
       {
         test: /\.js$/,
-        loader: "babel-loader",
+        // loader: "babel-loader",
+        use: "happypack/loader?id=js", // 配置 id 为 js
         include: [path.resolve(__dirname, "src")],
         exclude: [path.resolve(__dirname, "lib")],
         options: {
@@ -32,13 +34,19 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: [
-          process.env.NODE_ENV === "production"
-            ? minify.loader
-            : "vue-style-loader",
-          "css-loader",
-          "postcss-loader",
-        ],
+        // use: [
+        //   process.env.NODE_ENV === "production"
+        //     ? minify.loader
+        //     : "vue-style-loader",
+        //   "css-loader",
+        //   "postcss-loader",
+        // ],
+        use: "happypack/loader?id=css",
+        include: [path.resolve(__dirname, "src")],
+      },
+      {
+        test: /\.scss$/,
+        use: "happypack/loader?id=scss",
       },
     ],
     noParse: [/jquery/], // 不解析的模块
@@ -68,7 +76,49 @@ const config = {
       template: "index.html",
     }),
     new webpack.IgnorePlugin(/\.\/local/, /moment/),
+    // 传入 manifest.json
+    new webpack.DllReferencePlugin({
+      manifest: path.resolve(__dirname, "dist", "manifest.json"),
+    }),
+    new HappyPackPlugin({
+      id: "js",
+      use: [
+        {
+          loader: "babel-loader",
+          options: {
+            plugins: ["@babel/transform-runtime"],
+            presets: ["@babel/env"],
+          },
+        },
+      ],
+    }),
+    new HappyPackPlugin({
+      id: "css",
+      use: ["style-loader", "css-loader"],
+    }),
+    new HappyPackPlugin({
+      id: "scss",
+      use: ["style-loader", "css-loader", "sass-loader"],
+    }),
   ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        // 应用代码中公共模块
+        common: {
+          chunks: "all",
+          // 最小公共模块引用次数
+          minChunks: 2,
+        },
+        vendor: {
+          // node_modules 中第三方模块
+          test: /node_modules/,
+          chunks: "all",
+          minChunks: 1,
+        },
+      },
+    },
+  },
 };
 
 if (process.env.NODE_ENV === "production") {
