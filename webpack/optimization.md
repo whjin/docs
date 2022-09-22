@@ -19,5 +19,5 @@
 - 通过`webpack.DllPlugin`插件打包出`Dll`库。
 - 通过`webpack.DllReferencePlugin`引用打包好的`Dll`库。
 
-`Dll`库需要单独构建，需要一份单独的配置`webpack`文件。
+`Dll`库需要单独构建，需要一份单独的配置`webpack`文件。[webpack.dll.config.js]()
 
