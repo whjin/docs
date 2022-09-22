@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const MiniCssPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
@@ -66,6 +67,7 @@ const config = {
       filename: "index.html",
       template: "index.html",
     }),
+    new webpack.IgnorePlugin(/\.\/local/, /moment/),
   ],
 };
 
