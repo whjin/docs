@@ -1,10 +1,9 @@
 # CSS #
 
-- 介绍一下标准CSS的盒子模型？低版本IE的盒子模型有什么不同？
+## 两种盒模型
 
-> 1、有两种，IE盒子模型、W3C盒子模型
-> 2、盒模型：内容（`content`）、填充（`padding`）、边界（`margin`）、边框（`border`）
-> 3、区别：IE的`content`部分把`border`和`padding`计算进去
+- `content-box`内容盒模型，`width` = `content`
+- `border-box`边框盒模型，`width = content + padding + border`
 
 - CSS选择符有哪些？哪些属性可以继承？
 
