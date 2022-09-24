@@ -59,7 +59,7 @@
 
 1. [导学](https://github.com/whjin/docs/blob/main/interview/%E5%AF%BC%E5%AD%A6.md)
 2. [HTML](https://github.com/whjin/docs/blob/main/interview/HTML.md)
-3. [css](https://github.com/whjin/docs/tree/main/interview/css)
+3. [CSS](https://github.com/whjin/docs/blob/main/interview/CSS.md)
 4. [JavaScript](https://github.com/whjin/docs/blob/main/interview/JavaScript.md)
 5. [ES6](https://github.com/whjin/docs/blob/main/interview/ES6.md)
 6. [Node](https://github.com/whjin/docs/blob/main/interview/Node.md)
