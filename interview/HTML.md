@@ -100,3 +100,39 @@
 - `ShareWorker`，两个页面共享同一个线程，通过向线程发送数据和接收数据实现标签页之间的双向通信。
 - `localStorage`、`cookies`等本地存储方式，`localStorage`另一个浏览上下文里被添加、修改或删除时，它都会触发一个`storage`事件，通过监听`storage`事件控制它的值来进行页面信息通信。
 - `postMessage`
+
+# `meta`标签
+
+- `<meta charset="utf-8">`：声明文档使用的字符编码
+- `<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">`：优先使用`IE`最新版本和`Chrome`
+- `<meta http-equiv="pragma" content="no-cache">`
+- `<meta http-equiv="cache-control" content="no-cache">`
+- `<meta http-equiv="expires" content="0">`
+- `<meta name="description" content="">`：页面描述
+- `<meta name="keywords" content="">`：页面关键词
+- `<meta name="author" content="name,email">`：页面作者
+- `<meta name="robots" content="index,follow">`：所搜引擎抓取
+- `<meta name="viewport" content="initial-scale=1,maximum-scale=3,minimum-scale=1,user-scalable=no">`：移动端
+
+# 性能优化
+
+1、页面内容
+
+- 文件合并、`css`雪碧图、使用`base64`等方式减少`http`请求数，避免过多请求造成等待的情况。
+- `DNS`缓存等机制来减少`DNS`的查询次数。
+- 设置缓存策略，对常用不变的资源进行缓存。
+- 使用延迟加载的方式，来减少页面首屏加载时需要请求的资源。延迟加载的资源当用户需要访问时，再去请求加载。
+- 对某些资源使用预加载的方式，来提高用户需要访问资源时的响应速度。
+
+2、服务器
+
+- 使用`CDN`服务，来提高用户对于资源请求时的响应速度。
+- 服务器端开启`gzip`、`deflate`等方式对传输的资源进行压缩，减小文件的体积。
+- 尽可能减小`cookie`的大小，并且通过将静态资源分配到其他域名下，来避免对静态资源请求时携带不必要的`cookie`。
+
+3、`css`和`JavaScript`
+
+- 把样式表放在页面的`head`标签中，减少页面的首次渲染时间。
+- 避免使用`@import`。
+- 尽量把脚本放在页面底部或使用`defer`或`async`属性，避免脚本的加载和执行阻塞页面的渲染。
+- 对`css`和`JavaScript`文件进行压缩，来减小文件的体积。
