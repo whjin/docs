@@ -24,7 +24,7 @@
 6. [jQuery 的 deferred 对象](https://github.com/whjin/docs/blob/main/javascript/jQuery%E7%9A%84deferred%E5%AF%B9%E8%B1%A1.md)
 7. [jQuery 学习笔记](https://github.com/whjin/docs/blob/main/javascript/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)
 8. [Promise](https://github.com/whjin/docs/blob/main/javascript/Promise.md)
-9. [防抖节流]()
+9. [防抖节流](https://github.com/whjin/docs/blob/main/javascript/%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81.md)
 
 # HTTP
 
