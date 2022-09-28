@@ -27,3 +27,5 @@
 # `Promise.catch()`方法
 
 - `catch()`函数只有一个回调函数
+
+> [Promise代码实现](https://github.com/whjin/docs/blob/main/javascript/Promise.js)
