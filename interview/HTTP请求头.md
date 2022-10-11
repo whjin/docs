@@ -1,5 +1,5 @@
 |请求头|说明|
-|:-----:|-----|
+|-----|-----|
 |`Accept`|响应内容的类型`Content-Type`|
 |`Accept-Charset`|字符集|
 |`Accept-Encoding`|响应内容的编码方式|
