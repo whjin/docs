@@ -74,7 +74,9 @@
 15. [手写 call、apply 及 bind 函数](https://github.com/whjin/docs/blob/main/interview/src/call-apply-bind)
 16. [排序：插入排序、快速排序、选择排序、堆排序](https://github.com/whjin/docs/blob/main/interview/src/sort)
 17. [手写 new](https://github.com/whjin/docs/blob/main/interview/src/new.js)
-18. [400、401和403状态码](https://github.com/whjin/docs/blob/main/interview/400-401-403%E7%8A%B6%E6%80%81%E7%A0%81.md)
+18. [301、302和304状态码]()
+19. [400、401和403状态码](https://github.com/whjin/docs/blob/main/interview/400-401-403%E7%8A%B6%E6%80%81%E7%A0%81.md)
+20. [500、501、502、503、504状态码]()
 
 # WebRTC
 
