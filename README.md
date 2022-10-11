@@ -24,10 +24,6 @@
 6. [jQuery 的 deferred 对象](https://github.com/whjin/docs/blob/main/javascript/jQuery%E7%9A%84deferred%E5%AF%B9%E8%B1%A1.md)
 7. [jQuery 学习笔记](https://github.com/whjin/docs/blob/main/javascript/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)
 8. [Promise](https://github.com/whjin/docs/blob/main/javascript/Promise.md)
-9. [防抖节流](https://github.com/whjin/docs/blob/main/javascript/%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81.md)
-10. [深拷贝最佳实现](https://github.com/whjin/docs/blob/main/javascript/src/deepClone.js)
-11. [手写 call、apply 及 bind 函数](https://github.com/whjin/docs/blob/main/javascript/src/call-apply-bind)
-12. [排序：插入排序、快速排序、选择排序、堆排序](https://github.com/whjin/docs/blob/main/javascript/src/sort)
 
 # HTTP
 
@@ -70,9 +66,14 @@
 7. [HTTP](https://github.com/whjin/docs/blob/main/interview/HTTP.md)
 8. [性能优化](https://github.com/whjin/docs/blob/main/interview/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md)
 9. [Vue](https://github.com/whjin/docs/blob/main/interview/Vue.md)
-10. [浏览器输入URL到页面呈现](https://github.com/whjin/docs/blob/main/interview/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%91%88%E7%8E%B0.md)
-11. [CDN内容分发网络](https://github.com/whjin/docs/blob/main/interview/CDN%E5%86%85%E5%AE%B9%E5%88%86%E5%8F%91%E7%BD%91%E7%BB%9C.md)
-12. [cookie防范XSS攻击](https://github.com/whjin/docs/blob/main/interview/cookie%E9%98%B2%E8%8C%83XSS%E6%94%BB%E5%87%BB.md)
+10. [浏览器输入 URL 到页面呈现](https://github.com/whjin/docs/blob/main/interview/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%91%88%E7%8E%B0.md)
+11. [CDN 内容分发网络](https://github.com/whjin/docs/blob/main/interview/CDN%E5%86%85%E5%AE%B9%E5%88%86%E5%8F%91%E7%BD%91%E7%BB%9C.md)
+12. [cookie 防范 XSS 攻击](https://github.com/whjin/docs/blob/main/interview/cookie%E9%98%B2%E8%8C%83XSS%E6%94%BB%E5%87%BB.md)
+13. [防抖节流](https://github.com/whjin/docs/blob/main/interview/%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81.md)
+14. [深拷贝最佳实现](https://github.com/whjin/docs/blob/main/interview/src/deepClone.js)
+15. [手写 call、apply 及 bind 函数](https://github.com/whjin/docs/blob/main/interview/src/call-apply-bind)
+16. [排序：插入排序、快速排序、选择排序、堆排序](https://github.com/whjin/docs/blob/main/interview/src/sort)
+17. [手写 new](https://github.com/whjin/docs/blob/main/interview/src/new.js)
 
 # WebRTC
 
