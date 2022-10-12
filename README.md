@@ -79,6 +79,7 @@
 20. [500、501、502、503、504状态码](https://github.com/whjin/docs/blob/main/interview/500-501-502-503-504%E7%8A%B6%E6%80%81%E7%A0%81.md)
 21. [HTTP请求头](https://github.com/whjin/docs/blob/main/interview/HTTP%E8%AF%B7%E6%B1%82%E5%A4%B4.md)
 22. [强-协商缓存](https://github.com/whjin/docs/blob/main/interview/%E5%BC%BA-%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98.md)
+23. [GET和POST]()
 
 # WebRTC
 
