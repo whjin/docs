@@ -2,7 +2,7 @@
 |-----|-----|
 |`Accept`|响应内容的类型`Content-Type`|
 |`Accept-Charset`|字符集|
-|`Accept-Encoding`|响应内容的编码方式|
+|Accept-Encoding|响应内容的编码方式|
 |`Accept-Language`|响应内容的预研列表|
 |`Accept-Datetime`|按照时间来表示的响应内容版本|
 |`Authorization`|需要认证资源的认证信息|
