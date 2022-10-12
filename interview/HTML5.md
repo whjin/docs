@@ -1,0 +1,9 @@
+- 语义化标签：`header`、`main`、`footer`、`nav`、`aside`、`article`、`section`
+- 表单增强：`input`增加`color`、`email`、`address`、`data`、`range`等类型
+- 存储：`sessionStorage`、`localStorage`、`IndexDB`
+- 媒体：`audio`、`video`
+- 地理定位
+- 画布：`canvas`
+- 拖放`API`：`dragstart`、`dragenter`、`dragleave`、`dragover`、`dropend`
+- 后台线程：`web worker`
+- 全双工通信：`WebSocket`
