@@ -1,0 +1,10 @@
+|字段|说明|
+|---|---|
+|`name`|名称|
+|`value`|值|
+|`domain`|可以访问此`cookie`的域名|
+|`path`|可以访问此`cookie`的页面路径|
+|`expires/max-age`|过期时间，不设置默认是`session`，`cookie`会和`session`一起失效，当浏览器关闭（不是浏览器标签页，而是整个浏览器）后，此`cookie`失效|
+|`size`|此`cookie`大小|
+|`http`|此`cookie`的`httpOnly`属性，只有在`http`请求头中会带有此`cookie`的信息，而不能通过`document.cookie`来访问此`cookie`|
+|`secure`|只能通过`https`来传递此`cookie`|
