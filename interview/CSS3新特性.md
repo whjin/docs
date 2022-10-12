@@ -1,1 +1,9 @@
-- 
+- 边框：`border-radius`、`box-shadow`、`border-image`
+- 背景：`background-size`、`background-origin`
+- 文字效果：`text-shadow`、`word-wrap`
+- `2D`转换：`transform`、`translate`、`rotate`、`scale`、`skew`、`matrix`
+- `3D`转换：`rotateX`、`rotateY`
+- 过渡：`transition`
+- 动画：`animation`
+- 多列：`column-count`、`column-gap`、`column-rule`
+- 用户界面：`resize`、`box-sizing`、`outline-offset`
