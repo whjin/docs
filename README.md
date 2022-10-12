@@ -12,7 +12,7 @@
 5. [清除浮动](https://github.com/whjin/docs/blob/main/css/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8.md)
 6. [定位](https://github.com/whjin/docs/blob/main/css/%E5%AE%9A%E4%BD%8D.md)
 7. [BFC](https://github.com/whjin/docs/blob/main/css/BFC.md)
-8. [使用 attr()展示 tooltip](<https://github.com/whjin/docs/blob/main/css/%E4%BD%BF%E7%94%A8attr()%E5%B1%95%E7%A4%BAtooltip.md>)
+8. [使用 attr展示 tooltip](https://github.com/whjin/docs/blob/main/css/%E4%BD%BF%E7%94%A8attr%E5%B1%95%E7%A4%BAtooltip.md)
 
 # JavaScript
 
