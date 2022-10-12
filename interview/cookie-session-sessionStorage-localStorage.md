@@ -1,6 +1,7 @@
 - `cookie`存储在客户端
 - `cookie`可以在服务器端响应时设置，也可以在客户端请求时设置（`http`首部`set-cookie`）
 - `cookie`有大小限制，一般为`4K`
+- `cookie`可以指定作用域
 
 - `session`存储在服务器端
 - `session`存储敏感信息，安全性比`cookie`高
