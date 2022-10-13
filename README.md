@@ -31,7 +31,7 @@
 9. [闭包](https://github.com/whjin/docs/blob/main/javascript/%E9%97%AD%E5%8C%85.md)
 10. [类的创建和继承](https://github.com/whjin/docs/blob/main/javascript/%E7%B1%BB%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E7%BB%A7%E6%89%BF.md)
 11. [事件委托](https://github.com/whjin/docs/blob/main/javascript/%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98.md)
-12. [ajax浏览器缓存]()
+12. [ajax浏览器缓存](https://github.com/whjin/docs/blob/main/javascript/ajax%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98.md)
 
 # HTTP
 
