@@ -98,6 +98,7 @@
 29. [cookie字段](https://github.com/whjin/docs/blob/main/interview/cookie%E5%AD%97%E6%AE%B5.md)
 30. [transition和animation](https://github.com/whjin/docs/blob/main/interview/transition%E5%92%8Canimation.md)
 31. [call、apply、bind的区别](https://github.com/whjin/docs/blob/main/interview/call-apply-bind.md)
+32. [实现sleep效果]()
 
 # WebRTC
 
