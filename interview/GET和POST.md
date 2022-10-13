@@ -7,6 +7,7 @@
 - `get`产生一个`TCP`数据包
 - `get`请求，浏览器把`http header`和`data`一起发送给服务器
 
+----------
 
 - `post`放在`request body`中
 - `post`没有传参长度限制
