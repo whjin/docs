@@ -28,7 +28,8 @@
 6. [jQuery 的 deferred 对象](https://github.com/whjin/docs/blob/main/javascript/jQuery%E7%9A%84deferred%E5%AF%B9%E8%B1%A1.md)
 7. [jQuery 学习笔记](https://github.com/whjin/docs/blob/main/javascript/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)
 8. [Promise](https://github.com/whjin/docs/blob/main/javascript/Promise.md)
-9. [闭包]()
+9. [闭包](https://github.com/whjin/docs/blob/main/javascript/%E9%97%AD%E5%8C%85.md)
+10. [类的创建和继承]()
 
 # HTTP
 
