@@ -1,0 +1,5 @@
+- 在`ajax`发送请求前加上`ajaxReqObj.setRequestHeader("If-Modified-Since","0")`
+- 在`ajax`发送请求前加上`ajaxReqObj.setRequestHeader("Cache-Control","no-cache")`
+- 在`URL`后面加上一个随机数`"fresh="+Math.random()`
+- 在`URL`后面加上时间戳`"nowtime="+new Date().getTime()`
+- 使用`jQuery`，直接设置`$.ajaxSetup({cache:false})`。这样页面的所有`ajax`都会执行这条语句，就是不需要保存缓存记录。
