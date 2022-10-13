@@ -7,3 +7,7 @@
 - 动画：`animation`
 - 多列：`column-count`、`column-gap`、`column-rule`
 - 用户界面：`resize`、`box-sizing`、`outline-offset`
+- `flex`布局
+- 选择器`first-of-type`、`nth-child`
+- 盒模型`box-sizing`：`content-box`、`padding-box`、`border-box`
+- 颜色`rgba`、`opacity`
