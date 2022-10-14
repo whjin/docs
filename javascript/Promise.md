@@ -27,8 +27,3 @@
 # `Promise.catch()`方法
 
 - `catch()`函数只有一个回调函数
-
-
-> [Promise代码实现](https://github.com/whjin/docs/blob/main/javascript/src/Promise.js)
-
-> [将原生Ajax封装成Promise](https://github.com/whjin/docs/blob/main/javascript/src/AjaxToPromise.js)
