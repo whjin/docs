@@ -35,7 +35,7 @@
 13. [setTimeout-setInterval-requestAnimationFrame](https://github.com/whjin/docs/blob/main/javascript/setTimeout-setInterval-requestAnimationFrame.md)
 14. [bind函数](https://github.com/whjin/docs/blob/main/javascript/src/bind.js)
 15. [Symbol](https://github.com/whjin/docs/blob/main/javascript/Symbol.md)
-16. [JS原型链]()
+16. [JS原型链](https://github.com/whjin/docs/blob/main/javascript/JS%E5%8E%9F%E5%9E%8B%E9%93%BE.md)
 
 # HTTP
 
