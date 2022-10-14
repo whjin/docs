@@ -26,6 +26,6 @@ function unique(arr) {
   return result;
 }
 
-// Array.isFrom new Set
+// Array.isArray  new Set
 Array.from(new Set(arr));
 [...new Set(arr)]
