@@ -101,7 +101,7 @@
 32. [实现sleep效果](https://github.com/whjin/docs/blob/main/interview/src/sleep.js)
 33. [手写Promise](https://github.com/whjin/docs/blob/main/javascript/src/Promise.js)
 34. [将原生Ajax封装成Promise](https://github.com/whjin/docs/blob/main/javascript/src/AjaxToPromise.js)
-35. [basic Promise]()
+35. [basic Promise](https://github.com/whjin/docs/blob/main/interview/src/basic-Promise.js)
 
 # WebRTC
 
