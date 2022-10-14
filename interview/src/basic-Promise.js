@@ -6,15 +6,15 @@ function basicPromise(constructor) {
 
   function resolve(value) {
     if (self.status === "pending") {
-      self.value = value;
       self.status = "resolved";
+      self.value = value;
     }
   }
 
   function reject(reason) {
     if (self.status === "pending") {
-      self.reason = reason;
       self.status = "rejected";
+      self.reason = reason;
     }
   }
 
