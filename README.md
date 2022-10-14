@@ -34,6 +34,7 @@
 12. [ajax浏览器缓存](https://github.com/whjin/docs/blob/main/javascript/ajax%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98.md)
 13. [setTimeout-setInterval-requestAnimationFrame](https://github.com/whjin/docs/blob/main/javascript/setTimeout-setInterval-requestAnimationFrame.md)
 14. [bind函数](https://github.com/whjin/docs/blob/main/javascript/src/bind.js)
+15. [Symbol]()
 
 # HTTP
 
