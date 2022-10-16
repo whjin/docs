@@ -36,7 +36,7 @@
 14. [bind函数](https://github.com/whjin/docs/blob/main/javascript/src/bind.js)
 15. [Symbol](https://github.com/whjin/docs/blob/main/javascript/Symbol.md)
 16. [JS原型链](https://github.com/whjin/docs/blob/main/javascript/JS%E5%8E%9F%E5%9E%8B%E9%93%BE.md)
-17. [Promise+Generator+Async/Await]()
+17. [Promise+Generator+Async/Await](https://github.com/whjin/docs/blob/main/javascript/Promise%2BGenerator%2BAsync.md)
 
 # HTTP
 
