@@ -10,11 +10,17 @@
 ## ES6常用功能 ##
 
 - `let/const`
+- `Symbol`
+- `Set`、`Map`
 - 多行字符串/模板变量
 - 解构赋值
 - 块级作用域
 - 函数默认参数
+- `rest`参数
 - 箭头函数
+- `Promise`、`generator`、`async/await`
+- `Class`
+- `Es6 Module`:`import/export`
 
 **解构赋值**
 
