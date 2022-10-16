@@ -4,10 +4,10 @@ Function.prototype.myBind = function (context = window) {
   }
 
   let args = [...arguments].slice(1),
-    fn = this;
+    self = this;
 
   return function Fn() {
-    return fn.apply(
+    return self.apply(
       this instanceof Fn ? this : context,
       args.concat([...arguments])
     );
