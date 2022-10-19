@@ -17,6 +17,7 @@
 10. [垂直居中](https://github.com/whjin/docs/blob/main/css/%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD.md)
 11. [多行元素的文本省略号](https://github.com/whjin/docs/blob/main/css/src/%E5%A4%9A%E8%A1%8C%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%87%E6%9C%AC%E7%9C%81%E7%95%A5%E5%8F%B7.css)
 12. [overflow原理](https://github.com/whjin/docs/blob/main/css/overflow%E5%8E%9F%E7%90%86.md)
+13. [五角星]()
 
 # JavaScript
 
