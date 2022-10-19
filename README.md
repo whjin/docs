@@ -121,8 +121,8 @@
 
 1. [basic-configure](https://github.com/whjin/docs/blob/main/webpack/basic-configure.md)
 2. [webpack-optimization](https://github.com/whjin/docs/blob/main/webpack/optimization.md)
-3. [webpack打包机制]()
-4. [webpack热更新原理]()
+3. [webpack打包机制](https://github.com/whjin/docs/blob/main/webpack/webpack%E6%89%93%E5%8C%85%E6%9C%BA%E5%88%B6.md)
+4. [webpack热更新原理](https://github.com/whjin/docs/blob/main/webpack/webpack%E7%83%AD%E6%9B%B4%E6%96%B0%E5%8E%9F%E7%90%86.md)
 
 # SSR
 
