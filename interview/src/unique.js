@@ -1,3 +1,14 @@
+// 对象属性名唯一
+function unique(arr) {
+  let result = {};
+  for (let i = 0; i < arr.length; i++) {
+    if (!result[arr[i]]) {
+      result[arr[i]] = true;
+    }
+  }
+  return Object.keys(result);
+}
+
 // 循环遍历 includes
 function unique(arr) {
   if (!Array.isArray(arr)) {
@@ -28,4 +39,4 @@ function unique(arr) {
 
 // Array.isArray  new Set
 Array.from(new Set(arr));
-[...new Set(arr)]
+[...new Set(arr)];
