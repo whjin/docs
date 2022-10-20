@@ -103,7 +103,7 @@
 28. [CSRF和XSS攻击](https://github.com/whjin/docs/blob/main/interview/CSRF%E5%92%8CXSS%E6%94%BB%E5%87%BB.md)
 29. [cookie字段](https://github.com/whjin/docs/blob/main/interview/cookie%E5%AD%97%E6%AE%B5.md)
 30. [transition和animation](https://github.com/whjin/docs/blob/main/interview/transition%E5%92%8Canimation.md)
-31. [call、apply、bind的区别](https://github.com/whjin/docs/blob/main/interview/call-apply-bind.md)
+31. [call、apply、bind的区别](https://github.com/whjin/docs/blob/main/interview/call-apply-bind%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 32. [实现sleep效果](https://github.com/whjin/docs/blob/main/interview/src/sleep.js)
 33. [手写Promise](https://github.com/whjin/docs/blob/main/javascript/src/Promise.js)
 34. [将原生Ajax封装成Promise](https://github.com/whjin/docs/blob/main/javascript/src/AjaxToPromise.js)
