@@ -9,18 +9,19 @@
 
 ## ES6常用功能 ##
 
-- `let/const`
-- `Symbol`
-- `Set`、`Map`
-- 多行字符串/模板变量
-- 解构赋值
-- 块级作用域
-- 函数默认参数
-- `rest`参数
-- 箭头函数
-- `Promise`、`generator`、`async/await`
-- `Class`
-- `Es6 Module`:`import/export`
+1. `let/const`关键字
+2. `Symbol`新增基本数据类型
+3. `Set`、`Map`
+4. 多行字符串/模板变量，字符串模板
+5. 解构赋值、函数默认参数、扩展操作符等，新增语法
+6. 块级作用域
+7. `rest`参数
+8. 箭头函数
+9. `Promise`、`generator`生成器、`async/await`
+10. `Class`、`constructor`、`extends`类
+11. `Es6 Module`:`import/export`支持模块化
+12. 新增数组、字符串等内置构造函数方法，`Array.isArray`、`Array.from`、`Array.of`
+13. 新增元编程，`Proxy`、`Reflect`
 
 **解构赋值**
 
