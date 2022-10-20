@@ -45,7 +45,7 @@
 21. [箭头函数](https://github.com/whjin/docs/blob/main/javascript/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.md)
 22. [浏览器事件循环和任务队列](https://github.com/whjin/docs/blob/main/javascript/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E5%92%8C%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97.md)
 23. [判断数组或对象](https://github.com/whjin/docs/blob/main/javascript/%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%88%96%E5%AF%B9%E8%B1%A1.md)
-24. [WeakMap和WeakSet]()
+24. [WeakMap和WeakSet](https://github.com/whjin/docs/blob/main/javascript/WeakMap%E5%92%8CWeakSet.md)
 
 # HTTP
 
