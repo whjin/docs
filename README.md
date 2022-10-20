@@ -44,7 +44,7 @@
 20. [Promise.all使用场景](https://github.com/whjin/docs/blob/main/javascript/Promise.all%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF.md)
 21. [箭头函数](https://github.com/whjin/docs/blob/main/javascript/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.md)
 22. [浏览器事件循环和任务队列](https://github.com/whjin/docs/blob/main/javascript/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E5%92%8C%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97.md)
-23. [判断数组或对象]()
+23. [判断数组或对象](https://github.com/whjin/docs/blob/main/javascript/%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%88%96%E5%AF%B9%E8%B1%A1.md)
 
 # HTTP
 
@@ -114,6 +114,7 @@
 34. [将原生Ajax封装成Promise](https://github.com/whjin/docs/blob/main/javascript/src/AjaxToPromise.js)
 35. [basic Promise](https://github.com/whjin/docs/blob/main/interview/src/basic-Promise.js)
 36. [数组去重](https://github.com/whjin/docs/blob/main/interview/src/unique.js)
+37. [对象深拷贝和浅拷贝以及Object.assign]()
 
 # WebRTC
 
