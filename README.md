@@ -37,7 +37,7 @@
 13. [setTimeout-setInterval-requestAnimationFrame](https://github.com/whjin/docs/blob/main/javascript/setTimeout-setInterval-requestAnimationFrame.md)
 14. [bind函数](https://github.com/whjin/docs/blob/main/javascript/src/bind.js)
 15. [Symbol](https://github.com/whjin/docs/blob/main/javascript/Symbol.md)
-16. [原型和原型链](https://github.com/whjin/docs/blob/main/javascript/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE.md)
+16. [原型和原型链及作用域链](https://github.com/whjin/docs/blob/main/javascript/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE.md)
 17. [Promise+Generator+Async/Await](https://github.com/whjin/docs/blob/main/javascript/Promise%2BGenerator%2BAsync.md)
 18. [ES6-ES11全解](https://github.com/whjin/docs/blob/main/javascript/ES6-ES11%E5%85%A8%E8%A7%A3.md)
 19. [事件循环机制-宏任务和微任务](https://github.com/whjin/docs/blob/main/javascript/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E6%9C%BA%E5%88%B6-%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1.md)
