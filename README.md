@@ -47,7 +47,7 @@
 23. [判断数组或对象](https://github.com/whjin/docs/blob/main/javascript/%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%88%96%E5%AF%B9%E8%B1%A1.md)
 24. [WeakMap和WeakSet](https://github.com/whjin/docs/blob/main/javascript/WeakMap%E5%92%8CWeakSet.md)
 25. [async和await的作用](https://github.com/whjin/docs/blob/main/javascript/async%E5%92%8Cawait%E7%9A%84%E4%BD%9C%E7%94%A8.md)
-26. [JS垃圾回收机制]()
+26. [JS垃圾回收机制](https://github.com/whjin/docs/blob/main/javascript/JS%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6.md)
 
 # HTTP
 
