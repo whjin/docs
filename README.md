@@ -118,7 +118,8 @@
 35. [basic Promise](https://github.com/whjin/docs/blob/main/interview/src/basic-Promise.js)
 36. [数组去重](https://github.com/whjin/docs/blob/main/interview/src/unique.js)
 37. [对象深拷贝和浅拷贝以及Object.assign](https://github.com/whjin/docs/blob/main/interview/%E5%AF%B9%E8%B1%A1%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%BB%A5%E5%8F%8AObject.assign.md)
-38. [new一个构造函数]()
+38. [new一个构造函数](https://github.com/whjin/docs/blob/main/interview/new%E4%B8%80%E4%B8%AA%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0.md)
+39. [Object.is方法比较]()
 
 # WebRTC
 
