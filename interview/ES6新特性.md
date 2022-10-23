@@ -23,18 +23,50 @@
 12. 新增数组、字符串等内置构造函数方法，`Array.isArray`、`Array.from`、`Array.of`
 13. 新增元编程，`Proxy`、`Reflect`
 
+**let/const**
+
+使用`let/const`关键字声明变量的`for`循环，会创建块级作用域，还会将它绑定到每个循环中，确保对上个循环结束时的值进行重新赋值。
+
+**暂时性死区**
+
+使用`let/const`声明的变量，从一开始就形成了封闭作用域，在声明变量之前无法使用这个变量。
+
+`let/const`在进入块级作用域后，会因为提升的原因先创建，但不会被初始化，直到声明语句执行时才被初始化，初始化是如果使用`let`声明的变量没有赋值，则会默认赋值为`undefined`，而`const`必须在初始化时赋值。
+
+创建到初始化之间的代码片段就形成了暂时性死区。
+
+> 由`let/const`声明的变量，当它们包含的词法环境被实例化时会被创建，但只有在变量的词法绑定已经被求值运算后，才能够被访问。
+
+**Iterator迭代器**
+
+`Iterator`是`ES6`常用特性的实现基础（解构赋值、剩余/扩展运算符`.../...rest`、生成器、`for`循环）。
+
+对于可迭代的数据解构，`ES6`在内部部署了一个`[Symbol.iterator]`属性，它是一个函数，执行后会返回`iterator`对象（也叫迭代器对象），而生成`iterator`对象`[Symbol.iterator]`属性叫`iterator`接口，有这个接口的数据结构即被视为可迭代。
+
+数组中的`[Symbol.iterator]`方法（`iterator`接口）默认部署在数组原型上。
+
+默认部署`iterator`接口的数据结构：`Array`、`Map`、`Set`、`String`、`TypedArray`（类数组）、函数的`arguments`对象、`NodeList`对象。
+
+`Iterator`迭代器是一个对象，它具有一个`next`方法。
+
+- 可迭代的数据结构会有一个`[Symbol.iterator]`方法
+- `[Symbol.iterator]`执行后返回一个`iterator`对象
+- `iterator`对象有一个`next`方法
+- 执行一次`next`方法（消耗一次迭代器）会返回一个有`value, done`属性的对象
+
 **解构赋值**
 
-    const obj = {a: 10, b: 20, c: 30};
-    const {a, b} = obj;
-    console.log(a); //10
-    console.log(b); //20
-    
-    const arr = ['a', 'b', 'c'];
-    const [x, y, z] = arr;
-    console.log(x); //a
-    console.log(y); //b
-    console.log(z); //c
+数组结构的原理其实是消耗数组的迭代器，把生产对象的`value`属性的值赋值给对应的变量。
+
+**剩余运算符`rest`**
+
+剩余运算符最重要的一个特点就是替代了以前的`arguments`。
+
+箭头函数没有`arguments`，必须使用剩余运算符才能访问参数集合。
+
+剩余运算符可以和数组的解构赋值一起使用，但是必须放在最后一个，因为剩余运算符的原理其实是利用了数组的迭代器，它会消耗`...`后面的数组的所有迭代器，读取所有迭代器生产对象的`value`属性。
+
+剩余运算符和扩展运算符的区别是，剩余运算符会收集这些集合，放到右边的数组中，扩展运算符是将右边的数组拆分成元素的集合，它们是相反的。
     
 ## Promise
 
