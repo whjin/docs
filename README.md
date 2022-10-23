@@ -29,7 +29,7 @@
 5. [学习 JS 的 8 张思维导图](https://github.com/whjin/docs/blob/main/javascript/%E5%AD%A6%E4%B9%A0Javascript%E7%9A%848%E5%BC%A0%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.md)
 6. [jQuery 的 deferred 对象](https://github.com/whjin/docs/blob/main/javascript/jQuery%E7%9A%84deferred%E5%AF%B9%E8%B1%A1.md)
 7. [jQuery 学习笔记](https://github.com/whjin/docs/blob/main/javascript/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)
-8. [Promise](https://github.com/whjin/docs/blob/main/javascript/Promise.md)
+8. [Promise实现原理](https://github.com/whjin/docs/blob/main/javascript/Promise.md)
 9. [闭包](https://github.com/whjin/docs/blob/main/javascript/%E9%97%AD%E5%8C%85.md)
 10. [类的创建和继承](https://github.com/whjin/docs/blob/main/javascript/%E7%B1%BB%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E7%BB%A7%E6%89%BF.md)
 11. [事件委托](https://github.com/whjin/docs/blob/main/javascript/%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98.md)

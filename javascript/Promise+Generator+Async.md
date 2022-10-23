@@ -1,3 +1,5 @@
+> [async/await基本实现代码](https://github.com/whjin/docs/blob/main/javascript/src/async-await.js)
+
 **Promise**
 
 `Promise`解决`callback`回调地狱问题。
@@ -55,7 +57,6 @@
 
 `await`用于一个异步操作之前，表示要“等待”这个异步操作的返回值。`await`也可以用于同步的值。
 
-> [async/await基本实现代码]()
 
 
 
