@@ -85,7 +85,7 @@
 2. [HTML](https://github.com/whjin/docs/blob/main/interview/HTML.md)
 3. [CSS](https://github.com/whjin/docs/blob/main/interview/CSS.md)
 4. [JavaScript](https://github.com/whjin/docs/blob/main/interview/JavaScript.md)
-5. [ES6新特性](https://github.com/whjin/docs/blob/main/interview/ES6.md)
+5. [ES6新特性](https://github.com/whjin/docs/blob/main/interview/ES6%E6%96%B0%E7%89%B9%E6%80%A7.md)
 6. [Node](https://github.com/whjin/docs/blob/main/interview/Node.md)
 7. [HTTP](https://github.com/whjin/docs/blob/main/interview/HTTP.md)
 8. [性能优化](https://github.com/whjin/docs/blob/main/interview/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md)
