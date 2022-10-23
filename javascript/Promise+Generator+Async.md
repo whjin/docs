@@ -1,3 +1,5 @@
+**Promise**
+
 `Promise`解决`callback`回调地狱问题。
 
 `Promise`规范：`Promise`有三种状态，等待`pending`、已完成`fulfilled/resolved`、已拒绝`rejected`。`Promise`的状态只能从等待`pending`转到已完成`fulfilled/resolved`或者已拒绝`rejected`，不能逆向转换，同时已完成和已拒绝也不能相互转换。
@@ -20,6 +22,12 @@
 
 -------------------
 
+**Generator**
+
+`generator`函数不会自动执行，每一次调用它的`next`方法，会停留在下一个`yield`的位置。利用这个特性，只要编写一个自动执行的函数，就可以让这个`generator`函数完全实现`async`函数的功能。
+
+下一次调用`next`时，传的参数会被作为上一个`yield`前面接受的值。
+
 `generator`函数使用：
 
 1. 分阶段执行，可以暂停
@@ -31,6 +39,8 @@
 利用`generator`函数的暂停执行的效果，可以把异步操作写在`yield`语句里面，等到调用`next`方法时再往后执行。异步操作的后续操作可以放在`yield`语句下面，等到调用`next`方法时再执行。`generator`函数用来处理异步操作，改写回调函数。
 
 -------------------
+
+**async/await**
 
 `aysnc`和异步：
 
@@ -44,6 +54,9 @@
 如果`async`函数返回的是一个同步的值，这个值将被包装成一个`resolve`的`Promise`，等同于`return Promise.resolve(true)`
 
 `await`用于一个异步操作之前，表示要“等待”这个异步操作的返回值。`await`也可以用于同步的值。
+
+> [async/await基本实现代码]()
+
 
 
 
