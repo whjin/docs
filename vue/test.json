@@ -1,0 +1,5 @@
+{
+    "msg": "5",
+    "type": "400",
+    "extend": "{\"content\":\"多媒体\",\"duration\":7200,\"endTime\":\"2021-07-15 08:00:00\",\"jsh\":\"0104\",\"msgType\":0,\"periodStatus\":0,\"startTime\":\"2021-07-15 06:00:00\",\"videoType\":1,\"videoUrl\":\"http://192.168.1.214:8077/video/20210910/mp4/1436170324684181504.mp4\"}"
+}
