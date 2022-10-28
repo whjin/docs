@@ -127,7 +127,7 @@
 37. [对象深拷贝和浅拷贝以及Object.assign](https://github.com/whjin/docs/blob/main/interview/%E5%AF%B9%E8%B1%A1%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%BB%A5%E5%8F%8AObject.assign.md)
 38. [new一个构造函数](https://github.com/whjin/docs/blob/main/interview/new%E4%B8%80%E4%B8%AA%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0.md)
 39. [Object.is方法比较](https://github.com/whjin/docs/blob/main/interview/Object.is%E6%96%B9%E6%B3%95%E6%AF%94%E8%BE%83.md)
-40. [JS数据结构]()
+40. [JS数据结构](https://github.com/whjin/docs/blob/main/interview/JS%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md)
 
 # WebRTC
 
