@@ -109,7 +109,7 @@
 19. [400、401和403状态码](https://github.com/whjin/docs/blob/main/interview/400-401-403%E7%8A%B6%E6%80%81%E7%A0%81.md)
 20. [500、501、502、503、504状态码](https://github.com/whjin/docs/blob/main/interview/500-501-502-503-504%E7%8A%B6%E6%80%81%E7%A0%81.md)
 21. [HTTP请求头](https://github.com/whjin/docs/blob/main/interview/HTTP%E8%AF%B7%E6%B1%82%E5%A4%B4.md)
-22. [前端缓存](https://github.com/whjin/docs/blob/main/interview/%E5%BC%BA-%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98.md)
+22. [前端缓存](https://github.com/whjin/docs/blob/main/interview/%E5%89%8D%E7%AB%AF%E7%BC%93%E5%AD%98.md)
 23. [GET和POST](https://github.com/whjin/docs/blob/main/interview/GET%E5%92%8CPOST.md)
 24. [HTML5新特性](https://github.com/whjin/docs/blob/main/interview/HTML5%E6%96%B0%E7%89%B9%E6%80%A7.md)
 25. [CSS3新特性](https://github.com/whjin/docs/blob/main/interview/CSS3%E6%96%B0%E7%89%B9%E6%80%A7.md)
@@ -127,6 +127,7 @@
 37. [对象深拷贝和浅拷贝以及Object.assign](https://github.com/whjin/docs/blob/main/interview/%E5%AF%B9%E8%B1%A1%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%BB%A5%E5%8F%8AObject.assign.md)
 38. [new一个构造函数](https://github.com/whjin/docs/blob/main/interview/new%E4%B8%80%E4%B8%AA%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0.md)
 39. [Object.is方法比较](https://github.com/whjin/docs/blob/main/interview/Object.is%E6%96%B9%E6%B3%95%E6%AF%94%E8%BE%83.md)
+40. [JS数据结构]()
 
 # WebRTC
 
