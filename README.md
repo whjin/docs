@@ -83,7 +83,8 @@
 
 # Vue3
 
-1. [vue3响应式原理]()
+1. [vue3响应式原理](https://github.com/whjin/docs/blob/main/vue3/vue3%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86.md)
+2. [vue3新特性]()
 
 # Interview
 
