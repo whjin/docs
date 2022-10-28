@@ -84,7 +84,7 @@
 # Vue3
 
 1. [vue3响应式原理](https://github.com/whjin/docs/blob/main/vue3/vue3%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86.md)
-2. [vue3新特性]()
+2. [vue3新特性](https://github.com/whjin/docs/blob/main/vue3/Vue3%E6%96%B0%E7%89%B9%E6%80%A7.md)
 
 # Interview
 
@@ -109,7 +109,7 @@
 19. [400、401和403状态码](https://github.com/whjin/docs/blob/main/interview/400-401-403%E7%8A%B6%E6%80%81%E7%A0%81.md)
 20. [500、501、502、503、504状态码](https://github.com/whjin/docs/blob/main/interview/500-501-502-503-504%E7%8A%B6%E6%80%81%E7%A0%81.md)
 21. [HTTP请求头](https://github.com/whjin/docs/blob/main/interview/HTTP%E8%AF%B7%E6%B1%82%E5%A4%B4.md)
-22. [强-协商缓存](https://github.com/whjin/docs/blob/main/interview/%E5%BC%BA-%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98.md)
+22. [前端缓存](https://github.com/whjin/docs/blob/main/interview/%E5%BC%BA-%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98.md)
 23. [GET和POST](https://github.com/whjin/docs/blob/main/interview/GET%E5%92%8CPOST.md)
 24. [HTML5新特性](https://github.com/whjin/docs/blob/main/interview/HTML5%E6%96%B0%E7%89%B9%E6%80%A7.md)
 25. [CSS3新特性](https://github.com/whjin/docs/blob/main/interview/CSS3%E6%96%B0%E7%89%B9%E6%80%A7.md)
