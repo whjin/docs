@@ -1,0 +1,38 @@
+.project-container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  font-family: "仿宋", "楷体", "微软雅黑", "黑体", "宋体", Arial, Helvetica,
+    sans-serif;
+}
+
+.control-main {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px dashed #333;
+}
+
+.control-main > header {
+  font-size: 1.5em;
+  height: 42px;
+  line-height: 42px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.control-section {
+  width: fit-content;
+  height: 100%;
+  cursor: pointer;
+}
+
+.control-section img {
+  width: 192px;
+  height: 108px;
+}
+
+.control-section img.large {
+  width: 768px;
+  height: 432px;
+}
