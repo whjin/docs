@@ -1,4 +1,4 @@
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", () => {
     document.oncontextmenu = function (e) {
         return false;
     };
@@ -56,4 +56,8 @@ window.onload = function () {
             };
         });
     }
+});
+
+window.onload = function () {
+
 };
