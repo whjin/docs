@@ -6,9 +6,19 @@ window.onload = function () {
         return false;
     };
 
+    let isF12 = false;
     document.onkeydown = function (e) {
         if (e.code == "F12") {
-            return false;
+            return isF12;
+        }
+
+    };
+    document.onkeyup = function (e) {
+        if (e.key == "MediaTrackPrevious") {
+            isF12 = false;
+        }
+        if (e.key == "MediaTrackNext") {
+            isF12 = true;
         }
     };
 
