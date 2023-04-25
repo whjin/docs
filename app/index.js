@@ -8,7 +8,7 @@ document.ondragstart = function (e) {
 let isF12 = false;
 document.onkeydown = function (e) {
     if (e.code == "F12") {
-        // return isF12;
+        return isF12;
     }
 
 };
@@ -21,7 +21,6 @@ document.onkeyup = function (e) {
     }
 };
 
-
 // 管控主机
 previewImage(".control-section", ".control-section canvas");
 // 仓内屏
@@ -30,7 +29,6 @@ previewImage(".control-section", ".control-section canvas");
 function previewImage (sectionEle, canvasEle) {
     const section = document.querySelector(sectionEle);
 
-    console.log(controlList);
     controlList.forEach(image => {
         getBase64Image("render", section, canvasEle, image, 96, 54);
     });
