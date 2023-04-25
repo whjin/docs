@@ -1,21 +1,21 @@
 const controlList = [
   {
-    "src": "../app/control/home.png",
+    "src": "/app/control/home.png",
     "alt": "home",
     "title": "首页"
   },
   {
-    "src": "../app/control/intercom_1.png",
+    "src": "/app/control/intercom_1.png",
     "alt": "intercom_1",
     "title": "对讲"
   },
   {
-    "src": "../app/control/intercom_2.png",
+    "src": "/app/control/intercom_2.png",
     "alt": "intercom_2",
     "title": "对讲"
   },
   {
-    "src": "../app/control/intercom_3.png",
+    "src": "/app/control/intercom_3.png",
     "alt": "intercom_3",
     "title": "对讲"
   },
