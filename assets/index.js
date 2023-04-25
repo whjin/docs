@@ -31,9 +31,9 @@ previewImage(".control-section", ".control-section canvas");
 function previewImage (sectionEle, canvasEle) {
     const section = document.querySelector(sectionEle);
 
-    // controlList.forEach(image => {
-    //     getBase64Image("render", section, canvasEle, image, 96, 54);
-    // });
+    controlList.forEach(image => {
+        getBase64Image("render", section, canvasEle, image, 96, 54);
+    });
 
     window.onload = function () {
         const childNodes = [...section.childNodes];
