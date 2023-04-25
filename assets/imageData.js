@@ -63,5 +63,5 @@ const controlList = [
     "src": "../app/control/setting_2.png",
     "alt": "setting_2",
     "title": "设置"
-  },
+  }
 ];
