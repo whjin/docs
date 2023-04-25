@@ -30,7 +30,7 @@ function previewImage (sectionEle, canvasEle) {
     const section = document.querySelector(sectionEle);
 
     controlList.forEach(image => {
-        getBase64Image("render", section, canvasEle, image, 96, 54);
+        getBase64Image("render", section, canvasEle, image, 192, 108);
     });
 
     window.onload = function () {
