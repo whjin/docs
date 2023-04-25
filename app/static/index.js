@@ -21,7 +21,6 @@ document.onkeyup = function (e) {
     }
 };
 
-console.log(controlList);
 
 // 管控主机
 previewImage(".control-section", ".control-section canvas");
@@ -31,6 +30,7 @@ previewImage(".control-section", ".control-section canvas");
 function previewImage (sectionEle, canvasEle) {
     const section = document.querySelector(sectionEle);
 
+    console.log(controlList);
     controlList.forEach(image => {
         getBase64Image("render", section, canvasEle, image, 96, 54);
     });
