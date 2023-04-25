@@ -41,7 +41,8 @@ function previewImage (sectionEle, canvasEle) {
                 let src = target.getAttribute("src");
                 let alt = target.getAttribute("alt");
                 let title = target.getAttribute("title");
-                getBase64Image("preview", section, canvasEle, { src, alt, title }, 768, 432);
+                const image = { src, alt, title };
+                getBase64Image("preview", section, canvasEle, image, 768, 432);
             };
         });
     };
