@@ -23,41 +23,71 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // 管控主机
-    previewImg(".control-section", ".control-section img");
+    previewImage(".control-section", ".control-section canvas");
     // 仓内屏
-    previewImg(".terminal-section", ".terminal-section img");
+    // previewImage(".terminal-section", ".terminal-section img");
 
-    function previewImg (sectionEle, imgEle) {
+    function previewImage (sectionEle, canvasEle) {
         const section = document.querySelector(sectionEle);
-        const images = document.querySelectorAll(imgEle);
-        images.forEach((image) => {
-            image.onclick = function (e) {
-                let target = e.target;
-                const imgNodes = document.querySelectorAll(imgEle);
-                let lastChild = imgNodes[imgNodes.length - 1];
-                const { src, alt, title } = target;
-                let img = document.createElement("img");
-                img.src = src;
-                img.alt = alt;
-                img.title = title;
-                img.classList.add("preview");
-                if (lastChild.classList.contains("preview")) {
-                    if (lastChild.alt == target.alt) {
-                        section.removeChild(lastChild);
-                    } else {
-                        section.replaceChild(img, lastChild);
-                    }
-                } else {
-                    section.appendChild(img);
-                }
-                img.onclick = function () {
-                    section.removeChild(img);
-                };
-            };
+
+        controlList.forEach(image => {
+            getBase64Image("render", section, canvasEle, image, 96, 54);
         });
+
+        window.onload = function () {
+            const childNodes = [...section.childNodes];
+            childNodes.forEach((node) => {
+                node.onclick = function (e) {
+                    let target = e.target;
+                    let src = target.getAttribute("src");
+                    let alt = target.getAttribute("alt");
+                    let title = target.getAttribute("title");
+                    getBase64Image("preview", section, canvasEle, { src, alt, title }, 768, 432);
+                };
+            });
+        };
+    }
+
+    function getBase64Image (type, section, canvasEle, image, width, height) {
+        const { src, alt, title } = image;
+        const img = new Image();
+        img.src = src;
+        img.onload = function () {
+            const canvas = convertImageToCanvas(img, width, height);
+            canvas.setAttribute("src", src);
+            canvas.setAttribute("alt", alt);
+            canvas.setAttribute("title", title);
+            switch (type) {
+                case "render":
+                    section.appendChild(canvas);
+                    break;
+                case "preview":
+                    const canvasNodes = document.querySelectorAll(canvasEle);
+                    let lastChild = canvasNodes[canvasNodes.length - 1];
+                    canvas.classList.add("preview");
+                    if (lastChild.classList.contains("preview")) {
+                        if (lastChild.getAttribute("alt") == alt) {
+                            section.removeChild(lastChild);
+                        } else {
+                            section.replaceChild(canvas, lastChild);
+                        }
+                    } else {
+                        section.appendChild(canvas);
+                    }
+                    canvas.onclick = function () {
+                        section.removeChild(canvas);
+                    };
+                    break;
+            }
+        };
+    }
+
+    function convertImageToCanvas (image, width, height) {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(image, 0, 0, width, height);
+        return canvas;
     }
 });
-
-window.onload = function () {
-
-};

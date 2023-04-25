@@ -29,15 +29,13 @@
   padding-left: 1em;
 }
 
-.control-section img,
-.terminal-section img {
-  width: 96px;
-  height: 54px;
+.control-section canvas,
+.terminal-section canvas {
   margin: 6px 4px;
 }
 
-.control-section img.preview,
-.terminal-section img.preview {
+.control-section canvas.preview,
+.terminal-section canvas.preview {
   width: 768px;
   height: 432px;
   position: fixed;
