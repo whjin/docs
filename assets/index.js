@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let isF12 = false;
     document.onkeydown = function (e) {
         if (e.code == "F12") {
-            return isF12;
+            // return isF12;
         }
 
     };
@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    const list = controlList;
+
     // 管控主机
     previewImage(".control-section", ".control-section canvas");
     // 仓内屏
@@ -30,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function previewImage (sectionEle, canvasEle) {
         const section = document.querySelector(sectionEle);
 
-        controlList.forEach(image => {
+        list.forEach(image => {
             getBase64Image("render", section, canvasEle, image, 96, 54);
         });
 
