@@ -29,12 +29,9 @@ previewImage(".control-section", ".control-section canvas");
 function previewImage (sectionEle, canvasEle) {
     const section = document.querySelector(sectionEle);
 
-    window.requestAnimationFrame(function () {
-        controlList.forEach(imageData => {
-            const canvas = drawImageToCanvas(imageData, 96, 54);
-            console.log(canvas);
-            section.appendChild(canvas);
-        });
+    controlList.forEach(imageData => {
+        const canvas = drawImageToCanvas(imageData, 96, 54);
+        section.appendChild(canvas);
     });
 
     window.onload = function () {
@@ -72,6 +69,7 @@ function drawImageToCanvas (imageData, width, height) {
     const img = new Image();
     img.width = width;
     img.height = height;
+    img.src = src;
     const canvas = document.createElement("canvas");
     canvas.width = width;
     canvas.height = height;
@@ -79,11 +77,8 @@ function drawImageToCanvas (imageData, width, height) {
     canvas.setAttribute("alt", alt);
     canvas.setAttribute("title", title);
     const ctx = canvas.getContext("2d");
-    img.src = src;
     img.onload = function () {
         ctx.drawImage(img, 0, 0, width, height);
-        let base64 = canvas.toDataURL("image/jpeg");
-        img.src = base64;
     };
     return canvas;
 }
