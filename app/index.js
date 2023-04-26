@@ -29,9 +29,12 @@ previewImage(".control-section", ".control-section canvas");
 function previewImage (sectionEle, canvasEle) {
     const section = document.querySelector(sectionEle);
 
-    controlList.forEach(imageData => {
-        const canvas = drawImageToCanvas(section, imageData, 96, 54);
-        // section.appendChild(canvas);
+    window.requestAnimationFrame(function () {
+        controlList.forEach(imageData => {
+            const canvas = drawImageToCanvas(imageData, 96, 54);
+            console.log(canvas);
+            section.appendChild(canvas);
+        });
     });
 
     window.onload = function () {
@@ -64,7 +67,7 @@ function previewImage (sectionEle, canvasEle) {
     };
 }
 
-function drawImageToCanvas (section, imageData, width, height) {
+function drawImageToCanvas (imageData, width, height) {
     const { src, alt, title } = imageData;
     const img = new Image();
     img.width = width;
@@ -72,14 +75,15 @@ function drawImageToCanvas (section, imageData, width, height) {
     const canvas = document.createElement("canvas");
     canvas.width = width;
     canvas.height = height;
-    // canvas.setAttribute("src", src);
-    // canvas.setAttribute("alt", alt);
-    // canvas.setAttribute("title", title);
+    canvas.setAttribute("src", src);
+    canvas.setAttribute("alt", alt);
+    canvas.setAttribute("title", title);
     const ctx = canvas.getContext("2d");
     img.src = src;
     img.onload = function () {
         ctx.drawImage(img, 0, 0, width, height);
+        let base64 = canvas.toDataURL("image/jpeg");
+        img.src = base64;
     };
-    section.appendChild(canvas);
     return canvas;
 }
