@@ -67,8 +67,6 @@ function previewImage (sectionEle, canvasEle) {
 function drawImageToCanvas (imageData, width, height) {
     const { src, alt, title } = imageData;
     const img = new Image();
-    img.width = width;
-    img.height = height;
     img.src = src;
     const canvas = document.createElement("canvas");
     canvas.width = width;
@@ -77,6 +75,10 @@ function drawImageToCanvas (imageData, width, height) {
     canvas.setAttribute("alt", alt);
     canvas.setAttribute("title", title);
     const ctx = canvas.getContext("2d");
+    const pattern = ctx.createPattern(img, 'no-repeat');
+    ctx.rect(0, 0, width, height);
+    ctx.fillStyle = pattern;
+    ctx.fill();
     img.onload = function () {
         ctx.drawImage(img, 0, 0, width, height);
     };
