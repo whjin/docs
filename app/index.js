@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", e => {
     document.oncontextmenu = function (e) {
-        return false;
+        // return false;
     };
     document.ondragstart = function (e) {
         return false;
@@ -30,8 +30,8 @@ window.addEventListener("DOMContentLoaded", e => {
     function previewImage (sectionEle, canvasEle) {
         const section = document.querySelector(sectionEle);
 
-        controlList.forEach(image => {
-            getBase64Image("render", section, canvasEle, image, 96, 54);
+        controlList.forEach(imageItem => {
+            getBase64Image("render", section, canvasEle, imageItem, 192, 108);
         });
 
         window.onload = function () {
@@ -42,26 +42,27 @@ window.addEventListener("DOMContentLoaded", e => {
                     let src = target.getAttribute("src");
                     let alt = target.getAttribute("alt");
                     let title = target.getAttribute("title");
-                    const image = { src, alt, title };
-                    getBase64Image("preview", section, canvasEle, image, 768, 432);
+                    const imageItem = { src, alt, title };
+                    getBase64Image("preview", section, canvasEle, imageItem, 768, 432);
                 };
             });
         };
     }
 
-    function getBase64Image (type, section, canvasEle, image, width, height) {
-        const { src, alt, title } = image;
-        const img = document.createElement("img");
-        img.src = src;
+    function getBase64Image (type, section, canvasEle, data, width, height) {
+        const { src, alt, title } = data;
+        const img = new Image();
         img.width = width;
         img.height = height;
+        img.src = src;
         img.onload = function () {
-            const canvas = convertImageToCanvas(img, width, height);
-            canvas.setAttribute("src", src);
+            const canvas = convertImageToCanvas(img);
             canvas.setAttribute("alt", alt);
             canvas.setAttribute("title", title);
+            canvas.setAttribute("src", src);
             switch (type) {
                 case "render":
+                    console.log(canvas);
                     section.appendChild(canvas);
                     break;
                 case "preview":
@@ -85,12 +86,46 @@ window.addEventListener("DOMContentLoaded", e => {
         };
     }
 
-    function convertImageToCanvas (image, width, height) {
+    function convertImageToCanvas (image) {
         const canvas = document.createElement("canvas");
-        canvas.width = width;
-        canvas.height = height;
+        canvas.width = image.width;
+        canvas.height = image.height;
         const ctx = canvas.getContext("2d");
-        ctx.drawImage(image, 0, 0, width, height);
+        ctx.drawImage(image, 0, 0, image.width, image.height);
         return canvas;
+    }
+
+    function pathToBase64 (path) {
+        return new Promise((resolve, reject) => {
+            if (typeof window === 'object' && 'document' in window) {
+                if (typeof FileReader === 'function') {
+                    let xhr = new XMLHttpRequest();
+                    xhr.open('GET', path, true);
+                    xhr.responseType = 'blob';
+                    xhr.onload = function () {
+                        if (this.status === 200) {
+                            let reader = new FileReader();
+                            reader.onload = function (e) {
+                                resolve(e.target.result);
+                            };
+                            reader.onerror = reject;
+                            reader.readAsDataURL(this.response);
+                        }
+                    };
+                    xhr.onerror = reject;
+                    xhr.send();
+                    return;
+                }
+                let canvas = document.createElement('canvas');
+                let ctx = canvas.getContext('2d');
+                let img = new Image();
+                img.onload = function () {
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    ctx.drawImage(img, 0, 0);
+                    resolve(canvas.toDataURL());
+                };
+            }
+        });
     }
 });
