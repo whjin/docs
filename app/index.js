@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", e => {
     // 管控主机
     previewImage(".control-section", ".control-section canvas");
     // 仓内屏
-    // previewImage(".terminal-section", ".terminal-section img");
+    // previewImage(".terminal-section", ".terminal-section canvas");
 
     function previewImage (sectionEle, canvasEle) {
         const section = document.querySelector(sectionEle);
@@ -51,8 +51,10 @@ document.addEventListener("DOMContentLoaded", e => {
 
     function getBase64Image (type, section, canvasEle, image, width, height) {
         const { src, alt, title } = image;
-        const img = new Image();
+        const img = document.createElement("img");
         img.src = src;
+        img.width = width;
+        img.height = height;
         img.onload = function () {
             const canvas = convertImageToCanvas(img, width, height);
             canvas.setAttribute("src", src);
@@ -89,7 +91,6 @@ document.addEventListener("DOMContentLoaded", e => {
         canvas.height = height;
         const ctx = canvas.getContext("2d");
         ctx.drawImage(image, 0, 0, width, height);
-        ctx.save();
         return canvas;
     }
 });
