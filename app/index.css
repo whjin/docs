@@ -22,6 +22,7 @@
 }
 
 .control-section,
+.manager-section,
 .terminal-section {
   width: 100%;
   box-sizing: border-box;
@@ -30,15 +31,18 @@
 }
 
 .control-section canvas,
+.manager-section canvas,
 .terminal-section canvas {
   margin: 6px 4px;
 }
 
 .control-section canvas.preview,
+.manager-section canvas.preview,
 .terminal-section canvas.preview {
   width: 768px;
   height: 432px;
   position: fixed;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
