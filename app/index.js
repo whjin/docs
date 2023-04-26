@@ -30,8 +30,8 @@ function previewImage (sectionEle, canvasEle) {
     const section = document.querySelector(sectionEle);
 
     controlList.forEach(imageData => {
-        const canvas = drawImageToCanvas(imageData, 96, 54);
-        section.appendChild(canvas);
+        const canvas = drawImageToCanvas(section, imageData, 96, 54);
+        // section.appendChild(canvas);
     });
 
     window.onload = function () {
@@ -64,7 +64,7 @@ function previewImage (sectionEle, canvasEle) {
     };
 }
 
-function drawImageToCanvas (imageData, width, height) {
+function drawImageToCanvas (section, imageData, width, height) {
     const { src, alt, title } = imageData;
     const img = new Image();
     img.width = width;
@@ -80,5 +80,6 @@ function drawImageToCanvas (imageData, width, height) {
     img.onload = function () {
         ctx.drawImage(img, 0, 0, width, height);
     };
+    section.appendChild(canvas);
     return canvas;
 }
