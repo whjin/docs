@@ -75,10 +75,8 @@ function drawImageToCanvas (imageData, width, height) {
     canvas.setAttribute("alt", alt);
     canvas.setAttribute("title", title);
     const ctx = canvas.getContext("2d");
-    const pattern = ctx.createPattern(img, 'no-repeat');
     ctx.rect(0, 0, width, height);
-    ctx.fillStyle = pattern;
-    ctx.fill();
+    ctx.stroke();
     img.onload = function () {
         ctx.drawImage(img, 0, 0, width, height);
     };
