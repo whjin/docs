@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", e => {
+window.addEventListener("DOMContentLoaded", e => {
     document.oncontextmenu = function (e) {
         return false;
     };
