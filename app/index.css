@@ -13,6 +13,11 @@
   border-radius: 4px;
 }
 
+.project-main img {
+  width: 100%;
+  height: 100%;
+}
+
 .project-main > header {
   font-size: 1.5em;
   height: 42px;

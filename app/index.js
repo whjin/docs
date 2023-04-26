@@ -67,8 +67,8 @@ function previewImage (sectionEle, canvasEle) {
 function drawImageToCanvas (section, imageData, width, height) {
     const { src, alt, title } = imageData;
     const img = new Image();
-    // img.width = width;
-    // img.height = height;
+    img.width = width;
+    img.height = height;
     const canvas = document.createElement("canvas");
     canvas.width = width;
     canvas.height = height;
