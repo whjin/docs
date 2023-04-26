@@ -8,7 +8,7 @@ document.ondragstart = function (e) {
 let isF12 = false;
 document.onkeydown = function (e) {
     if (e.key == "F12") {
-        // return isF12;
+        return isF12;
     }
 
 };
