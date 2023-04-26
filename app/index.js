@@ -67,16 +67,16 @@ function previewImage (sectionEle, canvasEle) {
 function drawImageToCanvas (section, imageData, width, height) {
     const { src, alt, title } = imageData;
     const img = new Image();
-    img.width = width;
-    img.height = height;
-    img.src = src;
+    // img.width = width;
+    // img.height = height;
     const canvas = document.createElement("canvas");
     canvas.width = width;
     canvas.height = height;
-    canvas.setAttribute("src", src);
-    canvas.setAttribute("alt", alt);
-    canvas.setAttribute("title", title);
+    // canvas.setAttribute("src", src);
+    // canvas.setAttribute("alt", alt);
+    // canvas.setAttribute("title", title);
     const ctx = canvas.getContext("2d");
+    img.src = src;
     img.onload = function () {
         ctx.drawImage(img, 0, 0, width, height);
     };
