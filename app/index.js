@@ -51,39 +51,40 @@ window.addEventListener("DOMContentLoaded", e => {
 
     function getBase64Image (type, section, canvasEle, data, width, height) {
         const { src, alt, title } = data;
-        const img = new Image();
-        img.width = width;
-        img.height = height;
-        img.src = src;
-        img.onload = function () {
-            const canvas = convertImageToCanvas(img);
-            canvas.setAttribute("alt", alt);
-            canvas.setAttribute("title", title);
-            canvas.setAttribute("src", src);
-            switch (type) {
-                case "render":
-                    console.log(canvas);
-                    section.appendChild(canvas);
-                    break;
-                case "preview":
-                    const canvasNodes = document.querySelectorAll(canvasEle);
-                    let lastChild = canvasNodes[canvasNodes.length - 1];
-                    canvas.classList.add("preview");
-                    if (lastChild.classList.contains("preview")) {
-                        if (lastChild.getAttribute("alt") == alt) {
-                            section.removeChild(lastChild);
-                        } else {
-                            section.replaceChild(canvas, lastChild);
-                        }
-                    } else {
+        pathToBase64(src).then(base64 => {
+            const img = document.createElement('img');
+            img.width = width;
+            img.height = height;
+            img.src = base64;
+            img.onload = function () {
+                const canvas = convertImageToCanvas(img);
+                canvas.setAttribute("alt", alt);
+                canvas.setAttribute("title", title);
+                canvas.setAttribute("src", src);
+                switch (type) {
+                    case "render":
                         section.appendChild(canvas);
-                    }
-                    canvas.onclick = function () {
-                        section.removeChild(canvas);
-                    };
-                    break;
-            }
-        };
+                        break;
+                    case "preview":
+                        const canvasNodes = document.querySelectorAll(canvasEle);
+                        let lastChild = canvasNodes[canvasNodes.length - 1];
+                        canvas.classList.add("preview");
+                        if (lastChild.classList.contains("preview")) {
+                            if (lastChild.getAttribute("alt") == alt) {
+                                section.removeChild(lastChild);
+                            } else {
+                                section.replaceChild(canvas, lastChild);
+                            }
+                        } else {
+                            section.appendChild(canvas);
+                        }
+                        canvas.onclick = function () {
+                            section.removeChild(canvas);
+                        };
+                        break;
+                }
+            };
+        });
     }
 
     function convertImageToCanvas (image) {
@@ -124,8 +125,45 @@ window.addEventListener("DOMContentLoaded", e => {
                     canvas.height = img.height;
                     ctx.drawImage(img, 0, 0);
                     resolve(canvas.toDataURL());
+                    canvas.height = canvas.width = 0;
                 };
+                img.onerror = reject;
+                img.src = path;
+                return;
             }
+            if (typeof plus === 'object') {
+                plus.io.resolveLocalFileSystemURL(getLocalFilePath(path), function (entry) {
+                    entry.file(function (file) {
+                        let reader = new plus.io.FileReader();
+                        reader.onload = function (e) {
+                            resolve(e.target.resolve);
+                        };
+                        reader.onerror = function (error) {
+                            reject(error);
+                        };
+                        reader.readAsDataURL(file);
+                    }, function (error) {
+                        reject(error);
+                    });
+                }, function (error) {
+                    reject(error);
+                });
+                return;
+            }
+            if (typeof wx === 'object' && wx.canIUse('getFileSystemManager')) {
+                wx.getFileSystemManager().readFile({
+                    filePath: path,
+                    encoding: 'base64',
+                    success: function (res) {
+                        resolve('data:image/png;base64,' + res.data);
+                    },
+                    fail: function (error) {
+                        reject(error);
+                    }
+                });
+                return;
+            }
+            reject(new Error("not support"));
         });
     }
 });
