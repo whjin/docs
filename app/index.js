@@ -30,8 +30,10 @@ window.addEventListener("DOMContentLoaded", e => {
     function previewImage (sectionEle, canvasEle) {
         const section = document.querySelector(sectionEle);
 
-        controlList.forEach(imageItem => {
-            getBase64Image("render", section, canvasEle, imageItem, 192, 108);
+        renderCanvas(controlList, 192, 108, base64 => {
+            const imgDom = document.createElement('img');
+            imgDom.src = base64;
+            section.appendChild(imgDom);
         });
 
         window.onload = function () {
@@ -57,10 +59,10 @@ window.addEventListener("DOMContentLoaded", e => {
             img.height = height;
             img.src = base64;
             img.onload = function () {
-                const canvas = convertImageToCanvas(img);
+                const canvas = renderCanvas(type, img);
                 canvas.setAttribute("alt", alt);
                 canvas.setAttribute("title", title);
-                canvas.setAttribute("src", src);
+                canvas.setAttribute("src", base64);
                 switch (type) {
                     case "render":
                         section.appendChild(canvas);
@@ -87,15 +89,63 @@ window.addEventListener("DOMContentLoaded", e => {
         });
     }
 
-    function convertImageToCanvas (image) {
-        const canvas = document.createElement("canvas");
-        canvas.width = image.width;
-        canvas.height = image.height;
+    // 图片转canvas
+    function renderCanvas (images, width, height, callback) {
+        if (!images || !images.length) {
+            return false;
+        }
+        const option = {
+            width,
+            height,
+            cols: 4,
+            encoderOptions: 1, // 合成图片质量,0-1z之间，越大质量越好
+        };
+
+        let imageCount = images.length;
+        let rows = Math.ceil(imageCount / option.cols);
+
+        const canvas = document.createElement('canvas');
+        canvas.width = width * option.cols;
+        canvas.height = height * rows;
         const ctx = canvas.getContext("2d");
-        ctx.drawImage(image, 0, 0, image.width, image.height);
-        return canvas;
+
+        let drawCount = 0;
+
+        images.forEach((image, index) => {
+            const imageItem = new Image();
+            imageItem.src = image.src;
+            imageItem.crossOrigin = 'Anonymous';
+
+            let xAxis = parseInt(index % 4) * width;
+            let yAxis = parseInt(index / 4) * height;
+
+            imageItem.onload = function () {
+                ctx.drawImage(imageItem, xAxis, yAxis, width, height);
+                drawCount++;
+
+                if (drawCount == imageCount) {
+                    callback(canvas.toDataURL('image/jpeg', option.encoderOptions));
+                }
+            };
+
+            imageItem.onerror = function () {
+                drawCount++;
+                if (drawCount == imageCount) {
+                    callback(canvas.toDataURL('image/jpeg', option.encoderOptions));
+                }
+            };
+        });
+
+
+        // const canvas = document.createElement("canvas");
+        // canvas.width = image.width;
+        // canvas.height = image.height;
+        // const ctx = canvas.getContext("2d");
+        // ctx.drawImage(image, 0, 0, image.width, image.height);
+        // return canvas;
     }
 
+    // 图片路径转base64
     function pathToBase64 (path) {
         return new Promise((resolve, reject) => {
             if (typeof window === 'object' && 'document' in window) {
