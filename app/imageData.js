@@ -60,8 +60,8 @@ const controlList = [
     "title": "设置"
   },
   {
-    "src": "app/images/control/setting_2.png",
-    "alt": "setting_2",
+    "src": "app/images/control/setting_3.png",
+    "alt": "setting_3",
     "title": "设置"
   }
 ];
