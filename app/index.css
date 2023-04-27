@@ -8,7 +8,6 @@
 
 .project-main {
   border: 1px dashed #333;
-  position: relative;
   margin: 8px;
   border-radius: 4px;
 }
@@ -26,7 +25,6 @@
 .terminal-section {
   width: 100%;
   box-sizing: border-box;
-  cursor: pointer;
   padding-left: 1em;
 }
 
@@ -34,18 +32,17 @@
 .manager-section canvas,
 .terminal-section canvas {
   margin: 6px 4px;
+  cursor: pointer;
 }
 
-.control-section canvas.preview,
-.manager-section canvas.preview,
-.terminal-section canvas.preview {
+.project-container canvas.preview {
   width: 768px;
   height: 432px;
   position: fixed;
-  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   margin: auto;
   z-index: 1;
+  cursor: pointer;
 }

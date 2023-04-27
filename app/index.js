@@ -22,41 +22,41 @@ document.onkeyup = function (e) {
 };
 
 // 管控主机
-previewImage(controlList, ".control-section", ".control-section canvas");
+previewImage(controlList, ".project-container", ".control-section");
 // 仓内屏
-previewImage(terminalList, ".terminal-section", ".terminal-section canvas");
+previewImage(terminalList, ".project-container", ".terminal-section");
 
-function previewImage (list, sectionEle, canvasEle) {
+function previewImage (list, mainEle, sectionEle) {
     const section = document.querySelector(sectionEle);
 
     list.forEach(imageData => {
-        const canvas = drawImageToCanvas(imageData, 192, 108);
+        const canvas = drawImageToCanvas(imageData, 96, 54);
         section.appendChild(canvas);
     });
 
     const childNodes = [...section.childNodes];
-    childNodes.forEach((node) => {
-        node.onclick = function (e) {
+    childNodes.forEach((nodeItem) => {
+        nodeItem.onclick = function (e) {
             let target = e.target;
             let src = target.getAttribute("src");
             let alt = target.getAttribute("alt");
             let title = target.getAttribute("title");
             const imageData = { src, alt, title };
             const canvas = drawImageToCanvas(imageData, 768, 432);
-            const canvasNodes = document.querySelectorAll(canvasEle);
-            let lastChild = canvasNodes[canvasNodes.length - 1];
             canvas.classList.add("preview");
+            const container = document.querySelector(mainEle);
+            const lastChild = container.lastElementChild;
             if (lastChild.classList.contains("preview")) {
                 if (lastChild.getAttribute("alt") == alt) {
-                    section.removeChild(lastChild);
+                    container.removeChild(lastChild);
                 } else {
-                    section.replaceChild(canvas, lastChild);
+                    container.replaceChild(canvas, lastChild);
                 }
             } else {
-                section.appendChild(canvas);
+                container.appendChild(canvas);
             }
             canvas.onclick = function () {
-                section.removeChild(canvas);
+                container.removeChild(canvas);
             };
         };
     });
