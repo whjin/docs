@@ -25,7 +25,7 @@
 .terminal-section {
   width: 100%;
   box-sizing: border-box;
-  padding-left: 1em;
+  padding-left: 0.5em;
 }
 
 .control-section canvas,
