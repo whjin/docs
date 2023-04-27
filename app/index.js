@@ -21,9 +21,11 @@ document.onkeyup = function (e) {
     }
 };
 
-// // // 管控主机
+setCard({Name:'测试',WWID:"防伪标识,我是水印勿扰!"});
+
+// 管控主机
 previewImage(controlList, ".project-container", ".control-section");
-// // // 仓内屏
+// 仓内屏
 previewImage(terminalList, ".project-container", ".terminal-section");
 
 function previewImage (list, mainEle, sectionEle) {
