@@ -21,8 +21,6 @@ document.onkeyup = function (e) {
     }
 };
 
-setCard({Name:'测试',WWID:"防伪标识,我是水印勿扰!"});
-
 // 管控主机
 previewImage(controlList, ".project-container", ".control-section");
 // 仓内屏
