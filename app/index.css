@@ -22,7 +22,9 @@
 
 .control-section,
 .manager-section,
-.terminal-section {
+.terminal-section,
+.system-section,
+.debugTool-section {
   width: 100%;
   box-sizing: border-box;
   padding-left: 0.5em;
@@ -30,14 +32,16 @@
 
 .control-section canvas,
 .manager-section canvas,
-.terminal-section canvas {
+.terminal-section canvas,
+.system-section canvas,
+.debugTool-section canvas {
   margin: 6px 4px;
   cursor: pointer;
 }
 
 .project-container canvas.preview {
-  width: 768px;
-  height: 432px;
+  width: 960px;
+  height: 540px;
   position: fixed;
   top: 0;
   right: 0;

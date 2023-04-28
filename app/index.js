@@ -27,6 +27,10 @@ previewImage(controlList, ".project-container", ".control-section");
 previewImage(terminalList, ".project-container", ".terminal-section");
 // 仓外屏
 previewImage(managerList, ".project-container", ".manager-section");
+// 后台管理
+previewImage(systemList, ".project-container", ".system-section");
+// 调试工具
+previewImage(debugToolList, ".project-container", ".debugTool-section");
 
 function previewImage (list, mainEle, sectionEle) {
     const section = document.querySelector(sectionEle);
