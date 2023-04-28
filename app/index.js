@@ -25,6 +25,8 @@ document.onkeyup = function (e) {
 previewImage(controlList, ".project-container", ".control-section");
 // 仓内屏
 previewImage(terminalList, ".project-container", ".terminal-section");
+// 仓外屏
+previewImage(managerList, ".project-container", ".manager-section");
 
 function previewImage (list, mainEle, sectionEle) {
     const section = document.querySelector(sectionEle);
