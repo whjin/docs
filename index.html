@@ -13,27 +13,42 @@
 
 <body>
     <div class="project-container">
-        <main class="project-main">
-            <header>管控主机</header>
-            <section class="control-section"></section>
-        </main>
-        <main class="project-main">
-            <header>仓内屏</header>
-            <section class="terminal-section"></section>
-        </main>
-        <main class="project-main">
-            <header>仓外屏</header>
-            <section class="manager-section"></section>
-        </main>
-        <main class="project-main">
-            <header>后台管理</header>
-            <section class="system-section"></section>
-        </main>
-        <main class="project-main">
-            <header>调试工具</header>
-            <section class="debugTool-section"></section>
-        </main>
+        <div class="project-wrapper">
+            <main class="project-main">
+                <header>管控主机</header>
+                <section class="control-section"></section>
+            </main>
+            <main class="project-main">
+                <header>仓内屏</header>
+                <section class="terminal-section"></section>
+            </main>
+            <main class="project-main">
+                <header>仓外屏</header>
+                <section class="manager-section"></section>
+            </main>
+            <main class="project-main">
+                <header>后台管理</header>
+                <section class="system-section"></section>
+            </main>
+            <main class="project-main">
+                <header>调试工具</header>
+                <section class="debugTool-section"></section>
+            </main>
+        </div>
+        <footer class="project-footer">
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div>&copy;2015 - <span id="current"></span>
+                <a href="//github.com/whjin/docs" target="_blank" title="Github"> whjin </a>|<span
+                    id="busuanzi_container_site_pv"> 访问
+                    <a href="//busuanzi.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a>
+                    次 </span><span id="busuanzi_container_site_uv"><a href="//busuanzi.ibruce.info/"
+                        target="_blank"><span id="busuanzi_value_site_uv"></span></a> 人</span>
+            </div>
+        </footer>
     </div>
+    <script>
+        document.getElementById("current").innerText = new Date().getFullYear()
+    </script>
     <script src="app/static/controlList.js"></script>
     <script src="app/static/terminalList.js"></script>
     <script src="app/static/managerList.js"></script>

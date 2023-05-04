@@ -6,6 +6,12 @@
     sans-serif;
 }
 
+.project-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 48px;
+}
+
 .project-main {
   border: 1px dashed #333;
   margin: 8px;
@@ -40,8 +46,6 @@
 }
 
 .project-container canvas.preview {
-  width: 960px;
-  height: 540px;
   position: fixed;
   top: 0;
   right: 0;
@@ -50,4 +54,18 @@
   margin: auto;
   z-index: 1;
   cursor: pointer;
+}
+
+.project-footer {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  background-color: #c1c1c1;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+}
+
+.project-container a {
+  text-decoration: none;
 }

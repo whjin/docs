@@ -22,15 +22,15 @@ document.onkeyup = function (e) {
 };
 
 // 管控主机
-previewImage(controlList, ".project-container", ".control-section");
+previewImage(controlList, ".project-wrapper", ".control-section");
 // 仓内屏
-previewImage(terminalList, ".project-container", ".terminal-section");
+previewImage(terminalList, ".project-wrapper", ".terminal-section");
 // 仓外屏
-previewImage(managerList, ".project-container", ".manager-section");
+previewImage(managerList, ".project-wrapper", ".manager-section");
 // 后台管理
-previewImage(systemList, ".project-container", ".system-section");
+previewImage(systemList, ".project-wrapper", ".system-section");
 // 调试工具
-previewImage(debugToolList, ".project-container", ".debugTool-section");
+previewImage(debugToolList, ".project-wrapper", ".debugTool-section");
 
 function previewImage (list, mainEle, sectionEle) {
     const section = document.querySelector(sectionEle);
