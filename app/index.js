@@ -48,7 +48,7 @@ function previewImage (list, mainEle, sectionEle) {
             let alt = target.getAttribute("alt");
             let title = target.getAttribute("title");
             const imageData = { src, alt, title };
-            const canvas = drawImageToCanvas(imageData, 768, 432);
+            const canvas = drawImageToCanvas(imageData, 960, 540);
             canvas.classList.add("preview");
             const container = document.querySelector(mainEle);
             const lastChild = container.lastElementChild;
