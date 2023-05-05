@@ -27,10 +27,14 @@ previewImage(controlList, ".project-wrapper", ".control-section");
 previewImage(terminalList, ".project-wrapper", ".terminal-section");
 // 仓外屏
 previewImage(managerList, ".project-wrapper", ".manager-section");
-// 后台管理
+// 智能终端后台管理
 previewImage(systemList, ".project-wrapper", ".system-section");
-// 调试工具
-previewImage(debugToolList, ".project-wrapper", ".debugTool-section");
+// 排班系统
+previewImage(scheduleList, ".project-wrapper", ".schedule-section");
+// 远程提讯会见
+previewImage(remoteList, ".project-wrapper", ".remote-section");
+// 远程提讯会见后台管理
+previewImage(meetingList, ".project-wrapper", ".meeting-section");
 
 function previewImage (list, mainEle, sectionEle) {
     const section = document.querySelector(sectionEle);

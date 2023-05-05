@@ -58,5 +58,30 @@ const systemList = [
         "src": "app/images/system/system_talk_6.jpg",
         "alt": "system_talk_6",
         "title": "后台管理_自助谈话"
-    }
+    },
+    {
+        "src": "app/images/system/debug_1.jpg",
+        "alt": "debug_1",
+        "title": "调试工具"
+    },
+    {
+        "src": "app/images/system/debug_2.jpg",
+        "alt": "debug_2",
+        "title": "调试工具"
+    },
+    {
+        "src": "app/images/system/debug_3.jpg",
+        "alt": "debug_3",
+        "title": "调试工具"
+    },
+    {
+        "src": "app/images/system/debug_4.jpg",
+        "alt": "debug_4",
+        "title": "调试工具"
+    },
+    {
+        "src": "app/images/system/debug_4.jpg",
+        "alt": "debug_4",
+        "title": "调试工具"
+    },
 ];

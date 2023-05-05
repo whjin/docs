@@ -30,7 +30,9 @@
 .manager-section,
 .terminal-section,
 .system-section,
-.debugTool-section {
+.schedule-section,
+.remote-section,
+.meeting-section {
   width: 100%;
   box-sizing: border-box;
   padding-left: 0.5em;
@@ -40,7 +42,9 @@
 .manager-section canvas,
 .terminal-section canvas,
 .system-section canvas,
-.debugTool-section canvas {
+.schedule-section canvas,
+.remote-section canvas,
+.meeting-section canvas {
   margin: 6px 4px;
   cursor: pointer;
 }
