@@ -47,7 +47,7 @@
 .remote-section canvas,
 .meeting-section canvas,
 .behavior-section canvas {
-  margin: 6px 4px;
+  margin: 6px;
   cursor: pointer;
 }
 
