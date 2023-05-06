@@ -32,7 +32,8 @@
 .system-section,
 .schedule-section,
 .remote-section,
-.meeting-section {
+.meeting-section,
+.behavior-section {
   width: 100%;
   box-sizing: border-box;
   padding-left: 0.5em;
@@ -44,7 +45,8 @@
 .system-section canvas,
 .schedule-section canvas,
 .remote-section canvas,
-.meeting-section canvas {
+.meeting-section canvas,
+.behavior-section canvas {
   margin: 6px 4px;
   cursor: pointer;
 }
@@ -59,8 +61,16 @@
   z-index: 1;
   cursor: pointer;
 }
+.project-container canvas.top {
+  top: 0;
+  bottom: auto;
+}
+.project-container canvas.bottom {
+  top: auto;
+  bottom: 0;
+}
 
-.project-footer {
+footer.project-footer {
   width: 100%;
   height: 36px;
   line-height: 36px;
@@ -68,6 +78,9 @@
   position: fixed;
   bottom: 0;
   text-align: center;
+}
+footer.hidden {
+  visibility: hidden;
 }
 
 .project-container a {
