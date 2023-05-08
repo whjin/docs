@@ -62,6 +62,11 @@ function previewImage (list, mainEle, sectionEle, position) {
             } else if (userAgent.includes('iPad')) {
                 width = document.documentElement.clientWidth * 4 / 5;
                 height = width * 9 / 16;
+            } else if (userAgent.includes('Windows')) {
+                if (document.documentElement.clientWidth <= 960) {
+                    width = document.documentElement.clientWidth * 4 / 5;
+                    height = width * 9 / 16;
+                }
             }
             const canvas = drawImageToCanvas(imageData, width, height);
             const container = document.querySelector(mainEle);
