@@ -38,6 +38,9 @@ previewImage(meetingList, ".project-wrapper", ".meeting-section", "top");
 // 行为分析
 previewImage(behaviorList, ".project-wrapper", ".behavior-section", "top");
 
+// 查看技能弹框
+showSkillModal();
+
 function previewImage (list, mainEle, sectionEle, position) {
     const section = document.querySelector(sectionEle);
 
@@ -120,4 +123,13 @@ function drawImageToCanvas (imageData, width, height) {
         ctx.drawImage(img, 0, 0, width, height);
     };
     return canvas;
+}
+
+function showSkillModal () {
+    const headerNodes = document.querySelectorAll('header');
+    headerNodes.forEach(node => {
+        node.onclick = function (e) {
+            console.log(e.target);
+        };
+    });
 }

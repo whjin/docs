@@ -24,6 +24,7 @@
   line-height: 42px;
   font-weight: 600;
   text-align: center;
+  cursor: pointer;
 }
 
 .control-section,
