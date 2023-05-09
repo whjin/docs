@@ -18,7 +18,7 @@
   border-radius: 4px;
 }
 
-.project-main > header {
+.project-main header {
   font-size: 1.5em;
   height: 42px;
   line-height: 42px;
@@ -27,14 +27,22 @@
   cursor: pointer;
 }
 
+.project-main aside {
+  display: none;
+}
+.project-main aside.show {
+  display: block;
+}
+
 .control-section,
 .manager-section,
 .terminal-section,
 .system-section,
-.schedule-section,
 .remote-section,
 .meeting-section,
-.behavior-section {
+.behavior-section,
+.schedule-section,
+.xiyuyou-section {
   width: 100%;
   box-sizing: border-box;
   padding-left: 0.5em;
@@ -44,10 +52,11 @@
 .manager-section canvas,
 .terminal-section canvas,
 .system-section canvas,
-.schedule-section canvas,
 .remote-section canvas,
 .meeting-section canvas,
-.behavior-section canvas {
+.behavior-section canvas,
+.schedule-section canvas,
+.xiyuyou-section canvas {
   margin: 6px;
   cursor: pointer;
 }

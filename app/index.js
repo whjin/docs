@@ -1,6 +1,12 @@
 document.oncontextmenu = function (e) {
     return false;
 };
+document.onselectstart = function (e) {
+    return false;
+};
+document.oncopy = function (e) {
+    return false;
+};
 document.ondragstart = function (e) {
     return false;
 };
@@ -29,23 +35,26 @@ previewImage(terminalList, ".project-wrapper", ".terminal-section", "bottom");
 previewImage(managerList, ".project-wrapper", ".manager-section", "bottom");
 // 智能终端后台管理
 previewImage(systemList, ".project-wrapper", ".system-section", "bottom");
-// 排班系统
-previewImage(scheduleList, ".project-wrapper", ".schedule-section", "top");
 // 远程会见
 previewImage(remoteList, ".project-wrapper", ".remote-section", "top");
 // 远程会见后台管理
 previewImage(meetingList, ".project-wrapper", ".meeting-section", "top");
 // 行为分析
 previewImage(behaviorList, ".project-wrapper", ".behavior-section", "top");
+// 排班系统
+previewImage(scheduleList, ".project-wrapper", ".schedule-section", "top");
+// 西域游
+previewImage(xiyuyouList, ".project-wrapper", ".xiyuyou-section", "top");
 
-// 查看技能弹框
-showSkillModal();
+// 查看项目详情
+toggleDetails();
 
-function previewImage (list, mainEle, sectionEle, position) {
-    const section = document.querySelector(sectionEle);
+function previewImage (list, mainClass, sectionClass, position) {
+    const section = document.querySelector(sectionClass);
 
     list.forEach(imageData => {
         const canvas = drawImageToCanvas(imageData, 96, 54);
+        canvas.style.borderRadius = '4px';
         section.appendChild(canvas);
     });
 
@@ -63,16 +72,16 @@ function previewImage (list, mainEle, sectionEle, position) {
                 width = document.documentElement.clientWidth;
                 height = width * 9 / 16;
             } else if (userAgent.includes('iPad')) {
-                width = document.documentElement.clientWidth * 4 / 5;
+                width = document.documentElement.clientWidth * 9 / 10;
                 height = width * 9 / 16;
             } else if (userAgent.includes('Windows')) {
                 if (document.documentElement.clientWidth <= 960) {
-                    width = document.documentElement.clientWidth * 4 / 5;
+                    width = document.documentElement.clientWidth * 9 / 10;
                     height = width * 9 / 16;
                 }
             }
             const canvas = drawImageToCanvas(imageData, width, height);
-            const container = document.querySelector(mainEle);
+            const container = document.querySelector(mainClass);
             const lastChild = container.lastElementChild;
             const footerEle = document.querySelector("footer");
             canvas.classList.add("preview");
@@ -113,6 +122,7 @@ function drawImageToCanvas (imageData, width, height) {
     const canvas = document.createElement("canvas");
     canvas.width = width;
     canvas.height = height;
+    canvas.style.border = '1px solid #c1c1c1';
     canvas.setAttribute("src", src);
     canvas.setAttribute("alt", alt);
     canvas.setAttribute("title", title);
@@ -125,11 +135,28 @@ function drawImageToCanvas (imageData, width, height) {
     return canvas;
 }
 
-function showSkillModal () {
+function toggleDetails () {
+    const sectionNodes = document.querySelectorAll('section');
+    sectionNodes.forEach(node => {
+        const parent = node.parentNode;
+        const aside = document.createElement("aside");
+        let className = node.classList.value;
+        detailList.forEach(detail => {
+            if (detail.className == className) {
+                aside.innerHTML = detail.detailText;
+                parent.insertBefore(aside, node);
+            }
+        });
+    });
+
     const headerNodes = document.querySelectorAll('header');
     headerNodes.forEach(node => {
+        node.title = "点击查看项目详情，Ctrl+U查看源代码";
         node.onclick = function (e) {
-            console.log(e.target);
+            const target = e.target;
+            const asideNode = target.nextElementSibling;
+            asideNode.classList.toggle('show');
         };
     });
 }
+
