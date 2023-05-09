@@ -142,6 +142,7 @@ function toggleDetails () {
         const aside = document.createElement("aside");
         let className = node.classList.value;
         detailList.forEach(detail => {
+            Object.freeze(detail);
             if (detail.className == className) {
                 aside.innerHTML = detail.detailText;
                 parent.insertBefore(aside, node);
