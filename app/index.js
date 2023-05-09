@@ -122,7 +122,7 @@ function drawImageToCanvas (imageData, width, height) {
     const canvas = document.createElement("canvas");
     canvas.width = width;
     canvas.height = height;
-    canvas.style.border = '1px solid #c1c1c1';
+    canvas.style.border = '2px solid #c1c1c1';
     canvas.setAttribute("src", src);
     canvas.setAttribute("alt", alt);
     canvas.setAttribute("title", title);
