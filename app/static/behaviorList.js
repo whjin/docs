@@ -333,5 +333,15 @@ const behaviorList = [
     "src": "app/images/behavior/behavior_66.jpg",
     "alt": "behavior_66",
     "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_67.jpg",
+    "alt": "behavior_67",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_68.jpg",
+    "alt": "behavior_68",
+    "title": "视频智能行为分析系统"
   }
 ];
