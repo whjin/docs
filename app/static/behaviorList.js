@@ -343,5 +343,180 @@ const behaviorList = [
     "src": "app/images/behavior/behavior_68.jpg",
     "alt": "behavior_68",
     "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_69.jpg",
+    "alt": "behavior_69",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_70.jpg",
+    "alt": "behavior_70",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_71.jpg",
+    "alt": "behavior_71",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_72.jpg",
+    "alt": "behavior_72",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_73.jpg",
+    "alt": "behavior_73",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_74.jpg",
+    "alt": "behavior_74",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_75.jpg",
+    "alt": "behavior_75",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_76.jpg",
+    "alt": "behavior_76",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_77.jpg",
+    "alt": "behavior_77",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_78.jpg",
+    "alt": "behavior_78",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_79.jpg",
+    "alt": "behavior_79",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_80.jpg",
+    "alt": "behavior_80",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_81.jpg",
+    "alt": "behavior_81",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_82.jpg",
+    "alt": "behavior_82",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_83.jpg",
+    "alt": "behavior_83",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_84.jpg",
+    "alt": "behavior_84",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_85.jpg",
+    "alt": "behavior_85",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_86.jpg",
+    "alt": "behavior_86",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_87.jpg",
+    "alt": "behavior_87",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_88.jpg",
+    "alt": "behavior_88",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_89.jpg",
+    "alt": "behavior_89",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_90.jpg",
+    "alt": "behavior_90",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_91.jpg",
+    "alt": "behavior_91",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_92.jpg",
+    "alt": "behavior_92",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_93.jpg",
+    "alt": "behavior_93",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_94.jpg",
+    "alt": "behavior_94",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_95.jpg",
+    "alt": "behavior_95",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_96.jpg",
+    "alt": "behavior_96",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_97.jpg",
+    "alt": "behavior_97",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_98.jpg",
+    "alt": "behavior_98",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_99.jpg",
+    "alt": "behavior_99",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_100.jpg",
+    "alt": "behavior_100",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_101.jpg",
+    "alt": "behavior_101",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_102.jpg",
+    "alt": "behavior_102",
+    "title": "视频智能行为分析系统"
+  },
+  {
+    "src": "app/images/behavior/behavior_103.jpg",
+    "alt": "behavior_103",
+    "title": "视频智能行为分析系统"
   }
 ];
