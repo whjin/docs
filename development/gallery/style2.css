@@ -1,0 +1,51 @@
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 6px;
+  position: absolute;
+  bottom: 8px;
+}
+
+.thumbnails div {
+  width: 12px;
+  height: 12px;
+  background: #aaa;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.thumbnails div.highlighted {
+  background-color: #777;
+}
+
+.slides {
+  margin: 0 16px;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  width: 540px;
+  padding: 0 0.25rem;
+  height: 720px;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.slides > div {
+  scroll-snap-align: start;
+}
+
+.slides img {
+  width: 540px;
+  object-fit: contain;
+}
+
+.slides::-webkit-scrollbar {
+  display: none;
+}
