@@ -2,7 +2,7 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  font-family: "仿宋", "楷体", "微软雅黑", "黑体", "宋体", Arial, Helvetica,
+  font-family: '仿宋', '楷体', '微软雅黑', '黑体', '宋体', Arial, Helvetica,
     sans-serif;
 }
 
@@ -46,7 +46,12 @@
 .xiyuyou-section {
   width: 100%;
   box-sizing: border-box;
-  padding-left: 1em;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 96px);
+  grid-gap: 0.5em;
+  padding: 0.5em;
+  padding-top: 0;
 }
 
 .control-section canvas,
@@ -59,8 +64,6 @@
 .schedule-section canvas,
 .xiyuyou-section canvas {
   cursor: pointer;
-  margin-right: 1em;
-  margin-bottom: 0.75em;
 }
 
 .project-container canvas.preview {
@@ -98,3 +101,4 @@ footer.hidden {
 .project-container a {
   text-decoration: none;
 }
+
