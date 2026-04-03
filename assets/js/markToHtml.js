@@ -1,6 +1,6 @@
-async function loadMarkdown() {
+async function loadMarkdown(path) {
   try {
-    const response = await fetch('assets/template/docs.md');
+    const response = await fetch(path);
     const text = await response.text();
     const htmlContent = marked.parse(text);
     document.getElementById('markdown-content').innerHTML = htmlContent;
@@ -8,4 +8,3 @@ async function loadMarkdown() {
     console.error('Error loading Markdown file:', error);
   }
 }
-loadMarkdown();
