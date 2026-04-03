@@ -140,6 +140,7 @@ details summary {
   font-weight: 500;
 }
 
-details ul {
+ul {
   font-size: 16px;
+  margin-left: 0px;
 }

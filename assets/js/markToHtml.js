@@ -1,10 +1,11 @@
-async function loadMarkdown(path) {
-  try {
-    const response = await fetch(path);
-    const text = await response.text();
-    const htmlContent = marked.parse(text);
-    document.getElementById('markdown-content').innerHTML = htmlContent;
-  } catch (error) {
-    console.error('Error loading Markdown file:', error);
-  }
-}
+document.addEventListener('DOMContentLoaded', (e) => {
+  loadMarkdown('markdown-content', 'assets/template/index.md');
+});
+
+window.onload = function () {
+  const links = document.querySelectorAll('#markdown-content a');
+  links.forEach((link) => {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+};
