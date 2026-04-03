@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', (e) => {
-  loadMarkdown('markdown-content', 'assets/template/index.md');
+  loadMarkdown('markdown-content', 'src/template/index.md');
 });
 
 window.onload = function () {
