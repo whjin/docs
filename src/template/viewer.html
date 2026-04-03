@@ -14,7 +14,7 @@
       document.addEventListener('DOMContentLoaded', (e) => {
         const title = decodeURIComponent(window.location.search.slice(1));
         document.title = title;
-        loadMarkdown('markdown-viewer', `/src/template/docs/${title}.md`);
+        loadMarkdown('markdown-viewer', `docs/${title}.md`);
       });
     </script>
   </body>
