@@ -1,3 +1,4 @@
-# 前端开发文档 #
+# 开发文档
 
-> 站点地址：[前端开发文档](https://github.com/whjin/frontend-dev-doc/issues)
+- [开发文档](https://wuhuajin.com/docs/)
+- [讨论站点](https://github.com/whjin/docs/issues)
