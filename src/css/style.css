@@ -73,7 +73,7 @@ sup {
 }
 
 .arrow-icon {
-  background-image: url(../../assets/images/top.png);
+  background-image: url(../images/top.png);
   width: 30px;
   height: 30px;
   display: block;

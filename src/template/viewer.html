@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,7 +10,7 @@
     <script src="../js/marked.umd.min.js"></script>
     <script src="../js/util.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', e => {
+      document.addEventListener('DOMContentLoaded', (e) => {
         const title = decodeURIComponent(window.location.search.slice(1));
         document.title = title;
         loadMarkdown('markdown-viewer', `posts/${title}.md`);
