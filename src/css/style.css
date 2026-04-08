@@ -138,10 +138,10 @@ div object {
 details summary {
   font-size: 18px;
   font-weight: 500;
-  text-indent: 0.5em;
+  text-indent: 1em;
 }
 
 ul {
   font-size: 16px;
-  margin-left: 0px;
+  margin-left: 1em;
 }

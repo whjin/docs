@@ -5,7 +5,8 @@ const url = require('url');
 const chokidar = require('chokidar');
 const WebSocket = require('ws');
 
-const PORT = 3000;
+const PORT = 9527;
+const DEBOUNCE_DELAY = 100;
 
 // 静态文件服务器的根目录
 const rootDir = process.cwd();
@@ -15,7 +16,6 @@ const server = http.createServer((req, res) => {
   // 使用 url 模块解析请求的 URL
   const parsedUrl = url.parse(req.url, true);
   let pathname = parsedUrl.pathname;
-
   // 对 URL 进行解码，处理中文字符
   pathname = decodeURIComponent(pathname);
 
@@ -33,8 +33,9 @@ const server = http.createServer((req, res) => {
       contentType = 'text/css';
       break;
     case '.md':
-      contentType = 'text/markdown; charset=utf-8';
+      contentType = 'text/markdown;charset=utf-8';
       break;
+
     case '.png':
       contentType = 'image/png';
       break;
@@ -44,6 +45,9 @@ const server = http.createServer((req, res) => {
       break;
     case '.ico':
       contentType = 'image/x-icon';
+      break;
+    case '.json':
+      contentType = 'application/json;charset=utf-8';
       break;
   }
 
@@ -164,24 +168,40 @@ const wss = new WebSocket.Server({ server });
 
 // 3. 使用 chokidar 监视项目根目录下的文件变化
 const watcher = chokidar.watch(rootDir, {
-  ignored: /(^|[\/\\])\../, // 忽略隐藏文件
+  ignored: /(^|[\/\\])\../,
   persistent: true,
   ignoreInitial: true,
 });
 
-// 当有任何被监视的文件发生变化时
-watcher.on('change', (filePath) => {
-  // 只对特定类型的文件变化做出刷新响应
-  if (path.extname(filePath).match(/\.(html|md|js|css)$/)) {
-    // 向所有已连接的 WebSocket 客户端发送刷新指令
-    wss.clients.forEach((client) => {
-      if (client.readyState === WebSocket.OPEN) {
-        client.send('reload');
-      }
-    });
-  }
-});
+// 防抖刷新函数
+let reloadTimer = null;
+const triggerReload = (filePath) => {
+  clearTimeout(reloadTimer);
+  reloadTimer = setTimeout(() => {
+    if (path.extname(filePath).match(/\.(html|md|js|css)$/)) {
+      // 向所有已连接的 WebSocket 客户端发送刷新指令
+      wss.clients.forEach((client) => {
+        if (client.readyState === WebSocket.OPEN) {
+          client.send('reload');
+        }
+      });
+    }
+  }, DEBOUNCE_DELAY);
+};
+
+watcher
+  .on('add', (filePath) => triggerReload(filePath))
+  .on('change', (filePath) => triggerReload(filePath))
+  .on('unlink', (filePath) => triggerReload(filePath))
+  .on('error', (error) => console.error('[Live Server] 监听错误:', error));
 
 server.listen(PORT, () => {
   console.log('🚀 Live Server 正在运行: http://localhost:' + PORT);
+});
+
+process.on('SIGINT', () => {
+  watcher.close();
+  wss.close();
+  server.close();
+  process.exit(0);
 });
