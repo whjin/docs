@@ -15,7 +15,7 @@ document.head.appendChild(link);
 
 **创建对象**
 
-![](https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png?width=100)
+![](https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png)
 
 # Vue3
 
@@ -27,3 +27,8 @@ document.head.appendChild(link);
 6. 自定义渲染器
 7. 虚拟 dom
 8. teleport传送门 suspense 异步组件
+
+| 标题 | 内容   |
+| ---- | ------ |
+| 张三 | 打工   |
+| 李四 | 个体户 |

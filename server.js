@@ -69,7 +69,9 @@ const server = http.createServer((req, res) => {
           // 尝试在 src/template 目录下查找
           path.join(rootDir, 'src', 'template', pathname),
           // 尝试去掉开头的 /src/template
-          pathname.startsWith('/src/template/') ? path.join(rootDir, pathname.substring('/src/template'.length)) : null,
+          pathname.startsWith('/src/template/')
+            ? path.join(rootDir, pathname.substring('/src/template'.length))
+            : null,
         ].filter((p) => p && p !== filePath);
 
         // 检查可能的路径
@@ -83,8 +85,12 @@ const server = http.createServer((req, res) => {
             // 重新读取文件
             fs.readFile(filePath, (err, data) => {
               if (err) {
-                res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
-                res.end(`<h1>404 - 文件未找到</h1><p>尝试读取文件时出错: ${err.message}</p>`);
+                res.writeHead(404, {
+                  'Content-Type': 'text/html; charset=utf-8',
+                });
+                res.end(
+                  `<h1>404 - 文件未找到</h1><p>尝试读取文件时出错: ${err.message}</p>`,
+                );
               } else {
                 res.writeHead(200, { 'Content-Type': contentType });
                 res.end(data);
@@ -115,8 +121,6 @@ const server = http.createServer((req, res) => {
           `);
         }
       } else {
-        // 其他服务器错误
-        console.error(`服务器错误: ${error}`);
         res.writeHead(500);
         res.end('Server Error: ' + error.code);
       }
@@ -154,7 +158,10 @@ const server = http.createServer((req, res) => {
         `;
 
         // 将 WebSocket 脚本注入到 HTML 的 head 结束之前
-        const injectedContent = htmlContent.replace('</head>', wsScript + '\n</head>');
+        const injectedContent = htmlContent.replace(
+          '</head>',
+          wsScript + '\n</head>',
+        );
         res.end(injectedContent);
       } else {
         res.end(content);
