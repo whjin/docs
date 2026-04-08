@@ -4,16 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Viewer</title>
+    <script src="src/js/loadCSS.js"></script>
   </head>
   <body>
-    <div id="markdown-viewer"></div>
-    <script src="../js/marked.umd.min.js"></script>
-    <script src="../js/util.js"></script>
+    <div id="markdown-content" class="markdown-content"></div>
+    <script src="src/js/marked.min.js"></script>
+    <script src="src/js/highlight.min.js"></script>
+    <script src="src/js/marked-highlight.min.js"></script>
+    <script src="src/js/util.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', (e) => {
         const title = decodeURIComponent(window.location.search.slice(1));
         document.title = title;
-        loadMarkdown('markdown-viewer', `posts/${title}.md`);
+        loadMarkdown('markdown-content', `posts/${title}.md`);
       });
     </script>
   </body>

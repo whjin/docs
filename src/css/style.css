@@ -10,19 +10,21 @@ body {
     Noto Sans CJK SC,
     WenQuanYi Micro Hei,
     sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
 }
 
-ol,
-ul {
-  margin-left: -25px;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-h1.head {
-  text-align: center;
+.nav {
+  position: absolute;
+  right: 1em;
 }
 
 h5 {
@@ -67,11 +69,6 @@ a:hover {
   opacity: 0;
 }
 
-sup {
-  cursor: pointer;
-  color: #bd4147;
-}
-
 .arrow-icon {
   background-image: url(../images/top.png);
   width: 30px;
@@ -99,7 +96,7 @@ sup {
 .app-footer {
   position: fixed;
   width: 100%;
-  bottom: 0;
+  bottom: 0px;
   padding: 1em 0;
   text-align: center;
   background: #e9ecef;
@@ -135,13 +132,26 @@ div object {
   }
 }
 
+.markdown-content {
+  padding: 1em;
+}
+
 details summary {
   font-size: 18px;
   font-weight: 500;
-  text-indent: 1em;
 }
 
-ul {
-  font-size: 16px;
-  margin-left: 1em;
+ol,
+ul,
+li,
+.markdown-content p,
+.markdown-content code,
+.markdown-content pre {
+  font-size: 1em;
+}
+
+code {
+  background-color: #e9ecef;
+  padding: 2px 6px;
+  border-radius: 6px;
 }
