@@ -1,12 +1,12 @@
 # 原型链基础
 
-- nasdasdaa
+- 123实时123
 - asdasd
 
 1. asdasd1111
 2. 啊实打实的2222
 
-**创建对象1111**
+**创建对象**
 
 ![](https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png)
 
