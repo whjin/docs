@@ -4,14 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Viewer</title>
-    <script src="src/js/loadCSS.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/github-dark.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <div id="markdown-content" class="markdown-content"></div>
-    <script src="src/js/marked.min.js"></script>
-    <script src="src/js/highlight.min.js"></script>
-    <script src="src/js/marked-highlight.min.js"></script>
-    <script src="src/js/util.js"></script>
+    <script src="../js/marked.min.js"></script>
+    <script src="../js/highlight.min.js"></script>
+    <script src="../js/marked-highlight.min.js"></script>
+    <script src="../js/util.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', (e) => {
         const title = decodeURIComponent(window.location.search.slice(1));
