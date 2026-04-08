@@ -5,7 +5,7 @@ const url = require('url');
 const chokidar = require('chokidar');
 const WebSocket = require('ws');
 
-const PORT = 9527;
+const PORT = 8000;
 const DEBOUNCE_DELAY = 100;
 
 // 静态文件服务器的根目录
