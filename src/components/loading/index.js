@@ -6,6 +6,17 @@
   const MIN_SHOW_TIME = 300;
   const MAX_SHOW_TIME = 6000;
 
+  console.log(window.location);
+
+  function developmentMode() {
+    const locations = ['localhost', '127.0.0.1', '8000'];
+    return locations.some((location) =>
+      window.location.origin.includes(location),
+    );
+  }
+
+  console.log(developmentMode());
+
   function createLoading() {
     if (loadingEl) return;
     loadingEl = document.createElement('div');
