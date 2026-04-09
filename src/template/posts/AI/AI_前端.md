@@ -55,5 +55,3 @@ D2C 设计稿转码
 2. `Google A2UI`：AI生成的 `lowcode schema` `UI=F(state) A2UI UI=F(state) + AI(UI)`
 
 **知识库**
-
-123

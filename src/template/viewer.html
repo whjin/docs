@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <div id="markdown-content" class="markdown-content"></div>
+    <main id="markdown-content" class="markdown-content viewer"></main>
     <script src="../js/marked.min.js"></script>
     <script src="../js/highlight.min.js"></script>
     <script src="../js/marked-highlight.min.js"></script>
@@ -21,7 +21,7 @@
         let query = window.location.search.slice(1);
         let idx = query.indexOf('_');
         let dir = query.slice(0, idx);
-        let title = decodeURIComponent(query.slice(idx + 1));
+        let title = decodeURIComponent(query.slice(idx + 1)); 
         document.title = `吴华锦 - ${title}`.toUpperCase();
 
         const filePath = `posts/${dir}/${title}.md`;

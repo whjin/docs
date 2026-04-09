@@ -9,7 +9,7 @@ function loadMarkdown(targetId, filePath) {
     if (savedScrollTop) {
       window.scrollTo({
         top: parseInt(savedScrollTop, 10),
-        behavior: 'auto', // auto or smooth
+        behavior: 'auto',
       });
     }
   });
