@@ -15,6 +15,7 @@ body {
   height: 100%;
   box-sizing: border-box;
 }
+
 h1,
 h2,
 h3,
@@ -48,6 +49,12 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.container .title {
+  font-size: 1.5em;
+  font-weight: 600;
+  padding: 0.2em 0;
 }
 
 .nav {
@@ -125,7 +132,7 @@ a:hover {
   position: fixed;
   width: 100%;
   bottom: 0px;
-  padding: 1em 0;
+  padding: 0.8em 0;
   text-align: center;
   background: #e9ecef;
 }
