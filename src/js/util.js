@@ -1,4 +1,21 @@
-function loadMarkdown(elementId, filePath) {
+function loadMarkdown(targetId, filePath) {
+  const scrollKey = `scrollPosition_${encodeURIComponent(filePath)}`;
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    sessionStorage.setItem(scrollKey, scrollTop);
+  });
+  handler(targetId, filePath, () => {
+    const savedScrollTop = sessionStorage.getItem(scrollKey);
+    if (savedScrollTop) {
+      window.scrollTo({
+        top: parseInt(savedScrollTop, 10),
+        behavior: 'auto', // auto or smooth
+      });
+    }
+  });
+}
+
+function handler(targetId, filePath, callback) {
   marked.use(
     markedHighlight.markedHighlight({
       langPrefix: 'hljs language-',
@@ -22,11 +39,13 @@ function loadMarkdown(elementId, filePath) {
     })
     .then((markdownContent) => {
       const htmlContent = marked.parse(markdownContent);
-      document.getElementById(elementId).innerHTML = htmlContent;
+      document.getElementById(targetId).innerHTML = htmlContent;
+      callback && callback();
     })
     .catch((error) => {
       console.error('渲染失败:', error);
-      document.getElementById(elementId).innerHTML =
+      document.getElementById(targetId).innerHTML =
         `<div style="color: red;">加载失败：${error.message}</div>`;
+      callback && callback();
     });
 }

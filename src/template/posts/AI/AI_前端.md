@@ -35,4 +35,25 @@
 
 **AI编程助手**
 
+TDD Test-Drive
+KDD Knowledge-Drive
+
+D2C 设计稿转码
+
+生成基础的 `HTML/CSS` 通用组件 -> 业务组件
+
+让AI读懂设计稿 获取组件库知识 实现一个 `Agent` 处理 设计稿出代码
+
+**生成式UI（AI原生UI）**
+
+1. 面向用户侧：根据不同的上下文环境，直接生成不同的可交互页面/组件
+2. 研发侧：生产提效
+
+两种方式：
+
+1. 完全生产：大模型返回 `HTML/CSS`，`iframe`、微前端、`webview` 把AI生成的组件渲染用用户界面
+2. `Google A2UI`：AI生成的 `lowcode schema` `UI=F(state) A2UI UI=F(state) + AI(UI)`
+
 **知识库**
+
+123

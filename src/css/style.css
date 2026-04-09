@@ -12,8 +12,13 @@ body {
     sans-serif;
   font-size: 16px;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  padding-bottom: 80px;
 }
 
 h1,
@@ -45,13 +50,17 @@ h6 {
   font-size: 0.6em;
 }
 
-.container {
+.header {
+  width: 100%;
+  height: 50px;
+  background: #e9ecef;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.container .title {
+.header .title {
   font-size: 1.5em;
   font-weight: 600;
   padding: 0.2em 0;
@@ -60,23 +69,6 @@ h6 {
 .nav {
   position: absolute;
   right: 1em;
-}
-
-h5 {
-  margin-left: -5px;
-  background-color: #e9ecef;
-  display: inline-block;
-  padding: 3px;
-  border-radius: 3px;
-}
-
-.jumbotron {
-  padding: 5px 0;
-  border-radius: 0;
-}
-
-li {
-  margin: 6px 0;
 }
 
 li.fold-panel > ul,
@@ -128,47 +120,30 @@ a:hover {
     0 3px 3px 0 rgba(0, 0, 0, 0.24);
 }
 
-.app-footer {
+.footer {
   position: fixed;
   width: 100%;
+  height: 50px;
   bottom: 0px;
-  padding: 0.8em 0;
-  text-align: center;
   background: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 div object {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .row .col-md-2,
-  .row .col-md-3 {
-    border-right: none;
-  }
-
-  .scroll-top {
-    right: 20px;
-    bottom: 60px;
-    z-index: 9;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .col-md-3:not(:last-child),
-  .col-md-2:not(:last-child) {
-    border-right: 1px dashed #bd4147;
-  }
-
-  .scroll-top {
-    right: 20px;
-    bottom: 60px;
-    z-index: 9;
-  }
-}
-
 .markdown-content {
-  padding: 1em;
+  width: 100%;
+  height: calc(100% - 20px);
+  padding: 0 1em;
+  overflow: auto;
+}
+
+details {
+  margin: 1em 0;
 }
 
 details summary {
@@ -227,11 +202,34 @@ code {
   background-color: transparent;
 }
 
-/* 响应式表格 */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .row .col-md-2,
+  .row .col-md-3 {
+    border-right: none;
+  }
+
+  .scroll-top {
+    right: 20px;
+    bottom: 60px;
+    z-index: 9;
+  }
+
   .markdown-content table {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .col-md-3:not(:last-child),
+  .col-md-2:not(:last-child) {
+    border-right: 1px dashed #bd4147;
+  }
+
+  .scroll-top {
+    right: 20px;
+    bottom: 60px;
+    z-index: 9;
   }
 }

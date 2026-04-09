@@ -65,6 +65,9 @@ const quickSort = (arr) => {
   // const [pivot, ...rest] = arr;
   const pivot = arr.splice(Math.floor(arr.length / 2), 1)[0];
   // return [...quickSort(rest.filter((x) => x < pivot)), pivot, ...quickSort(rest.filter((x) => x >= pivot))];
-  return [...quickSort(arr.filter((x) => x < pivot)), pivot, ...quickSort(arr.filter((x) => x >= pivot))];
+  return [
+    ...quickSort(arr.filter((x) => x < pivot)),
+    pivot,
+    ...quickSort(arr.filter((x) => x >= pivot)),
+  ];
 };
-console.log(quickSort([3, 1, 4, 1, 5, 9, 2, 6]));

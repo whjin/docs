@@ -23,7 +23,27 @@
         let dir = query.slice(0, idx);
         let title = decodeURIComponent(query.slice(idx + 1));
         document.title = `吴华锦 - ${title}`.toUpperCase();
-        loadMarkdown('markdown-content', `posts/${dir}/${title}.md`);
+
+        const filePath = `posts/${dir}/${title}.md`;
+        loadMarkdown('markdown-content', filePath);
+
+        // const scrollKey = `scrollPosition_${encodeURIComponent(filePath)}`;
+
+        // window.addEventListener('scroll', () => {
+        //   const scrollTop =
+        //     window.scrollY || document.documentElement.scrollTop;
+        //   sessionStorage.setItem(scrollKey, scrollTop);
+        // });
+
+        // loadMarkdown('markdown-content', filePath, () => {
+        //   const savedScrollTop = sessionStorage.getItem(scrollKey);
+        //   if (savedScrollTop) {
+        //     window.scrollTo({
+        //       top: parseInt(savedScrollTop, 10),
+        //       behavior: 'auto', // auto or smooth
+        //     });
+        //   }
+        // });
       });
     </script>
   </body>
