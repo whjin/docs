@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="src/css/font-awesome.min.css" />
     <link rel="stylesheet" href="src/css/github-dark.min.css" />
     <link rel="stylesheet" href="src/css/style.css" />
-    <link rel="stylesheet" href="src/components/loading/style.css" />
+    <link rel="stylesheet" href="src/components/loading/index.css" />
   </head>
 
   <body>
@@ -64,34 +64,6 @@
         });
       });
     </script>
-    <footer class="footer">
-      <script async src="src/js/busuanzi.min.js"></script>
-      <div>
-        &copy;
-        <script>
-          document.write('2013 - ' + new Date().getFullYear());
-        </script>
-        <a href="https://github.com/whjin" target="_blank" title="github">
-          wuhuajin </a
-        >|
-        <span id="busuanzi_container_site_pv" style="display: inline">
-          访问
-          <a href="http://service.ibruce.info/" target="_blank">
-            <span id="busuanzi_value_site_uv"></span
-          ></a>
-          人
-          <a href="http://service.ibruce.info/" target="_blank">
-            <span id="busuanzi_value_site_pv"></span
-          ></a>
-          次
-        </span>
-      </div>
-    </footer>
-    <div class="scroll-top opacity">
-      <span class="arrow-icon"></span>
-    </div>
-    <script src="src/js/jquery.min.js"></script>
-    <script src="src/js/scrollTop.js"></script>
     <script>
       if (
         window.location.hostname === 'localhost' ||
@@ -100,5 +72,34 @@
         document.write('<script src="/src/js/client-reload.js"><\/script>');
       }
     </script>
+    <footer class="footer">
+      <script src="src/js/busuanzi.min.js" defer></script>
+      <div>
+        &copy;
+        <script>
+          document.write('2013 - ' + new Date().getFullYear());
+        </script>
+        <a href="https://github.com/whjin" target="_blank" title="github">
+          wuhuajin
+        </a>
+        |
+        <span id="busuanzi_container_site_pv" style="display: inline">
+          访问
+          <a href="http://service.ibruce.info/" target="_blank">
+            <span id="busuanzi_value_site_uv"></span>
+          </a>
+          人
+          <a href="http://service.ibruce.info/" target="_blank">
+            <span id="busuanzi_value_site_pv"></span>
+          </a>
+          次
+        </span>
+      </div>
+    </footer>
+    <div class="scroll-top opacity">
+      <span class="arrow-icon" title="回到顶部"></span>
+    </div>
+    <script src="src/js/jquery.min.js"></script>
+    <script src="src/js/scrollTop.js"></script>
   </body>
 </html>

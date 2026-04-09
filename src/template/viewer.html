@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="../css/font-awesome.min.css" />
     <link rel="stylesheet" href="../css/github-dark.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../components/loading/style.css" />
+    <link rel="stylesheet" href="../components/loading/index.css" />
+    <link rel="stylesheet" href="../css/back.css" />
   </head>
   <body>
+    <div class="back-btn">返回</div>
     <main id="markdown-content" class="markdown-content viewer"></main>
     <script src="../components/loading/index.js"></script>
     <script src="../js/marked.min.js"></script>
@@ -30,5 +32,10 @@
         loadMarkdown('markdown-content', filePath);
       });
     </script>
+    <div class="scroll-top opacity">
+      <span class="arrow-icon" title="回到顶部"></span>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/scrollTop.js"></script>
   </body>
 </html>
