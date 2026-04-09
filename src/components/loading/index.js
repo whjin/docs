@@ -1,21 +1,9 @@
 (function () {
-  const isOpen = true;
   let loadingEl = null;
   let timer = null;
   let startTime = 0;
   const MIN_SHOW_TIME = 300;
   const MAX_SHOW_TIME = 6000;
-
-  console.log(window.location);
-
-  function developmentMode() {
-    const locations = ['localhost', '127.0.0.1', '8000'];
-    return locations.some((location) =>
-      window.location.origin.includes(location),
-    );
-  }
-
-  console.log(developmentMode());
 
   function createLoading() {
     if (loadingEl) return;
@@ -48,7 +36,14 @@
     }, delay);
   }
 
-  if (isOpen) {
+  function productionMode() {
+    const locations = ['localhost', '127.0.0.1', '8000'];
+    return !locations.some((location) =>
+      window.location.origin.includes(location),
+    );
+  }
+  console.log(productionMode());
+  if (productionMode()) {
     document.addEventListener('DOMContentLoaded', show);
     window.addEventListener('load', hide);
   }
