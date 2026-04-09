@@ -18,9 +18,12 @@
     <script src="../js/util.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', (e) => {
-        const title = decodeURIComponent(window.location.search.slice(1));
+        let query = window.location.search.slice(1);
+        let idx = query.indexOf('_');
+        let dir = query.slice(0, idx);
+        let title = decodeURIComponent(query.slice(idx + 1));
         document.title = `吴华锦 - ${title}`.toUpperCase();
-        loadMarkdown('markdown-content', `posts/${title}.md`);
+        loadMarkdown('markdown-content', `posts/${dir}/${title}.md`);
       });
     </script>
   </body>
