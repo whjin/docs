@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="src/css/font-awesome.min.css" />
     <link rel="stylesheet" href="src/css/github-dark.min.css" />
     <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="src/components/loading/style.css" />
   </head>
 
   <body>
@@ -44,9 +45,10 @@
       </nav>
     </header>
     <main id="markdown-content" class="markdown-content entry"></main>
+    <script src="src/components/loading/index.js"></script>
     <script src="src/js/marked.min.js"></script>
     <script src="src/js/highlight.min.js"></script>
-    <script src="src/js/marked-highlight.min.js"></script>
+    <script src="src/js/marked-highlight.min.js" defer></script>
     <script src="src/js/util.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', (e) => {
@@ -54,13 +56,13 @@
         loadMarkdown('markdown-content', filePath);
       });
 
-      window.onload = function () {
+      window.addEventListener('load', () => {
         const links = document.querySelectorAll('#markdown-content a');
         links.forEach((link) => {
           link.setAttribute('target', '_blank');
           link.setAttribute('rel', 'noopener noreferrer');
         });
-      };
+      });
     </script>
     <footer class="footer">
       <script async src="src/js/busuanzi.pure.mini.js"></script>

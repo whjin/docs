@@ -55,3 +55,15 @@ D2C 设计稿转码
 2. `Google A2UI`：AI生成的 `lowcode schema` `UI=F(state) A2UI UI=F(state) + AI(UI)`
 
 **知识库**
+
+1. `AI Coding`(`vibe coding`、`spec coding`)
+2. 设计稿转码
+3. AI IDE 建设（主流前端IDE都是 `webview`）
+   1. IDE AI Agent 需要大量和用户运行环境交互的能力
+   2. Cursor已经可以集成 `browser-like`方案，让AI可以感知Web运行是状态
+4. 自动化测试
+
+**核心观点**
+
+1. 前端主流工作内容会以人机协作的形态共存（`coding -> promt + coding共存`）
+2. 核心岗位能力要求上，会更偏重于「创造性」和「问题解决」
