@@ -1,9 +1,17 @@
-const Loading = (function () {
+(function () {
+  const isOpen = true;
   let loadingEl = null;
   let timer = null;
   let startTime = 0;
   const MIN_SHOW_TIME = 300;
   const MAX_SHOW_TIME = 6000;
+
+  function loadCSS() {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'src/components/loading/style.css';
+    document.head.appendChild(link);
+  }
 
   function createLoading() {
     if (loadingEl) return;
@@ -36,8 +44,11 @@ const Loading = (function () {
     }, delay);
   }
 
-  document.addEventListener('DOMContentLoaded', show);
-  window.addEventListener('load', hide);
+  if (isOpen) {
+    loadCSS();
+    document.addEventListener('DOMContentLoaded', show);
+    window.addEventListener('load', hide);
+  }
 
   return { show, hide };
 })();
