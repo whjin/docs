@@ -48,5 +48,16 @@
     window.addEventListener('load', hide);
   }
 
+  const backBtn = document.querySelector('.back-btn');
+  if (backBtn) {
+    backBtn.addEventListener('click', () => {
+      console.log(window.location);
+      const origin = window.location.origin;
+      const targetUrl = productionMode() ? `${origin}/docs` : origin;
+      console.log(targetUrl);
+      window.location.href = targetUrl;
+    });
+  }
+
   return { show, hide };
 })();

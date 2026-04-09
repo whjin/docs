@@ -19,9 +19,4 @@ $(function () {
   $('.scroll-top').on('click', function () {
     $('html,body').animate({ scrollTop: 0 }, 500);
   });
-  $('.back-btn').on('click', function () {
-    console.log(window.location);
-    const targetUrl = window.location.origin;
-    // window.location.href = targetUrl;
-  });
 });
