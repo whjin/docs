@@ -51,11 +51,8 @@
   const backBtn = document.querySelector('.back-btn');
   if (backBtn) {
     backBtn.addEventListener('click', () => {
-      console.log(window.location);
       const origin = window.location.origin;
-      console.log(productionMode());
       const targetUrl = productionMode() ? `${origin}/docs` : origin;
-      console.log(targetUrl);
       window.location.href = targetUrl;
     });
   }

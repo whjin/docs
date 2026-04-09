@@ -11,7 +11,7 @@ function Person(name, age) {
   this.name = name;
   this.age = age;
   this.sayHello = function () {
-    console.log(`你好，我是${this.name}，今年${this.age}岁`);
+    return `你好，我是${this.name}，今年${this.age}岁`;
   };
 }
 
