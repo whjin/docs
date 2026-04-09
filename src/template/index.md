@@ -2,6 +2,7 @@
 <summary>JavaScript</summary>
 
 - [原型链](src/template/viewer.html?JavaScript_原型链)
+- [原型链](src/template/viewer.html?JavaScript_原型链)
 
 </details>
 
