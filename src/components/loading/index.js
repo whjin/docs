@@ -3,7 +3,7 @@ const Loading = (function () {
   let timer = null;
   let startTime = 0;
   const MIN_SHOW_TIME = 300;
-  const MAX_SHOW_TIME = 3000;
+  const MAX_SHOW_TIME = 6000;
 
   function createLoading() {
     if (loadingEl) return;
