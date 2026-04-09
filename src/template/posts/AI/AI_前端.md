@@ -70,4 +70,18 @@ D2C 设计稿转码
 
 ## AI前端工程
 
-aaa
+1. 基础知识
+   1. `LLM`、`context`、`Agent`、`Function call`、`MPC`、`embedding`等AI工程落地相关必备的基础知识
+2. `MPC`
+   1. `MCP`协议详解 `MCP Client/Server` 实现原理
+3. 知识库
+   1. 向量数据库
+   2. `embedding`
+4. 主流 `AI Agent` 架构
+   1. `ReAct`
+   2. `Plan-and-Execute`
+   3. `Multi-Agent`
+   4. `AI workflow`
+5. AI前端工程实践：通过 `MCP` + 合理AI架构，解决实际的工程问题
+
+

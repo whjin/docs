@@ -56,7 +56,7 @@ const server = http.createServer((req, res) => {
     if (error) {
       if (error.code == 'ENOENT') {
         // 文件不存在
-        if (pathname === '/favicon.ico') {
+        if (pathname === '/favicon.png') {
           // 对于 favicon.ico，返回一个空的响应
           res.writeHead(204);
           res.end();
@@ -70,7 +70,7 @@ const server = http.createServer((req, res) => {
           path.join(rootDir, 'src', 'template', pathname),
           // 尝试去掉开头的 /src/template
           pathname.startsWith('/src/template/')
-            ? path.join(rootDir, pathname.substring('/src/template'.length))
+            ? path.join(rootDir, pathname.slice('/src/template'.length))
             : null,
         ].filter((p) => p && p !== filePath);
 
