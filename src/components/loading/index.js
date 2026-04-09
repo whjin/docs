@@ -42,7 +42,7 @@
       window.location.origin.includes(location),
     );
   }
-  console.log(productionMode());
+
   if (productionMode()) {
     document.addEventListener('DOMContentLoaded', show);
     window.addEventListener('load', hide);
