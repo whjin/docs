@@ -197,9 +197,9 @@ const triggerReload = (filePath) => {
 };
 
 watcher
-  .on('add', (filePath) => triggerReload(filePath))
-  .on('change', (filePath) => triggerReload(filePath))
-  .on('unlink', (filePath) => triggerReload(filePath))
+  .on('add', triggerReload)
+  .on('change', triggerReload)
+  .on('unlink', triggerReload)
   .on('error', (error) => console.error('[Live Server] 监听错误:', error));
 
 server.listen(PORT, () => {
