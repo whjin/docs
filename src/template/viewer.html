@@ -19,7 +19,7 @@
     <script>
       document.addEventListener('DOMContentLoaded', (e) => {
         const title = decodeURIComponent(window.location.search.slice(1));
-        document.title = '吴华锦 - ' + title;
+        document.title = `吴华锦 - ${title}`.toUpperCase();
         loadMarkdown('markdown-content', `posts/${title}.md`);
       });
     </script>

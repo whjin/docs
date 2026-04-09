@@ -3,8 +3,6 @@
 
 - [原型链](src/template/viewer.html?js_原型链)
 
-`codea`
-
 </details>
 
 <details>
