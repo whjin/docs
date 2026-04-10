@@ -24,5 +24,6 @@
 <summary>访谈</summary>
 
 - [新趋势](src/template/viewer.html?文档_新趋势)
+- [简历](src/template/viewer.html?文档_简历)
 
 </details>
