@@ -20,3 +20,4 @@
 4. 使用 `sessionStorage`，监听`scroll`事件，`window.scrollTo`实现滚动定位
 5. 通过 `window.location` 检测当前环境，只在生产环境启用 `loading` 组件
 6. 增加 `deploy.sh` 代码部署脚本，一键部署
+7. `shell` 脚本增加提取 `commit.md` 提交信息和有效期机制
