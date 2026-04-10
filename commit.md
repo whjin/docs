@@ -1,1 +1,1 @@
-feat: 增加shell脚本读取commit.md文件内容作为提交信息
+doc: 提交commit.md文件

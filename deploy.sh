@@ -24,9 +24,10 @@ fi
 
 git push 
 
+echo "按任意键关闭"
+read -n 1
+
 # 4. 提交成功后清空文件内容
 > "$COMMIT_FILE"
 
-echo "按任意键关闭"
-read -n 1
 exit 0
