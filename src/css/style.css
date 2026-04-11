@@ -59,6 +59,15 @@ h6 {
   right: 1em;
 }
 
+.nav a {
+  margin-left: 0.3em;
+}
+
+.nav img {
+  color: #000;
+  display: inline-block;
+}
+
 li.fold-panel > ul,
 li.fold-panel > ol {
   display: none;

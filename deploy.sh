@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# commin信息格式：时间戳 + 提交信息
+
 COMMIT_FILE="commit.md"
 DEFAULT_MESSAGE="提交更新"
 TMP_COMMIT=$(mktemp -t commit.XXXXXX 2>/dev/null || mktemp)
