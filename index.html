@@ -1,19 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
-    <meta
-      name="keywords"
-      content="whjin,开发文档,html,css,javascript,canvas,jquery,vue.js,http,ajax,git,webpack"
-    />
+    <meta name="keywords" content="whjin,开发文档,html,css,javascript,canvas,jquery,vue.js,http,ajax,git,webpack" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="description" content="开发文档" />
     <meta name="author" content="whjin" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>开发文档 &laquo; 吴华锦</title>
     <link rel="icon" href="src/images/favicon.png" />
     <link rel="stylesheet" href="src/css/bootstrap.min.css" />
@@ -27,7 +21,7 @@
     <header class="header">
       <div class="title">开发文档</div>
       <nav class="nav">
-        <a href="https://github.com/whjin/docs" target="_blank" title="Github">
+        <a href="https://github.com/whjin/docs" target="_blank" rel="noopener noreferrer" title="Github">
           <svg
             class="octicon octicon-mark-github"
             viewBox="0 0 16 16"
@@ -51,24 +45,21 @@
     <script src="src/js/marked-highlight.min.js" defer></script>
     <script src="src/js/util.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', (e) => {
+      document.addEventListener('DOMContentLoaded', e => {
         const filePath = 'src/template/index.md';
         loadMarkdown('markdown-content', filePath);
       });
 
       window.addEventListener('load', () => {
         const links = document.querySelectorAll('#markdown-content a');
-        links.forEach((link) => {
+        links.forEach(link => {
           link.setAttribute('target', '_blank');
           link.setAttribute('rel', 'noopener noreferrer');
         });
       });
     </script>
     <script>
-      if (
-        window.location.hostname === 'localhost' ||
-        window.location.hostname === '127.0.0.1'
-      ) {
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
         document.write('<script src="/src/js/client-reload.js"><\/script>');
       }
     </script>
@@ -79,17 +70,15 @@
         <script>
           document.write('2013 - ' + new Date().getFullYear());
         </script>
-        <a href="https://github.com/whjin" target="_blank" title="github">
-          wuhuajin
-        </a>
+        <a href="https://github.com/whjin" target="_blank" rel="noopener noreferrer" title="github"> wuhuajin </a>
         |
         <span id="busuanzi_container_site_pv" style="display: inline">
           访问
-          <a href="http://service.ibruce.info/" target="_blank">
+          <a href="http://service.ibruce.info/" target="_blank" rel="noopener noreferrer">
             <span id="busuanzi_value_site_uv"></span>
           </a>
           人
-          <a href="http://service.ibruce.info/" target="_blank">
+          <a href="http://service.ibruce.info/" target="_blank" rel="noopener noreferrer">
             <span id="busuanzi_value_site_pv"></span>
           </a>
           次
