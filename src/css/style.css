@@ -57,10 +57,13 @@ h6 {
 .nav {
   position: absolute;
   right: 1em;
+  top: 0.6em;
+  display: flex;
+  /* flex-direction: column; */
 }
 
 .nav a {
-  margin-left: 0.3em;
+  margin-left: 0.5em;
 }
 
 .nav img {

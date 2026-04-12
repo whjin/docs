@@ -1,9 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
-    <meta name="keywords" content="whjin,开发文档,html,css,javascript,canvas,jquery,vue.js,http,ajax,git,webpack" />
+    <meta
+      name="keywords"
+      content="whjin,开发文档,html,css,javascript,canvas,jquery,vue.js,http,ajax,git,webpack"
+    />
     <meta name="format-detection" content="telephone=no" />
     <meta name="description" content="开发文档" />
     <meta name="author" content="whjin" />
@@ -20,7 +23,6 @@
   <body>
     <header class="header">
       <div class="title">开发文档</div>
-      <script src="src/components/social/index.js"></script>
     </header>
     <main id="markdown-content" class="markdown-content entry"></main>
     <script src="src/components/loading/index.js"></script>
@@ -28,22 +30,26 @@
     <script src="src/js/highlight.min.js"></script>
     <script src="src/js/marked-highlight.min.js"></script>
     <script src="src/js/util.js"></script>
+    <script src="src/components/social/index.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', e => {
-        const filePath = 'src/template/index.md';
-        loadMarkdown('markdown-content', filePath);
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const filePath = "src/template/index.md";
+        loadMarkdown("markdown-content", filePath);
       });
 
-      window.addEventListener('load', () => {
-        const links = document.querySelectorAll('#markdown-content a');
-        links.forEach(link => {
-          link.setAttribute('target', '_blank');
-          link.setAttribute('rel', 'noopener noreferrer');
+      window.addEventListener("load", () => {
+        const links = document.querySelectorAll("#markdown-content a");
+        links.forEach((link) => {
+          link.setAttribute("target", "_blank");
+          link.setAttribute("rel", "noopener noreferrer");
         });
       });
     </script>
     <script>
-      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      if (
+        window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1"
+      ) {
         document.write('<script src="/src/js/client-reload.js"><\/script>');
       }
     </script>
@@ -52,17 +58,32 @@
       <div>
         &copy;
         <script>
-          document.write('2013 - ' + new Date().getFullYear());
+          document.write("2013 - " + new Date().getFullYear());
         </script>
-        <a href="https://github.com/whjin" target="_blank" rel="noopener noreferrer" title="github"> wuhuajin </a>
+        <a
+          href="https://github.com/whjin"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="github"
+        >
+          wuhuajin
+        </a>
         |
         <span id="busuanzi_container_site_pv" style="display: inline">
           访问
-          <a href="http://service.ibruce.info/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="http://service.ibruce.info/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span id="busuanzi_value_site_uv"></span>
           </a>
           人
-          <a href="http://service.ibruce.info/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="http://service.ibruce.info/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span id="busuanzi_value_site_pv"></span>
           </a>
           次
