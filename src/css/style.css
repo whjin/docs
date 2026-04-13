@@ -1,7 +1,15 @@
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC,
-    Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Helvetica Neue,
+    PingFang SC,
+    Microsoft YaHei,
+    Source Han Sans SC,
+    Noto Sans CJK SC,
+    WenQuanYi Micro Hei,
+    sans-serif;
   font-size: 16px;
   width: 100%;
   height: 100%;
@@ -40,26 +48,26 @@ h6 {
 .header {
   width: 100%;
   height: 50px;
+  box-sizing: border-box;
   background: #e9ecef;
   display: flex;
   align-items: center;
-  justify-content: center;
   position: fixed;
   top: 0;
+  padding: 0 0.5em;
 }
 
 .header .title {
   font-size: 1.5em;
   font-weight: 600;
-  padding: 0.2em 0;
 }
 
 .nav {
-  position: absolute;
-  right: 1em;
-  top: 0.6em;
+  height: 100%;
   display: flex;
-  /* flex-direction: column; */
+  align-items: center;
+  position: absolute;
+  right: 0.5em;
 }
 
 .nav a {
@@ -115,7 +123,9 @@ a:hover {
   background-color: #007bff;
   border-radius: 50%;
   transition: all 0.3s ease;
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.12), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
+  box-shadow:
+    0 0 3px 0 rgba(0, 0, 0, 0.12),
+    0 3px 3px 0 rgba(0, 0, 0, 0.24);
 }
 
 .scroll-top:hover {
@@ -131,6 +141,14 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.banner {
+  white-space: nowrap;
+  overflow: auto;
+}
+.banner::-webkit-scrollbar {
+  display: none;
 }
 
 div object {

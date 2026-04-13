@@ -32,33 +32,35 @@
     <script src="src/js/util.js"></script>
     <script src="src/components/social/index.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", (e) => {
-        const filePath = "src/template/index.md";
-        loadMarkdown("markdown-content", filePath);
+      document.addEventListener('DOMContentLoaded', (e) => {
+        const filePath = 'src/template/index.md';
+        loadMarkdown('markdown-content', filePath);
       });
 
-      window.addEventListener("load", () => {
-        const links = document.querySelectorAll("#markdown-content a");
+      window.addEventListener('load', () => {
+        const links = document.querySelectorAll('#markdown-content a');
         links.forEach((link) => {
-          link.setAttribute("target", "_blank");
-          link.setAttribute("rel", "noopener noreferrer");
+          link.setAttribute('target', '_blank');
+          link.setAttribute('rel', 'noopener noreferrer');
         });
       });
     </script>
     <script>
       if (
-        window.location.hostname === "localhost" ||
-        window.location.hostname === "127.0.0.1"
+        window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1'
       ) {
         document.write('<script src="/src/js/client-reload.js"><\/script>');
       }
     </script>
     <footer class="footer">
       <script src="src/js/busuanzi.min.js"></script>
-      <div>
+      <div class="banner">
         &copy;
         <script>
-          document.write("2013 - " + new Date().getFullYear());
+          document.write(
+            `${isMobile() ? '' : '2013 - '}${new Date().getFullYear()}`,
+          );
         </script>
         <a
           href="https://github.com/whjin"
