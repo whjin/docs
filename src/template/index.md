@@ -25,6 +25,7 @@
 
 - [新趋势](src/template/viewer.html?文档_新趋势)
 - [简历](src/template/viewer.html?文档_简历)
-- [简历PDF](src/template/viewer.html?文档_吴华锦-前端开发工程师)
+- [简历1](src/template/viewer.html?文档_简历1&format=pdf)
+- [简历PDF](src/template/viewer.html?文档_简历PDF&format=pdf)
 
 </details>
