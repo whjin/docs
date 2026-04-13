@@ -29,22 +29,23 @@ function handler(targetId, filePath, callback) {
         }
         return hljs.highlightAuto(code).value;
       },
-    })
+    }),
   );
 
   fetch(filePath)
-    .then(response => {
+    .then((response) => {
       if (!response.ok) throw new Error(`文件加载失败: ${filePath}`);
       return response.text();
     })
-    .then(markdownContent => {
+    .then((markdownContent) => {
       const htmlContent = marked.parse(markdownContent);
       document.getElementById(targetId).innerHTML = htmlContent;
       callback && callback();
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('渲染失败:', error);
-      document.getElementById(targetId).innerHTML = `<div style="color: red;">加载失败：${error.message}</div>`;
+      document.getElementById(targetId).innerHTML =
+        `<div style="color: red;">加载失败：${error.message}</div>`;
       callback && callback();
     });
 }

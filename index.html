@@ -29,7 +29,7 @@
     <script src="src/js/marked.min.js"></script>
     <script src="src/js/highlight.min.js"></script>
     <script src="src/js/marked-highlight.min.js"></script>
-    <script src="src/js/util.js"></script>
+    <script src="src/components/render/index.js"></script>
     <script src="src/components/social/index.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', (e) => {
@@ -50,7 +50,9 @@
         window.location.hostname === 'localhost' ||
         window.location.hostname === '127.0.0.1'
       ) {
-        document.write('<script src="/src/js/client-reload.js"><\/script>');
+        document.write(
+          '<script src="/src/components/reload/index.js"><\/script>',
+        );
       }
     </script>
     <footer class="footer">
@@ -96,6 +98,6 @@
       <span class="arrow-icon" title="回到顶部"></span>
     </div>
     <script src="src/js/jquery.min.js"></script>
-    <script src="src/js/scrollTop.js"></script>
+    <script src="src/components/scroll/index.js"></script>
   </body>
 </html>

@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="../css/back.css" />
   </head>
   <body>
-    <!-- <div class="back-btn" title="返回首页">返回</div> -->
+    <div class="back-btn" title="返回首页">返回</div>
     <main id="markdown-content" class="markdown-content viewer"></main>
     <script src="../components/loading/index.js"></script>
     <script src="../js/marked.min.js"></script>
     <script src="../js/highlight.min.js"></script>
     <script src="../js/marked-highlight.min.js"></script>
-    <script src="../js/util.js"></script>
+    <script src="../components/render/index.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', (e) => {
         let query = window.location.search.slice(1);
@@ -36,6 +36,6 @@
       <span class="arrow-icon" title="回到顶部"></span>
     </div>
     <script src="../js/jquery.min.js"></script>
-    <script src="../js/scrollTop.js"></script>
+    <script src="../components/scroll/index.js"></script>
   </body>
 </html>
