@@ -1,3 +1,10 @@
+function isMobile() {
+  const ua = navigator.userAgent;
+  const isMobileUA =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+  return isMobileUA;
+}
+
 (function () {
   const socials = [
     {
@@ -26,13 +33,6 @@
     },
   ];
 
-  function isMobile() {
-    const ua = navigator.userAgent;
-    const isMobileUA =
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
-    return isMobileUA;
-  }
-
   const titleEl = document.querySelector('.title');
 
   const navEl = document.createElement('nav');
@@ -60,7 +60,4 @@
 
   const headerEl = document.querySelector('.header');
   headerEl.style.justifyContent = isMobile() ? 'flex-start' : 'center';
-
-  const footerEl = document.querySelector('.footer');
-  footerEl.innerHTML = `<span>&copy;${isMobile() ? '' : '2013-'}${new Date().getFullYear()}</span>`;
 })();
