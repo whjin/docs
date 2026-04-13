@@ -141,13 +141,11 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.banner {
   white-space: nowrap;
   overflow: auto;
 }
-.banner::-webkit-scrollbar {
+
+.footer::-webkit-scrollbar {
   display: none;
 }
 

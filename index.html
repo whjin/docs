@@ -30,69 +30,38 @@
     <script src="src/js/highlight.min.js"></script>
     <script src="src/js/marked-highlight.min.js"></script>
     <script src="src/components/render/index.js"></script>
-    <script src="src/components/social/index.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', (e) => {
-        const filePath = 'src/template/index.md';
-        loadMarkdown('markdown-content', filePath);
-      });
-
-      window.addEventListener('load', () => {
-        const links = document.querySelectorAll('#markdown-content a');
-        links.forEach((link) => {
-          link.setAttribute('target', '_blank');
-          link.setAttribute('rel', 'noopener noreferrer');
-        });
-      });
-    </script>
-    <script>
-      if (
-        window.location.hostname === 'localhost' ||
-        window.location.hostname === '127.0.0.1'
-      ) {
-        document.write(
-          '<script src="/src/components/reload/index.js"><\/script>',
-        );
-      }
-    </script>
+    <script src="src/components/render/home.js"></script>
     <footer class="footer">
       <script src="src/js/busuanzi.min.js"></script>
-      <div class="banner">
-        &copy;
-        <script>
-          document.write(
-            `${isMobile() ? '' : '2013 - '}${new Date().getFullYear()}`,
-          );
-        </script>
+      <script src="src/components/social/index.js"></script>
+      <a
+        href="https://github.com/whjin"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="github"
+      >
+        &nbsp;wuhuajin&nbsp;
+      </a>
+      |
+      <span id="busuanzi_container_site_pv" style="display: inline">
+        &nbsp;访问
         <a
-          href="https://github.com/whjin"
+          href="http://service.ibruce.info/"
           target="_blank"
           rel="noopener noreferrer"
-          title="github"
         >
-          wuhuajin
+          <span id="busuanzi_value_site_uv"></span>
         </a>
-        |
-        <span id="busuanzi_container_site_pv" style="display: inline">
-          访问
-          <a
-            href="http://service.ibruce.info/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span id="busuanzi_value_site_uv"></span>
-          </a>
-          人
-          <a
-            href="http://service.ibruce.info/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span id="busuanzi_value_site_pv"></span>
-          </a>
-          次
-        </span>
-      </div>
+        人
+        <a
+          href="http://service.ibruce.info/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span id="busuanzi_value_site_pv"></span>
+        </a>
+        次
+      </span>
     </footer>
     <div class="scroll-top opacity">
       <span class="arrow-icon" title="回到顶部"></span>

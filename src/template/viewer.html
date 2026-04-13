@@ -19,19 +19,9 @@
     <script src="../js/marked.min.js"></script>
     <script src="../js/highlight.min.js"></script>
     <script src="../js/marked-highlight.min.js"></script>
+    <script src="../js/pdf.min.js"></script>
     <script src="../components/render/index.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', (e) => {
-        let query = window.location.search.slice(1);
-        let idx = query.indexOf('_');
-        let dir = query.slice(0, idx);
-        let title = decodeURIComponent(query.slice(idx + 1));
-        document.title = `${title.toUpperCase()} \u00AB 吴华锦`;
-
-        const filePath = `posts/${dir}/${title}.md`;
-        loadMarkdown('markdown-content', filePath);
-      });
-    </script>
+    <script src="../components/render/viewer.js"></script>
     <div class="scroll-top opacity">
       <span class="arrow-icon" title="回到顶部"></span>
     </div>

@@ -1,20 +1,3 @@
-function loadMarkdown(targetId, filePath) {
-  const scrollKey = `scrollPosition_${encodeURIComponent(filePath)}`;
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    sessionStorage.setItem(scrollKey, scrollTop);
-  });
-  handler(targetId, filePath, () => {
-    const savedScrollTop = sessionStorage.getItem(scrollKey);
-    if (savedScrollTop) {
-      window.scrollTo({
-        top: parseInt(savedScrollTop, 10),
-        behavior: 'auto',
-      });
-    }
-  });
-}
-
 function handler(targetId, filePath, callback) {
   marked.use(
     markedHighlight.markedHighlight({
@@ -48,4 +31,25 @@ function handler(targetId, filePath, callback) {
         `<div style="color: red;">加载失败：${error.message}</div>`;
       callback && callback();
     });
+}
+
+function loadMarkdown(targetId, filePath) {
+  const scrollKey = `scrollPosition_${encodeURIComponent(filePath)}`;
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    sessionStorage.setItem(scrollKey, scrollTop);
+  });
+  handler(targetId, filePath, () => {
+    const savedScrollTop = sessionStorage.getItem(scrollKey);
+    if (savedScrollTop) {
+      window.scrollTo({
+        top: parseInt(savedScrollTop, 10),
+        behavior: 'auto',
+      });
+    }
+  });
+}
+
+function loadAPDF() {
+  
 }
