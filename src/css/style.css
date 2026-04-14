@@ -143,7 +143,8 @@ a:hover {
   overflow: auto;
 }
 
-.footer::-webkit-scrollbar {
+.footer::-webkit-scrollbar,
+pre::-webkit-scrollbar {
   display: none;
 }
 
@@ -191,6 +192,11 @@ li,
 
 li {
   margin: 0.5em auto;
+}
+
+.markdown-content pre {
+  max-height: 360px;
+  border-radius: 6px;
 }
 
 code {
