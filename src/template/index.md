@@ -23,7 +23,7 @@
 <details>
 <summary>工程化</summary>
 
-- [自动化测试](src/template/viewer.html?工程化_自动化测试)
+- [封装接口请求](src/template/viewer.html?工程化_封装接口请求)
 
 </details>
 
