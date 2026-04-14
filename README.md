@@ -21,3 +21,4 @@
 5. 通过 `window.location` 检测当前环境，只在生产环境启用 `loading` 组件
 6. 增加 `deploy.sh` 代码部署脚本，一键部署
 7. `shell` 脚本增加提取 `commit.md` 提交信息和有效期机制
+8. 添加 `viewer.html` 预览页面，兼容处理 `md` 和 `pdf` 文件

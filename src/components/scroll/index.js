@@ -1,22 +1,49 @@
 $(function () {
+  const IDLE_TIME = 6000;
+  let idleTimer = null;
+  const $scrollTop = $('.scroll-top');
+  const $backBtn = $('.back-btn');
+
+  function resetIdleTimer() {
+    if (idleTimer) clearTimeout(idleTimer);
+    $scrollTop.removeClass('opacity');
+    idleTimer = setTimeout(() => {
+      $scrollTop.addClass('opacity');
+    }, IDLE_TIME);
+  }
+
   $(window).scroll(function () {
-    let $Height = $(window).scrollTop();
-    if ($Height === 0) {
-      $('.back-btn').removeClass('hidden');
-      $('.scroll-top').addClass('opacity');
+    const scrollHeight = $(window).scrollTop();
+
+    if (scrollHeight === 0) {
+      $backBtn.removeClass('hidden');
+      $scrollTop.addClass('opacity');
     } else {
-      $('.back-btn').addClass('hidden');
-      $('.scroll-top').removeClass('opacity');
+      $backBtn.addClass('hidden');
+      $scrollTop.removeClass('opacity');
     }
-    if ($Height > 100) {
-      $('.back-btn').fadeOut(500);
-      $('.scroll-top').fadeIn(500);
+    if (scrollHeight > 100) {
+      $backBtn.fadeOut(500);
+      $scrollTop.fadeIn(500);
     } else {
-      $('.back-btn').fadeIn(500);
-      $('.scroll-top').fadeOut(500);
+      $backBtn.fadeIn(500);
+      $scrollTop.fadeOut(500);
     }
+
+    resetIdleTimer();
   });
-  $('.scroll-top').on('click', function () {
+
+  $scrollTop.on('click', function () {
     $('html,body').animate({ scrollTop: 0 }, 500);
   });
+
+  $scrollTop.hover(
+    function () {
+      if (idleTimer) clearTimeout(idleTimer);
+      $(this).removeClass('opacity');
+    },
+    function () {
+      resetIdleTimer();
+    },
+  );
 });
