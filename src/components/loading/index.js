@@ -44,8 +44,12 @@
   }
 
   if (productionMode()) {
-    document.addEventListener('DOMContentLoaded', show);
-    window.addEventListener('load', hide);
+    window.addEventListener('DOMContentLoaded', () => {
+      show();
+    });
+    window.addEventListener('load', () => {
+      hide();
+    });
   } else {
     const socket = new WebSocket(`ws://${location.host}`);
 

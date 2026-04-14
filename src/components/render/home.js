@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', (e) => {
+window.addEventListener('DOMContentLoaded', (e) => {
   const filePath = 'src/template/index.md';
   loadMarkdown('markdown-content', filePath);
 });
