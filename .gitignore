@@ -3,3 +3,8 @@
 node_modules
 pnpm-lock.yaml
 dist
+src/test/react/node_modules
+src/test/vue/node_modules
+src/test/react/package-lock.json
+src/test/vue/pnpm-lock.yaml
+src/test/vue/.vscode
