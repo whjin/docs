@@ -1,9 +1,3 @@
-// 第一步：配置 PDF.js Worker 路径（关键！放在最前面）
-// 方式1：使用 CDN 加载 Worker（推荐，无需本地文件）
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-// 方式2：使用本地 Worker 文件（需下载 pdf.worker.min.js 到本地对应路径）
-// pdfjsLib.GlobalWorkerOptions.workerSrc = 'libs/pdf.worker.min.js';
-
 window.addEventListener('DOMContentLoaded', (e) => {
   let query = decodeURIComponent(window.location.search.slice(1));
   let idx = query.indexOf('_');
@@ -30,94 +24,89 @@ window.addEventListener('load', () => {
   });
 });
 
-// 判断是否为移动端
-function isMobile() {
-  return window.innerWidth < 768;
-}
-
-// 初始化PDF页面缩放比例（用于触摸缩放）
-let pdfScale = 1;
-
 async function renderPDF(url) {
   const container = document.getElementById('markdown-content');
-  // 添加移动端适配样式
-  container.style.cssText = `
-    width: 100%;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch; /* 移动端顺滑滚动 */
-  `;
-
   try {
     container.innerHTML = '';
+    // 加载PDF文件
     const pdf = await pdfjsLib.getDocument(url).promise;
+    // 获取容器宽度（用于动态计算缩放比例）
     const containerWidth = container.clientWidth;
-    // 获取设备像素比，保证高清显示
-    const dpr = window.devicePixelRatio || 1;
+    // 缓存每页的渲染数据（用于手势缩放）
+    const pageRenderDatas = [];
 
     // 循环渲染每一页
     for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
       const page = await pdf.getPage(pageNum);
       const originViewport = page.getViewport({ scale: 1 });
 
-      // 基础缩放比例（容器宽度适配）
-      let baseScale = containerWidth / originViewport.width;
-      // 移动端缩放优化：提升缩放系数，结合设备像素比
-      if (isMobile()) {
-        // 移动端缩放系数更高（可根据需求调整），同时乘设备像素比
-        baseScale = (containerWidth / originViewport.width) * 3 * dpr;
-        // 保证最小缩放比例，避免过小
-        baseScale = Math.max(baseScale, 1.5);
-      } else {
-        // 桌面端保持原有逻辑，结合dpr
-        baseScale = (containerWidth / originViewport.width) * 2 * dpr;
-      }
+      // ========== 核心优化：适配移动端的缩放逻辑 ==========
+      // 1. 基础缩放：宽度适配容器 + 移动端最小缩放保障
+      const baseScale = containerWidth / originViewport.width;
+      // 2. 设备像素比：提升高清显示（适配Retina屏）
+      const pixelRatio = window.devicePixelRatio || 1;
+      // 3. 移动端缩放系数：保证字体大小（可根据需求调整，比如1.5/2）
+      const mobileScaleFactor = isMobile() ? 2.5 : 2;
+      // 最终缩放比例
+      const scale = baseScale * mobileScaleFactor * pixelRatio;
+      // 兜底：最小缩放比例（避免过小）
+      const finalScale = Math.max(scale, 1.5);
 
-      // 应用最终缩放比例（支持手动调整）
-      const viewport = page.getViewport({ scale: baseScale * pdfScale });
+      const viewport = page.getViewport({ scale: finalScale });
+      // 创建Canvas
       const canvas = document.createElement('canvas');
       const context = canvas.getContext('2d');
-
-      // 设置Canvas尺寸（高清+适配）
+      // 设置Canvas原生宽高（高清关键）
       canvas.width = viewport.width;
       canvas.height = viewport.height;
-      // Canvas 响应式样式：100%宽度，高度自适应，移动端禁止横向溢出
+      // ========== 新增：Canvas样式适配 ==========
       canvas.style.cssText = `
-        width: 100%;
+        max-width: 100%;
         height: auto;
         display: block;
         margin: 10px auto;
-        max-width: 100vw;
-        box-sizing: border-box;
       `;
-
       container.appendChild(canvas);
+
       // 渲染PDF页面
       await page.render({
         canvasContext: context,
         viewport,
       }).promise;
 
-      // 移动端添加触摸缩放功能
-      if (isMobile()) {
-        addTouchZoom(canvas, page, originViewport, baseScale, containerWidth, dpr);
-      }
+      // 缓存页面数据（用于手势缩放）
+      pageRenderDatas.push({
+        page,
+        canvas,
+        originViewport,
+        containerWidth,
+        pixelRatio,
+      });
     }
+
+    // ========== 新增：移动端手势缩放支持（捏合放大/缩小） ==========
+    initPinchZoom(container, pageRenderDatas);
   } catch (error) {
     console.error('PDF文件加载失败:', error);
     container.innerHTML = `<p style="text-align:center; padding:20px; color:red;">PDF 加载失败，请检查文件路径</p>`;
   }
 }
 
-// 移动端触摸缩放功能
-function addTouchZoom(canvas, page, originViewport, baseScale, containerWidth, dpr) {
-  let lastDistance = 0;
-  let currentScale = pdfScale;
+// 辅助函数：判断是否为移动端
+function isMobile() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
 
-  // 触摸开始：记录初始距离
-  canvas.addEventListener('touchstart', (e) => {
+// 辅助函数：初始化手势缩放
+function initPinchZoom(container, pageRenderDatas) {
+  let currentScale = 1; // 当前缩放倍数
+  let startDistance = 0; // 手势起始距离
+
+  // 触摸开始：计算初始距离
+  container.addEventListener('touchstart', (e) => {
     if (e.touches.length === 2) {
       // 计算两个触摸点的距离
-      lastDistance = Math.hypot(
+      startDistance = Math.hypot(
         e.touches[0].clientX - e.touches[1].clientX,
         e.touches[0].clientY - e.touches[1].clientY,
       );
@@ -125,42 +114,49 @@ function addTouchZoom(canvas, page, originViewport, baseScale, containerWidth, d
   });
 
   // 触摸移动：计算缩放比例并重新渲染
-  canvas.addEventListener('touchmove', (e) => {
+  container.addEventListener('touchmove', (e) => {
     e.preventDefault(); // 阻止页面滚动
-    if (e.touches.length === 2) {
+    if (e.touches.length === 2 && startDistance > 0) {
+      // 计算当前距离
       const currentDistance = Math.hypot(
         e.touches[0].clientX - e.touches[1].clientX,
         e.touches[0].clientY - e.touches[1].clientY,
       );
-      // 计算缩放增量（0.01为缩放灵敏度，可调整）
-      const scaleDelta = (currentDistance - lastDistance) * 0.01;
-      // 更新当前缩放比例，限制范围（1-3避免过大/过小）
-      currentScale = Math.max(1, Math.min(currentScale + scaleDelta, 3));
-      lastDistance = currentDistance;
-
-      // 更新全局缩放比例并重新渲染
-      pdfScale = currentScale;
-      const newViewport = page.getViewport({
-        scale: baseScale * currentScale,
-      });
-      canvas.width = newViewport.width;
-      canvas.height = newViewport.height;
-      page.render({
-        canvasContext: canvas.getContext('2d'),
-        viewport: newViewport,
-      });
+      // 计算缩放比例（相对于初始距离）
+      currentScale = currentDistance / startDistance;
+      // 限制缩放范围（1~3倍，避免过大/过小）
+      currentScale = Math.min(Math.max(currentScale, 1), 3);
+      // 重新渲染所有页面
+      renderPagesWithScale(pageRenderDatas, currentScale);
     }
   });
 
-  // 触摸结束：重置距离
-  canvas.addEventListener('touchend', () => {
-    lastDistance = 0;
+  // 触摸结束：重置初始距离
+  container.addEventListener('touchend', () => {
+    startDistance = 0;
   });
 }
 
-// 补充：如果原代码有 loadMarkdown 函数，需保留（此处补全空实现，避免报错）
-function loadMarkdown(elId, path) {
-  // 原 loadMarkdown 逻辑（若有），若无则可根据需求实现
-  const container = document.getElementById(elId);
-  container.innerHTML = `<p>加载 Markdown 文件：${path}</p>`;
+// 辅助函数：根据缩放比例重新渲染PDF页面
+function renderPagesWithScale(pageRenderDatas, scaleFactor) {
+  pageRenderDatas.forEach(async (data) => {
+    const { page, canvas, originViewport, containerWidth, pixelRatio } = data;
+    // 基础缩放逻辑（和初始化一致）
+    const baseScale = containerWidth / originViewport.width;
+    const mobileScaleFactor = isMobile() ? 2.5 : 2;
+    const baseFinalScale = baseScale * mobileScaleFactor * pixelRatio;
+    // 叠加手势缩放比例
+    const finalScale = baseFinalScale * scaleFactor;
+
+    const viewport = page.getViewport({ scale: finalScale });
+    // 更新Canvas尺寸
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    // 重新渲染页面
+    const context = canvas.getContext('2d');
+    await page.render({
+      canvasContext: context,
+      viewport,
+    }).promise;
+  });
 }
