@@ -8,7 +8,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const splits = title.split('&format=');
     document.title = `${splits[0].toUpperCase()} \u00AB 吴华锦`;
 
-    renderPDF(`posts/${dir}/${splits[0]}.${splits[1]}`);
+    const filePath = `posts/${dir}/${splits[0]}.${splits[1]}`;
+    const jsPath = 'src/js/pdf.worker.min.js';
+    renderPDF(filePath, jsPath);
   } else {
     document.title = `${title.toUpperCase()} \u00AB 吴华锦`;
     loadMarkdown('markdown-content', `posts/${dir}/${title}.md`);
@@ -23,8 +25,8 @@ window.addEventListener('load', () => {
   });
 });
 
-async function renderPDF(url) {
-  pdfjsLib.GlobalWorkerOptions.workerSrc = 'js/pdf.worker.min.js';
+async function renderPDF(url, path) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = path;
 
   document.querySelector('.markdown-content.viewer').style.padding = '0px';
 
