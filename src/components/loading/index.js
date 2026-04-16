@@ -1,3 +1,9 @@
+function isMobile() {
+  const ua = navigator.userAgent;
+  const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+  return isMobileUA;
+}
+
 (function () {
   let loadingEl = null;
   let timer = null;
@@ -38,12 +44,10 @@
 
   function productionMode() {
     const locations = ['localhost', '127.0.0.1', '8000'];
-    return !locations.some((location) =>
-      window.location.origin.includes(location),
-    );
+    return !locations.some((location) => window.location.origin.includes(location));
   }
 
-  if (productionMode()) {
+  if (productionMode() || isMobile()) {
     window.addEventListener('DOMContentLoaded', () => {
       show();
     });
@@ -81,6 +85,4 @@
       window.location.href = targetUrl;
     });
   }
-
-  return { show, hide };
 })();

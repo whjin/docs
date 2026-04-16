@@ -27,8 +27,7 @@ function handler(targetId, filePath, callback) {
     })
     .catch((error) => {
       console.error('渲染失败:', error);
-      document.getElementById(targetId).innerHTML =
-        `<div style="color: red;">加载失败：${error.message}</div>`;
+      document.getElementById(targetId).innerHTML = `<div style="color: red;">加载失败：${error.message}</div>`;
       callback && callback();
     });
 }
@@ -48,11 +47,4 @@ function loadMarkdown(targetId, filePath) {
       });
     }
   });
-}
-
-function isMobile() {
-  const ua = navigator.userAgent;
-  const isMobileUA =
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
-  return isMobileUA;
 }

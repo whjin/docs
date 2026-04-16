@@ -74,39 +74,8 @@ async function renderPDF(url) {
         viewport: renderViewport,
       }).promise;
     }
-
-    // enableMobileScale();
   } catch (error) {
     console.error('PDF文件加载失败:', error);
     container.innerHTML = `<p style="text-align:center; padding:20px; color:red;">PDF 加载失败，请检查文件路径</p>`;
   }
-}
-
-// 移动端手势缩放
-function enableMobileScale() {
-  const canvases = document.querySelectorAll('.markdown-content canvas');
-  canvases.forEach((canvas) => {
-    let initialScale = 1,
-      lastDistance = 0;
-    canvas.addEventListener('touchstart', (e) => {
-      if (e.touches.length === 2) {
-        lastDistance = Math.hypot(
-          e.touches[0].clientX - e.touches[1].clientX,
-          e.touches[0].clientY - e.touches[1].clientY,
-        );
-        initialScale = parseFloat(canvas.style.transform?.replace('scale(', '') || 1);
-      }
-    });
-    canvas.addEventListener('touchmove', (e) => {
-      if (e.touches.length === 2) {
-        e.preventDefault();
-        const currDistance = Math.hypot(
-          e.touches[0].clientX - e.touches[1].clientX,
-          e.touches[0].clientY - e.touches[1].clientY,
-        );
-        canvas.style.transform = `scale(${(initialScale * currDistance) / lastDistance})`;
-        canvas.style.transformOrigin = 'center';
-      }
-    });
-  });
 }
