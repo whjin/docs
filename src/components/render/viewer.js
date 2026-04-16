@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const splits = title.split('&format=');
     document.title = `${splits[0].toUpperCase()} \u00AB 吴华锦`;
 
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'src/js/pdf.worker.min.js';
+    pdfjsLib.GlobalWorkerOptions.workerSrc = '/src/js/pdf.worker.min.js';
 
     const pdfUrl = `posts/${dir}/${splits[0]}.${splits[1]}`;
     renderPDF(pdfUrl);
