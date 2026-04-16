@@ -8,10 +8,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const splits = title.split('&format=');
     document.title = `${splits[0].toUpperCase()} \u00AB 吴华锦`;
 
-    pdfjsLib.GlobalWorkerOptions.workerSrc = '../js/pdf.worker.min.js';
-
-    const pdfUrl = `posts/${dir}/${splits[0]}.${splits[1]}`;
-    renderPDF(pdfUrl);
+    renderPDF(`posts/${dir}/${splits[0]}.${splits[1]}`);
   } else {
     document.title = `${title.toUpperCase()} \u00AB 吴华锦`;
     loadMarkdown('markdown-content', `posts/${dir}/${title}.md`);
@@ -27,6 +24,10 @@ window.addEventListener('load', () => {
 });
 
 async function renderPDF(url) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'src/js/pdf.worker.min.js';
+
+  document.querySelector('.markdown-content.viewer').style.padding = '0px';
+
   const container = document.getElementById('markdown-content');
   try {
     container.innerHTML = '';
@@ -36,6 +37,7 @@ async function renderPDF(url) {
 
     // 2. 获取容器宽度（用于动态计算缩放比例）
     const containerWidth = container.clientWidth;
+    const dpr = window.devicePixelRatio || 1;
 
     // 3. 循环渲染每一页
     for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
@@ -45,7 +47,14 @@ async function renderPDF(url) {
       const originViewport = page.getViewport({ scale: 1 });
 
       // 计算缩放比例：保证宽度100%适配容器
-      const scale = (containerWidth / originViewport.width) * 2;
+      let scale = (containerWidth / originViewport.width) * dpr;
+      if (isMobile()) {
+        scale = Math.min(scale * 2, window.innerWidth / originViewport.width);
+      }
+      scale = Math.min(scale, containerWidth / originViewport.width);
+
+      // 高清渲染（解决模糊）
+      const renderViewport = page.getViewport({ scale: scale * dpr });
 
       // 获取缩放后的视口尺寸（决定Canvas原生大小，影响清晰度）
       const viewport = page.getViewport({ scale });
@@ -54,57 +63,50 @@ async function renderPDF(url) {
       const canvas = document.createElement('canvas');
       const context = canvas.getContext('2d');
 
-      // 设置Canvas的尺寸
-      canvas.width = viewport.width; // 原生宽度=缩放后的宽度（高清）
-      canvas.height = viewport.height; // 原生高度=缩放后的高度（无截断）
-      container.appendChild(canvas);
+      canvas.width = renderViewport.width;
+      canvas.height = renderViewport.height;
+      canvas.style.height = `${viewport.height}px`;
 
+      container.appendChild(canvas);
       // 渲染PDF页面到Canvas
       await page.render({
         canvasContext: context,
-        viewport,
+        viewport: renderViewport,
       }).promise;
     }
 
-    if (isMobile()) {
-      const canvases = container.querySelectorAll('canvas');
-      canvases.forEach((canvas) => {
-        let initialScale = 1;
-        let lastTouchDistance = 0;
-
-        // 触摸开始：记录初始距离
-        canvas.addEventListener('touchstart', (e) => {
-          if (e.touches.length === 2) {
-            lastTouchDistance = Math.hypot(
-              e.touches[0].clientX - e.touches[1].clientX,
-              e.touches[0].clientY - e.touches[1].clientY,
-            );
-            initialScale = parseFloat(canvas.style.transform?.replace('scale(', '') || 1);
-          }
-        });
-
-        // 触摸移动：计算缩放比例并应用
-        canvas.addEventListener('touchmove', (e) => {
-          e.preventDefault(); // 阻止页面滚动
-          if (e.touches.length === 2) {
-            const currentDistance = Math.hypot(
-              e.touches[0].clientX - e.touches[1].clientX,
-              e.touches[0].clientY - e.touches[1].clientY,
-            );
-            const scaleRatio = currentDistance / lastTouchDistance;
-            canvas.style.transform = `scale(${initialScale * scaleRatio})`;
-            canvas.style.transformOrigin = 'center center'; // 居中缩放
-          }
-        });
-
-        // 触摸结束：重置状态
-        canvas.addEventListener('touchend', () => {
-          lastTouchDistance = 0;
-        });
-      });
-    }
+    enableMobileScale();
   } catch (error) {
     console.error('PDF文件加载失败:', error);
     container.innerHTML = `<p style="text-align:center; padding:20px; color:red;">PDF 加载失败，请检查文件路径</p>`;
   }
+}
+
+// 移动端手势缩放
+function enableMobileScale() {
+  const canvases = document.querySelectorAll('.markdown-content canvas');
+  canvases.forEach((canvas) => {
+    let initialScale = 1,
+      lastDistance = 0;
+    canvas.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 2) {
+        lastDistance = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY,
+        );
+        initialScale = parseFloat(canvas.style.transform?.replace('scale(', '') || 1);
+      }
+    });
+    canvas.addEventListener('touchmove', (e) => {
+      if (e.touches.length === 2) {
+        e.preventDefault();
+        const currDistance = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY,
+        );
+        canvas.style.transform = `scale(${(initialScale * currDistance) / lastDistance})`;
+        canvas.style.transformOrigin = 'center';
+      }
+    });
+  });
 }
