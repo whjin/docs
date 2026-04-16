@@ -50,6 +50,9 @@ function loadMarkdown(targetId, filePath) {
   });
 }
 
-function loadAPDF() {
-  
+function isMobile() {
+  const ua = navigator.userAgent;
+  const isMobileUA =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+  return isMobileUA;
 }

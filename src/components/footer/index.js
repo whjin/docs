@@ -8,7 +8,7 @@
         title="github"
       >
         &nbsp;wuhuajin
-      </a>|
+      </a>&nbsp;|
       <span id="busuanzi_container_site_pv" style="display: inline">&nbsp;访问
         <a
           href="http://service.ibruce.info/"
