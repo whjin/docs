@@ -8,6 +8,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const splits = title.split('&format=');
     document.title = `${splits[0].toUpperCase()} \u00AB 吴华锦`;
 
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'src/js/pdf.worker.min.js';
+
     const pdfUrl = `posts/${dir}/${splits[0]}.${splits[1]}`;
     renderPDF(pdfUrl);
   } else {
@@ -62,6 +64,44 @@ async function renderPDF(url) {
         canvasContext: context,
         viewport,
       }).promise;
+    }
+
+    if (isMobile()) {
+      const canvases = container.querySelectorAll('canvas');
+      canvases.forEach((canvas) => {
+        let initialScale = 1;
+        let lastTouchDistance = 0;
+
+        // 触摸开始：记录初始距离
+        canvas.addEventListener('touchstart', (e) => {
+          if (e.touches.length === 2) {
+            lastTouchDistance = Math.hypot(
+              e.touches[0].clientX - e.touches[1].clientX,
+              e.touches[0].clientY - e.touches[1].clientY,
+            );
+            initialScale = parseFloat(canvas.style.transform?.replace('scale(', '') || 1);
+          }
+        });
+
+        // 触摸移动：计算缩放比例并应用
+        canvas.addEventListener('touchmove', (e) => {
+          e.preventDefault(); // 阻止页面滚动
+          if (e.touches.length === 2) {
+            const currentDistance = Math.hypot(
+              e.touches[0].clientX - e.touches[1].clientX,
+              e.touches[0].clientY - e.touches[1].clientY,
+            );
+            const scaleRatio = currentDistance / lastTouchDistance;
+            canvas.style.transform = `scale(${initialScale * scaleRatio})`;
+            canvas.style.transformOrigin = 'center center'; // 居中缩放
+          }
+        });
+
+        // 触摸结束：重置状态
+        canvas.addEventListener('touchend', () => {
+          lastTouchDistance = 0;
+        });
+      });
     }
   } catch (error) {
     console.error('PDF文件加载失败:', error);
