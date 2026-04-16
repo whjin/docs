@@ -11,6 +11,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     renderPDF(`posts/${dir}/${splits[0]}.${splits[1]}`);
   } else {
     document.title = `${title.toUpperCase()} \u00AB 吴华锦`;
+
     loadMarkdown('markdown-content', `posts/${dir}/${title}.md`);
   }
 });
