@@ -3,6 +3,7 @@
 
 - [简历文档](src/template/viewer.html?简历_简历文档)
 - [简历PDF](src/template/viewer.html?简历_简历PDF&format=pdf)
+- [简历详解](src/template/viewer.html?简历_简历详解)
 
 </details>
 
