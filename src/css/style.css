@@ -160,6 +160,7 @@ div object {
 
 .markdown-content canvas {
   width: 100%;
+  font-size: 3em;
 }
 
 .markdown-content.entry {
