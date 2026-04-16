@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
 });
 
 async function renderPDF(url) {
-  pdfjsLib.GlobalWorkerOptions.workerSrc = '/src/js/pdf.worker.min.js';
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'js/pdf.worker.min.js';
 
   document.querySelector('.markdown-content.viewer').style.padding = '0px';
 
