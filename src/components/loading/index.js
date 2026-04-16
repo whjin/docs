@@ -47,7 +47,7 @@ function isMobile() {
     return !locations.some((location) => window.location.origin.includes(location));
   }
 
-  if (productionMode() || isMobile()) {
+  if (productionMode()) {
     window.addEventListener('DOMContentLoaded', () => {
       show();
     });
