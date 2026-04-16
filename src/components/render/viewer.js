@@ -8,9 +8,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const splits = title.split('&format=');
     document.title = `${splits[0].toUpperCase()} \u00AB 吴华锦`;
 
-    const filePath = `posts/${dir}/${splits[0]}.${splits[1]}`;
-    const jsPath = '../js/pdf.worker.min.js';
-    renderPDF(filePath, jsPath);
+    renderPDF(`posts/${dir}/${splits[0]}.${splits[1]}`);
   } else {
     document.title = `${title.toUpperCase()} \u00AB 吴华锦`;
     loadMarkdown('markdown-content', `posts/${dir}/${title}.md`);
@@ -25,8 +23,8 @@ window.addEventListener('load', () => {
   });
 });
 
-async function renderPDF(url, path) {
-  pdfjsLib.GlobalWorkerOptions.workerSrc = path;
+async function renderPDF(url) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = '../js/pdf.worker.min.js';
 
   document.querySelector('.markdown-content.viewer').style.padding = '0px';
 
@@ -77,7 +75,7 @@ async function renderPDF(url, path) {
       }).promise;
     }
 
-    enableMobileScale();
+    // enableMobileScale();
   } catch (error) {
     console.error('PDF文件加载失败:', error);
     container.innerHTML = `<p style="text-align:center; padding:20px; color:red;">PDF 加载失败，请检查文件路径</p>`;
