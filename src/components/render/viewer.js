@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     document.title = `${splits[0].toUpperCase()} \u00AB 吴华锦`;
 
     const filePath = `posts/${dir}/${splits[0]}.${splits[1]}`;
-    const jsPath = 'src/js/pdf.worker.min.js';
+    const jsPath = '../js/pdf.worker.min.js';
     renderPDF(filePath, jsPath);
   } else {
     document.title = `${title.toUpperCase()} \u00AB 吴华锦`;
