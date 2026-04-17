@@ -1,7 +1,7 @@
 <details>
 <summary>React</summary>
 
-- [React+UmiJS+Dva架构](src/template/viewer.html?React_React+UmiJS+Dva架构)
+- [React+UmiJS+Dva架构](src/template/viewer.html?React_React-UmiJS-Dva架构)
 
 </details>
 
