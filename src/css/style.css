@@ -169,6 +169,15 @@ div object {
   padding: 1em;
 }
 
+.viewer li {
+  margin: 0.5em -0.5em;
+}
+
+li strong {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
 details {
   margin: 1em 0;
 }
@@ -192,7 +201,7 @@ li,
 }
 
 li {
-  margin: 0.5em auto;
+  margin: 0.5em -0.5em;
 }
 
 pre {
@@ -225,14 +234,11 @@ blockquote p {
 
 /* markdown表格样式 */
 .markdown-content table {
-  display: block;
   width: 100%;
-  width: max-content;
-  max-width: 100%;
   overflow: auto;
   border-spacing: 0;
   border-collapse: collapse;
-  margin: 1rem 0;
+  margin: 1em 0;
 }
 
 .markdown-content table th {

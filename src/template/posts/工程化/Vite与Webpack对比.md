@@ -24,3 +24,19 @@
 <!-- prettier-ignore-end -->
 
 ## 三、生产构建流程
+
+<!-- prettier-ignore-start -->
+|**维度**|`Webpack`|`Vite`|
+|---|---|---|
+|**构建工具**|自身完全全流程打包|开发用 `esbuild` 预构建，生产用 `Rollup` 打包|
+|**构建原理**|基于 `CommonJS/ESM` 混合打包，兼容性优先|纯 `ESM` 打包，`Tree Shaking` 更彻底|
+|**构建速度**|中等，大型项目耗时较长|比 `Webpack` 快 `2-10` 倍（`esbuild + Rollup` 双重加速）|
+|**产物优化**|优化手段丰富，但配置复杂|内置代码分割、压缩、懒加载，默认优化效果更好|
+|**产物体积**|通常更大（冗余代码多）|通常更小（`Rollup` 更优的 `Tree Shaking`）|
+|**兼容性**|原生支持低版本浏览器|默认仅支持现代浏览器，需 `@vitejs/plugin-legacy` 兼容低版本|
+<!-- prettier-ignore-end -->
+
+## 四、其他关键区别
+
+1. **配置复杂度**
+- 
