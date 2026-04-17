@@ -36,9 +36,10 @@
 </details>
 
 <details>
-<summary>访谈</summary>
+<summary>文档</summary>
 
 - [新趋势](src/template/viewer.html?文档_新趋势)
+- [帮助文档](src/template/viewer.html?文档_帮助文档)
 
 </details>
 
