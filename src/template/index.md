@@ -1,8 +1,6 @@
 <details>
 <summary>React</summary>
 
-- [React+UmiJS+Dva架构](src/template/viewer.html?React_React-UmiJS-Dva架构)
-
 </details>
 
 <details>
@@ -32,6 +30,7 @@
 <summary>工程化</summary>
 
 - [封装接口请求](src/template/viewer.html?工程化_封装接口请求)
+- [Vite与Webpack对比](src/template/viewer.html?工程化_Vite与Webpack对比)
 
 </details>
 
