@@ -39,4 +39,24 @@
 ## 四、其他关键区别
 
 1. **配置复杂度**
-- 
+
+- `Webpack`：配置及其灵活但复杂，需要手动配置 `entry`、`output`、`loader`、`plugin`、`optimization` 等。
+- `Vite`：遵循“约定大于配置”，内置对 `TypeScript`、`JSX`、`CSS`、`JSON`、静态资源等支持，开箱即用，配置量减少 `70%` 以上。
+
+2. **依赖处理**
+
+- `Webpack`：打包时统一处理所有依赖，支持 `CommonJS`、`AMD`、`UMD`、`ESM` 等所有模块规范。
+- `Vite`：
+  - 开发时：用 `esbuild` 预构建第三方依赖（将 `CommonJS/UMD` 转为 `ESM`，合并小模块减少请求）
+  - 生产时：`Rollup` 处理所有依赖，纯 `ESM` 输出
+  - 对非 `ESM` 规范的依赖兼容性稍差，部分老旧库可能需要额外配置。
+
+3. **生态系统**
+
+- `Webpack`：生态及其成熟，拥有海量 `loader` 和 `plugin`，几乎能满足任何构建需求。
+- `Vite`：生态发展迅猛，主流框架（`React`、`Vue`、`Svelte`）均官方支持，但小众场景的插件数量仍小于 `Webpack`。
+
+4. **多页面应用支持**
+
+- `Webpack`：需要手动配置多个 `entry` 和 `HtmlWebpackPlugin` 。
+- `Vite`：原生支持多页面，只需在 `pages` 目录下创建对应 `HTML` 文件即可。
