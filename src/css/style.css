@@ -235,7 +235,7 @@ blockquote p {
 /* markdown表格样式 */
 .markdown-content table {
   width: 100%;
-  overflow: auto;
+  overflow: auto; 
   border-spacing: 0;
   border-collapse: collapse;
   margin: 1em 0;

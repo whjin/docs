@@ -1,5 +1,14 @@
 <details>
-<summary>React</summary>
+<summary>Web3</summary>
+
+- [Solidity文档](src/template/viewer.html?Web3_Solidity文档)
+
+</details>
+
+<details>
+<summary>GIS</summary>
+
+- [Cesium文档](src/template/viewer.html?GIS_Cesium文档)
 
 </details>
 
@@ -9,6 +18,8 @@
 - [简历文档](src/template/viewer.html?简历_简历文档)
 - [简历PDF](src/template/viewer.html?简历_简历PDF&format=pdf)
 - [简历详解](src/template/viewer.html?简历_简历详解)
+- [英文简历](src/template/viewer.html?简历_英文简历)
+- [英文简历PDF](src/template/viewer.html?简历_英文简历PDF&format=pdf)
 
 </details>
 
