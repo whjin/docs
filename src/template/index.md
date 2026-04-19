@@ -2,6 +2,7 @@
 <summary>Web3</summary>
 
 - [Solidity文档](src/template/viewer.html?Web3_Solidity文档)
+- [Web3钱包](src/template/viewer.html?Web3_Web3钱包)
 
 </details>
 
@@ -50,6 +51,7 @@
 
 - [新趋势](src/template/viewer.html?文档_新趋势)
 - [帮助文档](src/template/viewer.html?文档_帮助文档)
+- [领域适配性分析](src/template/viewer.html?文档_领域适配性分析)
 
 </details>
 
