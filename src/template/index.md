@@ -34,7 +34,8 @@
 <details>
 <summary>AI</summary>
 
-- [AI+前端](src/template/viewer.html?AI_AI_前端)
+- [AI前端](src/template/viewer.html?AI_AI前端)
+- [AI视频制作](src/template/viewer.html?AI_AI视频制作)
 
 </details>
 
