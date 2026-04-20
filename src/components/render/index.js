@@ -60,7 +60,8 @@ function generateTOC() {
 
   const headings = contentEl.querySelectorAll('h1, h2, h3, h4, h5, h6');
   if (headings.length === 0) {
-    tocNavEl.innerHTML = '<p>暂无目录</p>';
+    const sidebarArea = document.querySelector('.sidebar-area');
+    sidebarArea.style.display = 'none';
     return;
   }
 

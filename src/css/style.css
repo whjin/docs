@@ -175,6 +175,7 @@ div object {
 
 li strong {
   display: inline-block;
+  margin-bottom: 0.5em;
 }
 
 details {
@@ -292,7 +293,6 @@ blockquote p {
   font-weight: bold;
   border-bottom: 1px solid #e9ecef;
   padding: 0.5em;
-  /* margin-bottom: 1em; */
 }
 
 .entry ~ .sidebar-area {
@@ -310,9 +310,7 @@ blockquote p {
 
 .toc-nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0.5em auto;
-  padding: 0.5em;
+  padding: 0 0.5em;
 }
 
 .toc-nav li {
