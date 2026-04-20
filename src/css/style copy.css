@@ -279,24 +279,23 @@ blockquote p {
 
 .sidebar-area {
   width: 20%;
-  height: calc(100vh - 10px);
+  height: calc(100vh - 50px);
   box-sizing: border-box;
   border-left: 1px solid #e9ecef;
   overflow: auto;
   position: sticky;
-  top: 0;
 }
 
-.sidebar-area .sidebar-title {
+.sidebar-area .title {
   font-size: 1.2em;
   font-weight: bold;
   border-bottom: 1px solid #e9ecef;
   padding: 0.5em;
-  /* margin-bottom: 1em; */
+  margin-bottom: 1em;
 }
 
 .entry ~ .sidebar-area {
-  padding-top: 50px;
+  padding: 50px 0 0px 0;
 }
 
 .toc-nav {
@@ -310,14 +309,35 @@ blockquote p {
 
 .toc-nav ul {
   list-style: none;
-  padding: 0;
+  padding-left: 0.8em;
   margin: 0.5em auto;
-  padding: 0.5em;
 }
 
 .toc-nav li {
   margin: 0.6em auto;
   line-height: 1.5;
+}
+
+.toc-nav .toc-h1 {
+  padding-left: 0;
+  font-weight: 600;
+}
+
+.toc-nav .toc-h2 {
+  padding-left: 0.8em;
+  font-weight: 600;
+}
+.toc-nav .toc-h3 {
+  padding-left: 1.6em;
+}
+.toc-nav .toc-h4 {
+  padding-left: 2.4em;
+}
+.toc-nav .toc-h5 {
+  padding-left: 3.2em;
+}
+.toc-nav .toc-h6 {
+  padding-left: 4em;
 }
 
 .toc-nav a {

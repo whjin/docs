@@ -27,7 +27,7 @@ function generateTOC() {
   // 提取所有标题元素
   const headings = contentEl.querySelectorAll('h1, h2, h3, h4, h5, h6');
   if (headings.length === 0) {
-    tocNavEl.innerHTML = '<p style="color:#666;">暂无目录</p>';
+    tocNavEl.innerHTML = '<p>暂无目录</p>';
     return;
   }
 

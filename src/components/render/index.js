@@ -51,3 +51,53 @@ async function loadMarkdown(targetId, filePath) {
     });
   });
 }
+
+function generateTOC() {
+  const contentEl = document.getElementById('markdown-content');
+  const tocNavEl = document.getElementById('toc-nav');
+
+  if (!contentEl || !tocNavEl) return;
+
+  const headings = contentEl.querySelectorAll('h1, h2, h3, h4, h5, h6');
+  if (headings.length === 0) {
+    tocNavEl.innerHTML = '<p>暂无目录</p>';
+    return;
+  }
+
+  let tocHTML = '<ul>';
+  const set = new Set();
+  headings.forEach((heading, index) => {
+    const headingId = `toc-${index}-${heading.tagName.toLowerCase()}`;
+    heading.id = headingId;
+    const level = heading.tagName.toLowerCase();
+    const text = heading.textContent.trim();
+
+    let idx = [...set.add(level)].findIndex((l) => l === level);
+
+    tocHTML += `
+      <li style="
+        font-weight: ${['h1', 'h2'].includes(level) ? '600' : '500'};
+        padding-left: ${idx * 0.8}em;
+      ">
+        <a href="#${headingId}" title="${text}">${text}</a>
+      </li>
+    `;
+  });
+  tocHTML += '</ul>';
+
+  tocNavEl.innerHTML = tocHTML;
+
+  tocNavEl.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').slice(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        targetEl.scrollIntoView({
+          top: targetEl.offsetTop - 60,
+          behavior: 'smooth',
+        });
+      }
+    });
+  });
+}

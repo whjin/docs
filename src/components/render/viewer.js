@@ -8,11 +8,18 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const splits = title.split('&format=');
     document.title = `${splits[0]} \u00AB 吴华锦`;
 
-    renderPDF(`posts/${dir}/${splits[0]}.${splits[1]}`);
+    renderPDF(`posts/${dir}/${splits[0]}.${splits[1]}`).then(() => {
+      const tocNavEl = document.getElementById('toc-nav');
+      if (tocNavEl) {
+        tocNavEl.innerHTML = '<p>暂无目录</p>';
+      }
+    });
   } else {
     document.title = `${title} \u00AB 吴华锦`;
 
-    loadMarkdown('markdown-content', `posts/${dir}/${title}.md`);
+    loadMarkdown('markdown-content', `posts/${dir}/${title}.md`).then(() => {
+      generateTOC();
+    });
   }
 });
 

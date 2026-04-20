@@ -44,7 +44,7 @@ function generateTOC() {
     console.log('提取到的标题数量：', headings.length); // 调试用：看是否能抓到标题
 
     if (headings.length === 0) {
-      tocNavEl.innerHTML = '<p style="color:#666;">暂无目录</p>';
+      tocNavEl.innerHTML = '<p>暂无目录</p>';
       return;
     }
 

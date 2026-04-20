@@ -1,6 +1,12 @@
 window.addEventListener('DOMContentLoaded', (e) => {
   const filePath = 'src/template/index.md';
-  loadMarkdown('markdown-content', filePath);
+  loadMarkdown('markdown-content', filePath)
+    .then(() => {
+      generateTOC();
+    })
+    .catch((error) => {
+      console.error('加载 Markdown 失败：', error);
+    });
 });
 
 window.addEventListener('load', () => {
@@ -10,3 +16,5 @@ window.addEventListener('load', () => {
     link.setAttribute('rel', 'noopener noreferrer');
   });
 });
+
+
