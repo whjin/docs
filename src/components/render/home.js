@@ -1,6 +1,5 @@
 window.addEventListener('DOMContentLoaded', (e) => {
-  const filePath = 'src/template/index.md';
-  loadMarkdown('markdown-content', filePath)
+  loadMarkdown('markdown-content', 'src/template/index.md')
     .then(() => {
       generateTOC();
     })
@@ -16,5 +15,3 @@ window.addEventListener('load', () => {
     link.setAttribute('rel', 'noopener noreferrer');
   });
 });
-
-

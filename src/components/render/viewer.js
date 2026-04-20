@@ -8,10 +8,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const splits = title.split('&format=');
     document.title = `${splits[0]} \u00AB 吴华锦`;
 
-    renderPDF(`posts/${dir}/${splits[0]}.${splits[1]}`).then(() => {
-      const sidebarArea = document.querySelector('.sidebar-area');
-      sidebarArea.style.display = 'none';
-    });
+    document.querySelector('.sidebar-area').style.display = 'none';
+
+    renderPDF(`posts/${dir}/${splits[0]}.${splits[1]}`);
   } else {
     document.title = `${title} \u00AB 吴华锦`;
 

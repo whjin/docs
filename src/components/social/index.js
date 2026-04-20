@@ -1,6 +1,12 @@
 (function () {
   const socials = [
     {
+      href: '',
+      title: '微信',
+      name: 'wechat',
+      icon: 24,
+    },
+    {
       href: 'https://weibo.com/u/1710899102',
       title: '微博',
       name: 'weibo',
@@ -35,7 +41,7 @@
     const aEl = document.createElement('a');
     const imgEl = document.createElement('img');
 
-    aEl.href = s.href;
+    if (s.href) aEl.href = s.href;
     aEl.rel = 'noopener noreferrer';
     aEl.target = '_blank';
     aEl.title = s.title;

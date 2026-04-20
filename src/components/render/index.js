@@ -59,7 +59,7 @@ function generateTOC() {
   if (!contentEl || !tocNavEl) return;
 
   const headings = contentEl.querySelectorAll('h1, h2, h3, h4, h5, h6');
-  if (headings.length === 0) {
+  if (headings.length === 0 || isMobile()) {
     const sidebarArea = document.querySelector('.sidebar-area');
     sidebarArea.style.display = 'none';
     return;

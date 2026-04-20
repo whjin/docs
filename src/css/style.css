@@ -71,6 +71,7 @@ h6 {
 
 .nav a {
   margin-left: 0.5em;
+  cursor: pointer;
 }
 
 .nav img {
@@ -347,8 +348,8 @@ blockquote p {
     white-space: nowrap;
   }
 
-  .layout-container {
-    flex-direction: column;
+  .content-area {
+    padding: 1em;
   }
 
   .sidebar-area {
@@ -360,15 +361,6 @@ blockquote p {
     position: static;
     border-left: none;
     border-top: 1px solid #e9ecef;
-  }
-
-  .content-area {
-    padding: 0.5em;
-  }
-
-  .markdown-content.entry.content-area,
-  .markdown-content.viewer.content-area {
-    padding: 0.5em;
   }
 }
 

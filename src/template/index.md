@@ -1,4 +1,10 @@
 <details>
+<summary>小程序</summary>
+
+- [小程序文档](src/template/viewer.html?小程序_小程序文档)
+
+</details>
+<details>
 <summary>Web3</summary>
 
 - [Solidity文档](src/template/viewer.html?Web3_Solidity文档)
