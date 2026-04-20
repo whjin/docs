@@ -44,6 +44,15 @@ h6 {
   font-size: 0.6em;
 }
 
+ol,
+ul,
+li,
+.markdown-content p,
+.markdown-content code,
+.markdown-content pre {
+  font-size: 1em;
+}
+
 div object {
   display: none;
 }
@@ -65,7 +74,7 @@ div object {
 }
 
 .viewer li {
-  margin: 0.5em -0.5em;
+  margin: 0.5em auto;
 }
 
 li strong {
@@ -84,19 +93,6 @@ details summary {
 
 .markdown-content img {
   max-width: 100%;
-}
-
-ol,
-ul,
-li,
-.markdown-content p,
-.markdown-content code,
-.markdown-content pre {
-  font-size: 1em;
-}
-
-li {
-  margin: 0.5em -0.5em;
 }
 
 pre {
@@ -342,10 +338,6 @@ blockquote::-webkit-scrollbar {
     z-index: 9;
   }
 
-  .layout-container {
-    flex-direction: column;
-  }
-
   .markdown-content table {
     display: block;
     overflow: auto;
@@ -353,16 +345,7 @@ blockquote::-webkit-scrollbar {
   }
 
   .sidebar-area {
-    width: 100%;
-    height: auto;
-    max-height: 200px;
-    position: static;
-    border-left: none;
-    border-top: 1px solid #e9ecef;
-  }
-
-  .viewer li {
-    margin-right: 0;
+    display: none;
   }
 }
 
