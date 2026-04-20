@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- 原有 head 内容不变 -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
     <meta name="keywords" content="whjin,开发文档,html,css,javascript,canvas,jquery,vue.js,http,ajax,git,webpack" />
@@ -21,13 +22,19 @@
     <header class="header">
       <div class="title">开发文档</div>
     </header>
+
+    <!-- 新增 Flex 布局容器 -->
     <div class="layout-container">
-      <main id="markdown-content" class="markdown-content conten-area entry"></main>
+      <!-- 左侧：文章内容区 -->
+      <main id="markdown-content" class="markdown-content entry content-area"></main>
+      <!-- 右侧：目录导航区 -->
       <aside class="sidebar-area">
-        <div class="title">文章目录</div>
+        <div class="sidebar-title">文章目录</div>
         <nav id="toc-nav" class="toc-nav"></nav>
       </aside>
     </div>
+
+    <!-- 原有脚本/元素不变 -->
     <script src="src/js/busuanzi.min.js"></script>
     <script src="src/components/loading/index.js"></script>
     <script src="src/js/marked.min.js"></script>

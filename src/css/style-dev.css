@@ -296,61 +296,67 @@ blockquote p {
   }
 }
 
+/* ========== Flex 两栏布局 ========== */
+/* 布局容器 */
 .layout-container {
   display: flex;
   width: 100%;
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 100px); /* 扣除 header + footer 高度 */
+  padding-top: 50px; /* 适配 header 固定定位 */
   box-sizing: border-box;
 }
 
+/* 左侧内容区 */
 .content-area {
-  flex: 1;
-  /* padding: 1em; */
+  flex: 1; /* 占满剩余宽度 */
+  padding: 1em;
   box-sizing: border-box;
-  overflow: auto;
+  overflow-y: auto;
 }
 
+/* 右侧目录侧边栏 */
 .sidebar-area {
-  width: 25%;
-  /* min-width: 240px;
-  max-width: 300px; */
-  height: calc(100vh - 50px);
+  width: 280px;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 1em;
   box-sizing: border-box;
-  padding: 60px 1em 0px 1em;
+  background-color: #f8f9fa;
   border-left: 1px solid #e9ecef;
-  overflow: auto;
-  position: sticky;
-  top: 50px;
+  overflow-y: auto;
+  position: sticky; /* 滚动时目录固定 */
+  top: 50px; /* 与 header 对齐 */
+  height: calc(100vh - 50px); /* 视口高度 - header 高度 */
 }
 
-.sidebar-area .title {
+/* 目录标题 */
+.sidebar-title {
   font-size: 1.2em;
   font-weight: 600;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
   border-bottom: 1px solid #e9ecef;
-  margin-bottom: 0.5em;
-  padding-bottom: 0.3em;
 }
 
+/* 目录导航样式 */
 .toc-nav {
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
-
 .toc-nav ul {
-  /* list-style: none; */
+  list-style: none;
   padding-left: 0.8em;
-  margin: 0.5em auto;
+  margin: 0.5em 0;
 }
-
 .toc-nav li {
-  margin: 0.6em auto;
+  margin: 0.6em 0;
   line-height: 1.5;
 }
 
+/* 标题层级缩进 */
 .toc-nav .toc-h1 {
   padding-left: 0;
   font-weight: 600;
 }
-
 .toc-nav .toc-h2 {
   padding-left: 0.8em;
 }
@@ -367,44 +373,51 @@ blockquote p {
   padding-left: 4em;
 }
 
+/* 目录链接交互 */
 .toc-nav a {
   color: #333;
   text-decoration: none;
   transition: color 0.2s;
 }
-
 .toc-nav a:hover {
   color: #007bff;
-  background-color: transparent;
+  background-color: transparent; /* 覆盖原有 hover 样式 */
 }
 
+/* ========== 响应式适配（移动端单列） ========== */
 @media screen and (max-width: 992px) {
   .layout-container {
-    flex-direction: column;
+    flex-direction: column; /* 改为纵向排列 */
   }
-
   .sidebar-area {
     width: 100%;
     min-width: 100%;
     max-width: 100%;
-    max-height: 200px;
     height: auto;
     position: static;
     border-left: none;
     border-top: 1px solid #e9ecef;
+    max-height: 200px; /* 移动端目录高度限制 */
   }
-
   .content-area {
     padding: 0.5em;
   }
-
+  /* 覆盖原有 padding 样式 */
   .markdown-content.entry.content-area,
   .markdown-content.viewer.content-area {
     padding: 0.5em;
   }
 }
 
-.header,
+/* ========== 样式兼容调整 ========== */
+.header {
+  z-index: 10;
+} /* 确保 header 不被遮挡 */
 .footer {
   z-index: 10;
+}
+/* 移除原有内容区 padding（由 content-area 控制） */
+.markdown-content.entry,
+.markdown-content.viewer {
+  padding: 0 !important;
 }

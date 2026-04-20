@@ -28,7 +28,7 @@
 <summary>JavaScript</summary>
 
 - [设计模式文档](src/template/viewer.html?JavaScript_设计模式文档)
-- [原型链](src/template/viewer.html?JavaScript_原型链)
+- [ECMAScript文档](src/template/viewer.html?JavaScript_ECMAScript文档)
 
 </details>
 

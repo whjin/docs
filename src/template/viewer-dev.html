@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- 原有 head 内容不变 -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Viewer</title>
@@ -14,13 +15,19 @@
   </head>
   <body>
     <div class="back-btn" title="返回首页">返回</div>
+
+    <!-- 新增 Flex 布局容器 -->
     <div class="layout-container">
-      <main id="markdown-content" class="markdown-content content-area viewer"></main>
+      <!-- 左侧：文章内容区 -->
+      <main id="markdown-content" class="markdown-content viewer content-area"></main>
+      <!-- 右侧：目录导航区 -->
       <aside class="sidebar-area">
-        <div class="title">文章目录</div>
+        <div class="sidebar-title">文章目录</div>
         <nav id="toc-nav" class="toc-nav"></nav>
       </aside>
     </div>
+
+    <!-- 原有脚本不变 -->
     <script src="../components/loading/index.js"></script>
     <script src="../js/marked.min.js"></script>
     <script src="../js/highlight.min.js"></script>
