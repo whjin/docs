@@ -4,18 +4,26 @@ window.addEventListener('DOMContentLoaded', (e) => {
   let dir = query.slice(0, idx);
   let title = query.slice(idx + 1);
 
+  const contentEl = document.getElementById('markdown-content');
+  const nacContainer = document.querySelector('.nav-container');
+
   if (title.includes('&format=')) {
     const splits = title.split('&format=');
     document.title = `${splits[0]} \u00AB 吴华锦`;
 
     document.querySelector('.sidebar-area').style.display = 'none';
+    nacContainer.classList.add('hide-toc');
 
-    renderPDF(`posts/${dir}/${splits[0]}.${splits[1]}`);
+    renderPDF(contentEl, `posts/${dir}/${splits[0]}.${splits[1]}`);
   } else {
     document.title = `${title} \u00AB 吴华锦`;
 
     loadMarkdown('markdown-content', `posts/${dir}/${title}.md`).then(() => {
       generateTOC();
+      const headings = contentEl.querySelectorAll('h1, h2, h3, h4, h5, h6');
+      if (headings.length === 0 || isMobile()) {
+        nacContainer.classList.add('hide-toc');
+      }
     });
   }
 });
@@ -28,10 +36,9 @@ window.addEventListener('load', () => {
   });
 });
 
-async function renderPDF(url) {
+async function renderPDF(container, url) {
   pdfjsLib.GlobalWorkerOptions.workerSrc = '../js/pdf.worker.min.js';
 
-  const container = document.getElementById('markdown-content');
   try {
     container.innerHTML = '';
 

@@ -19,29 +19,36 @@
   transition: all 0.3s ease;
 }
 
+.nav-container:hover {
+  width: 80px;
+  height: 50px;
+  border-radius: 0 0 0 4px;
+}
+
 .nav-container .hidden {
   display: none;
 }
+.hide-toc:hover {
+  width: 50px;
+  border-radius: 0 0 0 100%;
+}
+.hide-toc .nav-toc {
+  display: none;
+}
 
+.hide-toc .nav-back,
 .hidden ~ .nav-back {
   margin-left: 10px;
   margin-bottom: 8px;
 }
 
 .nav-container img {
-  display: inline-block;
   width: 28px;
   height: 28px;
 }
 
 .nav-toc.hide {
   display: none;
-}
-
-.nav-container:hover {
-  width: 80px;
-  height: 50px;
-  border-radius: 0 0 0 4px;
 }
 
 @media screen and (max-width: 768px) {

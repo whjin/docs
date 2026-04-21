@@ -275,7 +275,7 @@ blockquote::-webkit-scrollbar {
 }
 
 .sidebar-area {
-  width: 200px;
+  width: 240px;
   max-width: 20%;
   height: calc(100vh - 10px);
   box-sizing: border-box;
