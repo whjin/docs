@@ -57,7 +57,7 @@
       e.stopPropagation();
       const origin = window.location.origin;
       const targetUrl = productionMode() ? `${origin}/docs` : origin;
-      // window.location.href = targetUrl;
+      window.location.href = targetUrl;
     });
   }
 
