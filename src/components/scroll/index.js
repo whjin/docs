@@ -2,7 +2,7 @@ $(function () {
   const IDLE_TIME = 6000;
   let idleTimer = null;
   const $scrollTop = $('.scroll-top');
-  const $backBtn = $('.back-btn');
+  const $navContainer = $('.nav-container');
 
   function resetIdleTimer() {
     if (idleTimer) clearTimeout(idleTimer);
@@ -16,17 +16,17 @@ $(function () {
     const scrollHeight = $(window).scrollTop();
 
     if (scrollHeight === 0) {
-      $backBtn.removeClass('hidden');
+      $navContainer.removeClass('hidden');
       $scrollTop.addClass('opacity');
     } else {
-      $backBtn.addClass('hidden');
+      $navContainer.addClass('hidden');
       $scrollTop.removeClass('opacity');
     }
     if (scrollHeight > 100) {
-      $backBtn.fadeOut(500);
+      $navContainer.fadeOut(500);
       $scrollTop.fadeIn(500);
     } else {
-      $backBtn.fadeIn(500);
+      $navContainer.fadeIn(500);
       $scrollTop.fadeOut(500);
     }
 

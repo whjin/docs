@@ -1,0 +1,43 @@
+.nav-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 0 0 0 100%;
+  background-color: #007bff;
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.8em;
+  z-index: 99;
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-container .hidden {
+  opacity: 0;
+}
+
+.nav-container img {
+  width: 28px;
+  height: 28px;
+}
+
+.nav-toc {
+  display: none;
+}
+
+.nav-back {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.nav-container:hover {
+  width: 80px;
+  height: 50px;
+  border-radius: 0 0 0 4px;
+}
