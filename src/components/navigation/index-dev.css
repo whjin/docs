@@ -2,58 +2,70 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 50px; /* 默认仅显示返回图标 */
+  width: 50px;
   height: 50px;
-  border-radius: 0 0 0 100%; /* 默认圆形 */
+  border-radius: 0 0 0 100%;
   background-color: #007bff;
   cursor: pointer;
   color: #fff;
   font-size: 0.8em;
   z-index: 99;
   margin: 0;
-  padding: 0 10px; /* 保证图标不溢出 */
+  padding: 0;
   border: none;
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* 默认只显示返回图标 */
+  justify-content: space-around;
   transition: all 0.3s ease;
-  overflow: hidden;
 }
 
-/* 有目录（存在）时，hover 展开为矩形 */
-.nav-container.has-toc:hover {
-  width: 100px; /* 容纳两个图标 */
-  border-radius: 0 0 0 4px;
-  justify-content: space-between; /* 两个图标水平分布 */
+/* 关键修改：hidden 类改用 display: none 替代 opacity */
+.nav-container .hidden {
+  display: none !important; /* 强制隐藏，优先级更高 */
 }
 
-/* 图标通用样式 */
 .nav-container img {
   width: 28px;
   height: 28px;
-  transition: opacity 0.3s ease;
+  /* 保证图标布局一致 */
+  display: inline-block;
 }
 
-/* 目录图标默认隐藏（仅hover显示） */
-.nav-toc {
-  opacity: 0;
-  pointer-events: none;
+/* 移动端/强制隐藏目录的类 */
+.nav-toc.hide {
+  display: none !important;
 }
 
-/* 有目录时，hover 显示目录图标 */
-.nav-container.has-toc:hover .nav-toc {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* 返回图标始终显示 */
 .nav-back {
-  opacity: 1;
+  /* 确保返回图标始终显示 */
+  display: inline-block;
 }
 
-/* 无目录（不存在）时，强制不展开 */
-.nav-container.no-toc:hover {
-  width: 50px;
-  border-radius: 0 0 0 100%;
-  justify-content: flex-end;
+/* 桌面端hover展开容器 */
+.nav-container:hover {
+  width: 80px;
+  height: 50px;
+  border-radius: 0 0 0 4px;
+}
+
+/* ========== 移动端样式 ========== */
+@media (max-width: 767px) {
+  /* 移动端导航容器强制不展开 */
+  .nav-container {
+    width: 50px !important;
+    border-radius: 0 0 0 100% !important;
+  }
+  /* 移动端强制隐藏目录图标 */
+  .nav-toc {
+    display: none !important;
+  }
+  /* 移动端hover不触发任何变化 */
+  .nav-container:hover {
+    width: 50px !important;
+    border-radius: 0 0 0 100% !important;
+  }
+  /* 移动端隐藏侧边栏目录 */
+  .sidebar-area {
+    display: none !important;
+  }
 }

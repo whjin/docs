@@ -55,12 +55,17 @@ async function loadMarkdown(targetId, filePath) {
 function generateTOC() {
   const contentEl = document.getElementById('markdown-content');
   const tocNavEl = document.getElementById('toc-nav');
+  const sidebarArea = document.querySelector('.sidebar-area');
 
-  if (!contentEl || !tocNavEl) return;
+  if (!contentEl || !tocNavEl || !sidebarArea) return;
+
+  if (isMobile()) {
+    sidebarArea.style.display = 'none';
+    return;
+  }
 
   const headings = contentEl.querySelectorAll('h1, h2, h3, h4, h5, h6');
   if (headings.length === 0 || isMobile()) {
-    const sidebarArea = document.querySelector('.sidebar-area');
     sidebarArea.style.display = 'none';
     return;
   }
@@ -85,8 +90,9 @@ function generateTOC() {
     `;
   });
   tocHTML += '</ul>';
-
   tocNavEl.innerHTML = tocHTML;
+
+  sidebarArea.style.display = 'block';
 
   tocNavEl.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', (e) => {

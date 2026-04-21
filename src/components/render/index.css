@@ -348,16 +348,3 @@ blockquote::-webkit-scrollbar {
     display: none;
   }
 }
-
-@media screen and (min-width: 768px) {
-  .col-md-3:not(:last-child),
-  .col-md-2:not(:last-child) {
-    border-right: 1px dashed #bd4147;
-  }
-
-  .scroll-top {
-    right: 20px;
-    bottom: 60px;
-    z-index: 9;
-  }
-}

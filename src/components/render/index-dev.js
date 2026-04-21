@@ -57,67 +57,58 @@ function generateTOC() {
   const tocNavEl = document.getElementById('toc-nav');
   const sidebarArea = document.querySelector('.sidebar-area');
 
-  if (!contentEl || !tocNavEl) return;
+  if (!contentEl || !tocNavEl || !sidebarArea) return;
+
+  // 移动端：强制隐藏目录
+  if (isMobile()) {
+    sidebarArea.style.display = 'none';
+    return;
+  }
 
   const headings = contentEl.querySelectorAll('h1, h2, h3, h4, h5, h6');
-  // 目录存在性判断（非移动端+有标题）
-  const tocExist = headings.length > 0 && !isMobile();
-
-  if (!tocExist) {
+  // 桌面端无标题时也隐藏目录
+  if (headings.length === 0) {
     sidebarArea.style.display = 'none';
-  } else {
-    sidebarArea.style.display = 'block'; // 默认显示目录
-    // 原有目录生成逻辑（不变）
-    let tocHTML = '<ul>';
-    const set = new Set();
-    headings.forEach((heading, index) => {
-      const headingId = `toc-${index}-${heading.tagName.toLowerCase()}`;
-      heading.id = headingId;
-      const level = heading.tagName.toLowerCase();
-      const text = heading.textContent.trim();
-
-      let idx = [...set.add(level)].findIndex((l) => l === level);
-
-      tocHTML += `
-        <li style="
-          font-weight: ${['h1', 'h2'].includes(level) ? '600' : '500'};
-          padding-left: ${idx * 0.8}em;
-        ">
-          <a href="#${headingId}" title="${text}">${text}</a>
-        </li>
-      `;
-    });
-    tocHTML += '</ul>';
-    tocNavEl.innerHTML = tocHTML;
-
-    // 原有锚点点击逻辑（不变）
-    tocNavEl.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').slice(1);
-        const targetEl = document.getElementById(targetId);
-        if (targetEl) {
-          targetEl.scrollIntoView({
-            top: targetEl.offsetTop - 60,
-            behavior: 'smooth',
-          });
-        }
-      });
-    });
+    return;
   }
 
-  // 生成目录后，触发导航状态更新（关键）
-  if (window.updateNavClass) {
-    window.updateNavClass();
-  } else {
-    // 兼容导航脚本的初始化逻辑
-    const navContainer = document.querySelector('.nav-container');
-    if (tocExist) {
-      navContainer.classList.add('has-toc');
-      navContainer.classList.remove('no-toc');
-    } else {
-      navContainer.classList.add('no-toc');
-      navContainer.classList.remove('has-toc');
-    }
-  }
+  // 桌面端有标题时生成目录
+  let tocHTML = '<ul>';
+  const set = new Set();
+  headings.forEach((heading, index) => {
+    const headingId = `toc-${index}-${heading.tagName.toLowerCase()}`;
+    heading.id = headingId;
+    const level = heading.tagName.toLowerCase();
+    const text = heading.textContent.trim();
+
+    let idx = [...set.add(level)].findIndex((l) => l === level);
+
+    tocHTML += `
+      <li style="
+        font-weight: ${['h1', 'h2'].includes(level) ? '600' : '500'};
+        padding-left: ${idx * 0.8}em;
+      ">
+        <a href="#${headingId}" title="${text}">${text}</a>
+      </li>
+    `;
+  });
+  tocHTML += '</ul>';
+
+  tocNavEl.innerHTML = tocHTML;
+  sidebarArea.style.display = 'block'; // 显示目录
+
+  // 锚点点击逻辑（不变）
+  tocNavEl.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').slice(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        targetEl.scrollIntoView({
+          top: targetEl.offsetTop - 60,
+          behavior: 'smooth',
+        });
+      }
+    });
+  });
 }
