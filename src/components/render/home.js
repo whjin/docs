@@ -14,4 +14,5 @@ window.addEventListener('load', () => {
     link.setAttribute('target', '_blank');
     link.setAttribute('rel', 'noopener noreferrer');
   });
+  hideLoading();
 });

@@ -14,7 +14,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
     document.querySelector('.sidebar-area').style.display = 'none';
     nacContainer.classList.add('hide-toc');
 
-    renderPDF(contentEl, `posts/${dir}/${splits[0]}.${splits[1]}`);
+    renderPDF(contentEl, `posts/${dir}/${splits[0]}.${splits[1]}`).then(() => {
+      hideLoading();
+    });
   } else {
     document.title = `${title} \u00AB 吴华锦`;
 
@@ -24,6 +26,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
       if (headings.length === 0 || isMobile()) {
         nacContainer.classList.add('hide-toc');
       }
+      hideLoading();
     });
   }
 });
