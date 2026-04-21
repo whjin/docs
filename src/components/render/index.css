@@ -183,7 +183,7 @@ a:hover {
 }
 
 .arrow-icon {
-  background-image: url(../images/top.png);
+  background-image: url(../../images/top.png);
   width: 30px;
   height: 30px;
   display: block;

@@ -1,0 +1,59 @@
+.nav-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50px; /* 默认仅显示返回图标 */
+  height: 50px;
+  border-radius: 0 0 0 100%; /* 默认圆形 */
+  background-color: #007bff;
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.8em;
+  z-index: 99;
+  margin: 0;
+  padding: 0 10px; /* 保证图标不溢出 */
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* 默认只显示返回图标 */
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* 有目录（存在）时，hover 展开为矩形 */
+.nav-container.has-toc:hover {
+  width: 100px; /* 容纳两个图标 */
+  border-radius: 0 0 0 4px;
+  justify-content: space-between; /* 两个图标水平分布 */
+}
+
+/* 图标通用样式 */
+.nav-container img {
+  width: 28px;
+  height: 28px;
+  transition: opacity 0.3s ease;
+}
+
+/* 目录图标默认隐藏（仅hover显示） */
+.nav-toc {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 有目录时，hover 显示目录图标 */
+.nav-container.has-toc:hover .nav-toc {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 返回图标始终显示 */
+.nav-back {
+  opacity: 1;
+}
+
+/* 无目录（不存在）时，强制不展开 */
+.nav-container.no-toc:hover {
+  width: 50px;
+  border-radius: 0 0 0 100%;
+  justify-content: flex-end;
+}
