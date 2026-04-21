@@ -1,0 +1,38 @@
+.social {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+}
+
+.social a {
+  cursor: pointer;
+  margin-right: 1em;
+}
+
+.social img {
+  color: #000;
+  display: inline-block;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+
+.modal-container {
+  width: fit-content;
+  height: fit-content;
+  background-color: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container img {
+  width: 100px;
+  height: 100px;
+  margin: 8px;
+}

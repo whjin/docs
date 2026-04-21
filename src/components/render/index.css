@@ -140,23 +140,7 @@ blockquote p {
   font-weight: 600;
 }
 
-.nav {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  right: 0.5em;
-}
 
-.nav a {
-  margin-left: 0.5em;
-  cursor: pointer;
-}
-
-.nav img {
-  color: #000;
-  display: inline-block;
-}
 
 li.fold-panel > ul,
 li.fold-panel > ol {
