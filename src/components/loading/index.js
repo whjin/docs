@@ -1,7 +1,7 @@
 function isMobile() {
-  const ua = navigator.userAgent;
-  const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
-  return isMobileUA;
+  const userAgent = navigator.userAgent.toLowerCase();
+  const mobileRegex = /iphone|android|ipad|ipod|mobile|webos|blackberry|iemobile|opera mini/i;
+  return mobileRegex.test(userAgent) || window.innerWidth <= 768;
 }
 
 function productionMode() {

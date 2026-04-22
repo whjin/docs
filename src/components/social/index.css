@@ -1,14 +1,17 @@
 .social {
   height: 100%;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   position: absolute;
   right: 0;
+  z-index: 10;
 }
 
 .social a {
   cursor: pointer;
   margin-right: 1em;
+  display: inline-block;
 }
 
 .social img {
@@ -20,19 +23,50 @@
   position: absolute;
   top: 50px;
   right: 0;
+  display: none;
+  z-index: 9;
 }
 
 .modal-container {
   width: fit-content;
   height: fit-content;
-  background-color: #e9ecef;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  padding: 1em;
+  position: relative;
+  border-radius: 0 0 0 8px;
+  gap: 1em;
+}
+
+.modal-container::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: var(--offset-right, 50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #fff;
 }
 
 .modal-container img {
   width: 100px;
   height: 100px;
-  margin: 8px;
+  flex-shrink: 0;
+}
+
+.modal-overlay.show {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-container {
+    border-radius: 0;
+  }
 }
