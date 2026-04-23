@@ -30,8 +30,10 @@
 <summary>简历</summary>
 
 - [简历文档](src/template/viewer.html?简历_简历文档)
-- [简历PDF](src/template/viewer.html?简历_简历PDF&format=pdf)
-- [简历详解](src/template/viewer.html?简历_简历详解)
+- [简历文档PDF](src/template/viewer.html?简历_简历文档PDF&format=pdf)
+- [简历文档详解](src/template/viewer.html?简历_简历文档详解)
+- [简历精简版](src/template/viewer.html?简历_简历精简版)
+- [简历精简版PDF](src/template/viewer.html?简历_简历精简版PDF&format=pdf)
 - [英文简历](src/template/viewer.html?简历_英文简历)
 - [英文简历PDF](src/template/viewer.html?简历_英文简历PDF&format=pdf)
 
