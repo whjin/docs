@@ -75,7 +75,7 @@ div object {
 
 .entry li,
 .viewer li {
-  margin: 0.8em auto;
+  margin: 0.6em auto;
 }
 
 li strong {
@@ -329,5 +329,10 @@ blockquote::-webkit-scrollbar {
 
   .sidebar-area {
     display: none;
+  }
+
+  .entry li,
+  .viewer li {
+    margin: 0.8em auto;
   }
 }
