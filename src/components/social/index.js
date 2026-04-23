@@ -98,11 +98,26 @@
   containerEl.className = 'modal-container';
   overlayEl.appendChild(containerEl);
 
+  const fullscreenOverlayEl = document.createElement('div');
+  fullscreenOverlayEl.className = 'fullscreen-modal-overlay';
+  const fullscreenImgEl = document.createElement('img');
+  fullscreenImgEl.className = 'fullscreen-modal-img';
+  fullscreenOverlayEl.appendChild(fullscreenImgEl);
+  document.body.appendChild(fullscreenOverlayEl);
+
   qrcodeList.forEach((q) => {
     const imgEl = document.createElement('img');
     imgEl.src = q.src;
     imgEl.alt = imgEl.title = q.title;
     containerEl.appendChild(imgEl);
+
+    imgEl.addEventListener('click', (e) => {
+      e.stopPropagation();
+      fullscreenImgEl.src = q.src;
+      fullscreenImgEl.alt = fullscreenImgEl.title = q.title;
+      fullscreenOverlayEl.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    });
   });
 
   function calcTrianglePosition() {
@@ -130,4 +145,27 @@
   overlayEl.addEventListener('click', (e) => {
     e.stopPropagation();
   });
+
+  fullscreenOverlayEl.addEventListener('click', (e) => {
+    if (e.target === fullscreenOverlayEl) {
+      hideQrcode(e);
+    }
+  });
+
+  fullscreenImgEl.addEventListener('click', (e) => {
+    hideQrcode(e);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    let flag = e.key === 'Escape' && fullscreenOverlayEl.classList.contains('show');
+    if (flag) {
+      hideQrcode(e);
+    }
+  });
+
+  function hideQrcode(e) {
+    e.stopPropagation();
+    fullscreenOverlayEl.classList.remove('show');
+    document.body.style.overflow = '';
+  }
 })();
