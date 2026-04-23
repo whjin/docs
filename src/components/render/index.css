@@ -75,7 +75,8 @@ div object {
 
 .entry li,
 .viewer li {
-  margin: 0.6em auto;
+  margin: 0.5em auto;
+  line-height: 1.8;
 }
 
 li strong {
@@ -333,6 +334,7 @@ blockquote::-webkit-scrollbar {
 
   .entry li,
   .viewer li {
-    margin: 0.8em auto;
+    margin: 0.5em auto;
+    line-height: 1.8;
   }
 }
