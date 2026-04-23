@@ -73,8 +73,9 @@ div object {
   padding: 1em;
 }
 
+.entry li,
 .viewer li {
-  margin: 0.5em auto;
+  margin: 0.8em auto;
 }
 
 li strong {
@@ -139,8 +140,6 @@ blockquote p {
   font-size: 1.5em;
   font-weight: 600;
 }
-
-
 
 li.fold-panel > ul,
 li.fold-panel > ol {
@@ -273,7 +272,7 @@ blockquote::-webkit-scrollbar {
   font-size: 1.2em;
   font-weight: bold;
   border-bottom: 1px solid #e9ecef;
-  padding: 0.5em;
+  padding: 0.5em 1em;
 }
 
 .entry ~ .sidebar-area {
@@ -291,7 +290,7 @@ blockquote::-webkit-scrollbar {
 
 .toc-nav ul {
   list-style: none;
-  padding: 0 0.5em;
+  padding: 0 0.5em 0 1em;
 }
 
 .toc-nav li {
