@@ -79,11 +79,6 @@ div object {
   line-height: 1.6;
 }
 
-li strong {
-  display: inline-block;
-  margin-bottom: 0.5em;
-}
-
 details {
   margin: 1em 0;
 }
@@ -261,7 +256,7 @@ blockquote::-webkit-scrollbar {
 .sidebar-area {
   width: 240px;
   max-width: 20%;
-  height: calc(100vh - 10px);
+  height: 100vh;
   box-sizing: border-box;
   border-left: 1px solid #e9ecef;
   overflow: auto;
@@ -273,11 +268,15 @@ blockquote::-webkit-scrollbar {
   font-size: 1.2em;
   font-weight: bold;
   border-bottom: 1px solid #e9ecef;
-  padding: 0.5em 1em;
+  padding: 0.5em 0.8em;
 }
 
 .entry ~ .sidebar-area {
-  padding-top: 50px;
+  height: calc(100vh - 100px);
+  max-height: 100%;
+  top: 50px;
+  box-sizing: border-box;
+  overflow: auto;
 }
 
 .toc-nav {
