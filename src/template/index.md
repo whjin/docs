@@ -15,6 +15,7 @@
 <details>
 <summary>Web3</summary>
 
+- [Web3文档](src/template/viewer.html?Web3_Web3文档)
 - [Solidity文档](src/template/viewer.html?Web3_Solidity文档)
 - [Web3钱包](src/template/viewer.html?Web3_Web3钱包)
 
