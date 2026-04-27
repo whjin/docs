@@ -35,3 +35,62 @@
 ## `buffer`文件
 
 - 二进制 `Buffer` 内存
+- `Buffer.from('10')`
+- `Buffer.alloc(10, 1)` 创建指定长度的 `Buffer`，填充值为`1`
+- 编码类型：`utf8`、`ascii`、`base64`、 `hex`
+
+## `JWT`鉴权机制
+
+- `JWT`：`JSON Web Token`，`JSON`对象，`Base64`编码，`HMAC`签名
+- `token`：头部 `header`、载荷 `payload`、签名 `signature`
+
+```json
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+```
+
+- 生成 `token`，验证 `token`
+- 校验 `token`：`koa-jwt`
+- 加密密钥 `payload`
+
+```js
+app.use(koajwt({
+    secret: 'access_token',
+  }).unless({
+    path: [/api/login],
+  }));
+
+  router.get('/api/user', async (ctx,next) => {
+    const authorization = ctx.header.authorization; // 获取 jwt
+    const token = authorization.replace('Bearer ', '');
+    const result = jwt.verify(token, 'access_token');
+    ctx.body = result;
+  })
+```
+
+## `Stream`
+
+- `stream`：数据传输手段，端到端信息交互方式
+- 可写流：`fs.createWriteStream`
+- 可读流：`fs.createReadStream`
+- 双工流：`net.socket`
+- 转换流：在数据写入/读取时修改数据的流
+- `http` `request`-可读流 `response`-可写流
+- `pipe`：数据传输管道，可读流 -> 可写流
+
+```js
+const server = http.createServer((req, res) => {
+  const method = req.method;
+  if (method === 'GET') {
+    const filename = path.resolve(__dirname, 'data.json');
+    let stream = fs.createReadStream(filename);
+    stream.pipe(res);
+  }
+});
+```
+
+## `process`
+
+- `process`：开启服务进程，进程管理
