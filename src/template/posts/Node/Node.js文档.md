@@ -94,3 +94,15 @@ const server = http.createServer((req, res) => {
 ## `process`
 
 - `process`：开启服务进程，进程管理
+- `process.env` `process.env.NODE_ENV`
+- `process.nextTick` `evnetLoop`
+- `process.pid` `ppid`
+- `process.cwd()` 当前进程目录
+- `process.stdout` `process.stdin` `process.stderr`
+- `process.argv` 命令行参数
+- `process.argv.slice(2)` 0: `Node`路径 1: `JS`文件路径
+
+## `eventEmitter`
+
+- 事件驱动 `fs.readStream` `eventEmitter.on()`
+- 观察者模式
