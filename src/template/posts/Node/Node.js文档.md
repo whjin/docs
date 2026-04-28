@@ -106,3 +106,100 @@ const server = http.createServer((req, res) => {
 
 - 事件驱动 `fs.readStream` `eventEmitter.on()`
 - 观察者模式
+
+## 中间件
+
+- 本质是回调函数
+- `koa`通过中间件实现请求处理流程
+- `ctx`：`request`、`response`
+- `next`：执行下一次中间件的函数
+- 每个中间件足够清晰，职责单一，可组合
+
+```js
+module.exports = (options) => async (ctx, next) => {
+  try {
+    const token = ctx.header.authorization;
+    if (token) {
+      await verify(token);
+    }
+    await next();
+  } catch (error) {
+    console.error(error);
+  }
+};
+```
+
+## 事件循环
+
+- `timers`：`setTimeout`、`setInterval`
+- `timers`检查阶段：`setTimeout`、`setInterval` 回调函数
+- `IO` 回调
+- 闲置时间：`idle` 系统内部
+- `poll`：轮询阶段
+- `check`：`setImmediate`
+- `close` 回调 `socket.on('end')`
+- 每个阶段，都会执行对应的队列
+- `process.nextTick`
+
+## 性能 + 监控 + 优化
+
+- `CPU`：负载 使用率
+- `内存`：`os`
+- 磁盘 `IO` `Redis` `memcached`
+
+```js
+const os = require('os');
+
+const { rss, heapTotal, heapUsed } = process.memoryUsage();
+
+const sysFree = os.freemem();
+const sysTotal = os.totalmem();
+
+// heapUsed / heapTotal：Node堆内存的占用率
+// rss / sysTotal：进程占用的内存率 内存系统比例
+```
+
+- `EasyMonitor` `Node` 内核性能监控 + 分析工具
+- `Node.js` 使用最新版本 `V8`
+- `Stream`
+- 代码层面
+- 内存管理
+
+## 文件上传
+
+- `multiparty`：文件上传 `"content-type": "multipart/form-data"`
+
+```js
+<form action="http://localhost:8080/api/upload" method="post" enctype="multipart/form-data">
+  <input type="file" name="file" id="file" value="" multiple="multiple" />
+  <input type="submit" value="提交" />
+</form>;
+
+router.post('/uploadFile', async (ctx, next) => {
+  const file = ctx.request.files.file;
+  const reader = fs.createReadStream(file.path);
+  let filePath = path.join(__dirname, 'public/upload/') + `${file.name}`;
+  const upStream = fs.createWriteStream(filePath);
+  reader.pipe(upStream);
+  return (ctx.body = { code: 200, message: '上传成功' });
+});
+```
+
+- `koa-multer`
+
+```js
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, './upload/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+const upload = multer({ storage });
+
+const fileRouter = new Router();
+fileRouter.post('/upload', upload.single('file'), async (ctx, next) => {});
+app.use(fileRouter.routes());
+```
