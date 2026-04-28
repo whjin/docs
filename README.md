@@ -1,7 +1,7 @@
-# 开发文档
+# 博客
 
-- [开发文档](https://wuhuajin.com/docs/)
-- [讨论站点](https://github.com/whjin/docs/issues)
+- [个人主页](https://wuhuajin.com/blog)
+- [讨论站点](https://github.com/whjin/blog/issues)
 
 # 功能项
 

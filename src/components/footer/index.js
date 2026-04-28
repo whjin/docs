@@ -2,12 +2,12 @@
   const html = `
       <span>&copy;${isMobile() ? '' : '2013-'}${new Date().getFullYear()}</span>
       <a
-        href="https://github.com/whjin"
+        href="https://wuhuajin.com"
         target="_blank"
         rel="noopener noreferrer"
-        title="github"
+        title="博客"
       >
-        &nbsp;wuhuajin
+        &nbsp;吴华锦
       </a>&nbsp;|
       <span id="busuanzi_container_site_pv" style="display: inline">&nbsp;访问
         <a

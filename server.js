@@ -5,7 +5,7 @@ const url = require('url');
 const chokidar = require('chokidar');
 const WebSocket = require('ws');
 
-const PORT = 8000;
+const PORT = 8080;
 const DEBOUNCE_DELAY = 100;
 
 // 静态文件服务器的根目录
@@ -69,9 +69,7 @@ const server = http.createServer((req, res) => {
           // 尝试在 src/template 目录下查找
           path.join(rootDir, 'src', 'template', pathname),
           // 尝试去掉开头的 /src/template
-          pathname.startsWith('/src/template/')
-            ? path.join(rootDir, pathname.slice('/src/template'.length))
-            : null,
+          pathname.startsWith('/src/template/') ? path.join(rootDir, pathname.slice('/src/template'.length)) : null,
         ].filter((p) => p && p !== filePath);
 
         // 检查可能的路径
@@ -88,9 +86,7 @@ const server = http.createServer((req, res) => {
                 res.writeHead(404, {
                   'Content-Type': 'text/html; charset=utf-8',
                 });
-                res.end(
-                  `<h1>404 - 文件未找到</h1><p>尝试读取文件时出错: ${err.message}</p>`,
-                );
+                res.end(`<h1>404 - 文件未找到</h1><p>尝试读取文件时出错: ${err.message}</p>`);
               } else {
                 res.writeHead(200, { 'Content-Type': contentType });
                 res.end(data);
@@ -158,10 +154,7 @@ const server = http.createServer((req, res) => {
         `;
 
         // 将 WebSocket 脚本注入到 HTML 的 head 结束之前
-        const injectedContent = htmlContent.replace(
-          '</head>',
-          wsScript + '\n</head>',
-        );
+        const injectedContent = htmlContent.replace('</head>', wsScript + '\n</head>');
         res.end(injectedContent);
       } else {
         res.end(content);

@@ -1,7 +1,7 @@
 {
   "name": "docs",
   "version": "1.0.0",
-  "description": "- [开发文档](https://wuhuajin.com/docs/)\r - [讨论站点](https://github.com/whjin/docs/issues)",
+  "description": "- [博客](https://wuhuajin.com/blog)\r - [讨论站点](https://github.com/whjin/blog/issues)",
   "main": "server.js",
   "scripts": {
     "dev": "node server.js"

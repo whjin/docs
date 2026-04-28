@@ -5,7 +5,7 @@ function isMobile() {
 }
 
 function productionMode() {
-  const locations = ['localhost', '127.0.0.1', '8000'];
+  const locations = ['localhost', '127.0.0.1', '8080'];
   return !locations.some((location) => window.location.origin.includes(location));
 }
 
